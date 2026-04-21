@@ -15,7 +15,6 @@
       cursor: none;
     }
 
-    /* 🚫 force no system cursor anywhere */
     * {
       cursor: none !important;
     }
@@ -36,7 +35,7 @@
       z-index: 1000;
     }
 
-    /* LAYOUT */
+    /* DESKTOP LAYOUT */
     .container {
       display: flex;
       width: 100vw;
@@ -89,6 +88,50 @@
       pointer-events: none;
     }
 
+    /* 📱 MOBILE (PHONE) VERSION */
+    @media (max-width: 768px) {
+
+      html, body {
+        overflow-y: auto; /* allow scrolling */
+      }
+
+      .title {
+        font-size: 48px;
+        top: 20px;
+        left: 20px;
+      }
+
+      .container {
+        flex-direction: column;
+        height: auto;
+        padding-top: 120px;
+      }
+
+      .issue {
+        width: 100%;
+        padding: 30px 0;
+        justify-content: center !important;
+      }
+
+      .issue.left,
+      .issue.right {
+        padding-left: 0 !important;
+      }
+
+      .img-wrap {
+        width: 85%;
+        max-width: 420px;
+      }
+
+      .label {
+        position: static;
+        margin-top: 10px;
+        text-align: right;
+        width: 85%;
+        max-width: 420px;
+      }
+    }
+
   </style>
 </head>
 
@@ -120,7 +163,7 @@
 
   </div>
 
-  <!-- ✨ NEON GREEN TRAIL CURSOR -->
+  <!-- ✨ NEON GREEN CURSOR TRAIL -->
   <script>
     document.addEventListener("mousemove", (e) => {
 
@@ -138,7 +181,6 @@
       dot.style.zIndex = "9999";
       dot.style.transform = "translate(-50%, -50%)";
 
-      // 🟢 NEON GREEN
       dot.style.background = "#39ff14";
       dot.style.boxShadow = "0 0 8px #39ff14, 0 0 16px #39ff14";
 
