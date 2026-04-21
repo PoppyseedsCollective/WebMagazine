@@ -9,20 +9,24 @@
       margin: 0;
       padding: 0;
       height: 100%;
+      overflow: hidden;
       font-family: Arial, sans-serif;
       background: #111;
       cursor: none;
     }
 
-    /* TITLE */
+    /* 🔥 TITLE */
     .title {
       position: fixed;
       top: 30px;
       left: 20px;
-      font-size: 120px;
+
+      font-size: 80px;
       font-weight: 300;
+
       color: white;
       mix-blend-mode: difference;
+
       pointer-events: none;
       z-index: 1000;
     }
@@ -36,62 +40,121 @@
 
     .issue {
       flex: 1;
+      position: relative;
       display: flex;
       align-items: center;
-      justify-content: center;
     }
 
+    .issue.left {
+      justify-content: flex-start;
+      padding-left: 60px;
+    }
+
+    .issue.right {
+      justify-content: flex-start;
+      padding-left: 120px;
+    }
+
+    /* IMAGE WRAP */
     .img-wrap {
       position: relative;
-      max-width: 70%;
+      max-width: 80%;
+      max-height: 80%;
     }
 
     .img-wrap img {
       width: 100%;
       height: auto;
       display: block;
+      object-fit: contain;
     }
 
+    /* REMOVE LINK STYLING */
     a {
       text-decoration: none;
+      color: inherit;
+      cursor: pointer;
     }
 
+    /* LABEL */
     .label {
       position: absolute;
       right: 0;
       bottom: -25px;
+
       color: white;
       font-size: 14px;
-      opacity: 0.8;
+      font-weight: 300;
+      opacity: 0.85;
+
+      pointer-events: none;
     }
+
   </style>
 </head>
 
 <body>
 
-  <div class="title">Poppyseeds Magazine</div>
+  <!-- TITLE -->
+  <div class="title">
+    Poppyseeds Magazine
+  </div>
 
+  <!-- MAGAZINES (NOW CLICKABLE PDF LINKS) -->
   <div class="container">
 
-    <div class="issue">
+    <div class="issue left">
       <div class="img-wrap">
-        <a href="https://poppyseeds.space/magazines/Issue01.pdf" target="_blank">
-          <img src="images/Issue01.png">
+        <a href="pdf/Issue01.pdf" target="_blank">
+          <img src="images/Issue01.png" alt="Issue 01">
         </a>
         <div class="label">Issue 01</div>
       </div>
     </div>
 
-    <div class="issue">
+    <div class="issue right">
       <div class="img-wrap">
-        <a href="https://poppyseeds.space/magazines/Issue02.pdf" target="_blank">
-          <img src="images/Issue02.png">
+        <a href="pdf/Issue02.pdf" target="_blank">
+          <img src="images/Issue02.png" alt="Issue 02">
         </a>
         <div class="label">Issue 02</div>
       </div>
     </div>
 
   </div>
+
+  <!-- CURSOR TRAIL -->
+  <script>
+    document.addEventListener("mousemove", (e) => {
+      const dot = document.createElement("div");
+
+      dot.style.position = "fixed";
+      dot.style.left = e.clientX + "px";
+      dot.style.top = e.clientY + "px";
+
+      dot.style.width = "10px";
+      dot.style.height = "10px";
+      dot.style.background = "white";
+      dot.style.borderRadius = "50%";
+
+      dot.style.pointerEvents = "none";
+      dot.style.transform = "translate(-50%, -50%)";
+      dot.style.zIndex = "9999";
+
+      dot.style.opacity = "1";
+      dot.style.transition = "opacity 1s ease-out";
+
+      document.body.appendChild(dot);
+
+      setTimeout(() => {
+        dot.style.opacity = "0";
+      }, 10);
+
+      setTimeout(() => {
+        dot.remove();
+      }, 1000);
+    });
+  </script>
 
 </body>
 </html>
