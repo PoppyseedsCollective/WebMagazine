@@ -19,17 +19,21 @@
       cursor: none !important;
     }
 
-    /* 🎬 SHAKE ANIMATION */
-    @keyframes subtleShake {
+    /* ⚡ STRONGER + FASTER SHAKE */
+    @keyframes fastShake {
       0%   { transform: translate(0px, 0px); }
-      20%  { transform: translate(1px, -1px); }
-      40%  { transform: translate(-1px, 1px); }
-      60%  { transform: translate(1px, 1px); }
-      80%  { transform: translate(-1px, -1px); }
+      10%  { transform: translate(2px, -2px); }
+      20%  { transform: translate(-2px, 2px); }
+      30%  { transform: translate(2px, 2px); }
+      40%  { transform: translate(-2px, -2px); }
+      50%  { transform: translate(3px, 0px); }
+      60%  { transform: translate(-3px, 1px); }
+      70%  { transform: translate(2px, -1px); }
+      80%  { transform: translate(-1px, 2px); }
+      90%  { transform: translate(1px, -2px); }
       100% { transform: translate(0px, 0px); }
     }
 
-    /* TITLE */
     .title {
       position: fixed;
       top: 30px;
@@ -44,10 +48,10 @@
       pointer-events: none;
       z-index: 1000;
 
-      animation: subtleShake 4s infinite ease-in-out;
+      animation: fastShake 1.2s infinite;
     }
 
-    /* DESKTOP LAYOUT */
+    /* DESKTOP */
     .container {
       display: flex;
       width: 100vw;
@@ -100,11 +104,12 @@
       pointer-events: none;
     }
 
-    /* 📱 MOBILE */
+    /* 📱 MOBILE FIX (IMPORTANT PART) */
     @media (max-width: 768px) {
 
       html, body {
-        overflow-y: auto;
+        overflow-y: auto !important;
+        overflow-x: hidden;
       }
 
       .title {
@@ -114,15 +119,17 @@
       }
 
       .container {
-        flex-direction: column;
-        height: auto;
+        display: flex !important;
+        flex-direction: column !important;
+        height: auto !important;
         padding-top: 120px;
       }
 
       .issue {
-        width: 100%;
-        padding: 30px 0;
+        width: 100% !important;
+        display: flex !important;
         justify-content: center !important;
+        padding: 30px 0;
       }
 
       .issue.left,
@@ -149,10 +156,8 @@
 
 <body>
 
-  <!-- TITLE -->
-  <div class="title">Poppyseeds Collective</div>
+  <div class="title">Poppyseeds Magazine</div>
 
-  <!-- MAGAZINES -->
   <div class="container">
 
     <div class="issue left">
@@ -175,7 +180,7 @@
 
   </div>
 
-  <!-- ✨ NEON CURSOR -->
+  <!-- NEON CURSOR -->
   <script>
     document.addEventListener("mousemove", (e) => {
 
