@@ -15,7 +15,7 @@
       cursor: none;
     }
 
-    /* 🔥 TITLE (DOUBLED SIZE) */
+    /* 🔥 FULL WIDTH TITLE (RESPONSIVE EDGE FEEL) */
     .title {
       position: fixed;
       top: 30px;
@@ -26,9 +26,7 @@
       justify-content: space-between;
       padding: 0 20px;
 
-    
-   font-size: 10vw;
-
+      font-size: 6.5vw;   /* 👈 THIS controls full-screen feel */
       font-weight: 300;
 
       color: white;
@@ -36,6 +34,8 @@
 
       pointer-events: none;
       z-index: 1000;
+
+      white-space: nowrap;
     }
 
     /* LAYOUT */
@@ -47,9 +47,9 @@
 
     .issue {
       flex: 1;
+      position: relative;
       display: flex;
       align-items: center;
-      justify-content: center;
     }
 
     .issue.left {
@@ -64,8 +64,8 @@
 
     .img-wrap {
       position: relative;
-      max-width: 85%;
-      max-height: 85%;
+      max-width: 80%;
+      max-height: 80%;
     }
 
     .img-wrap img {
@@ -75,6 +75,7 @@
       display: block;
     }
 
+    /* LABEL bottom right of image */
     .label {
       position: absolute;
       right: 0;
@@ -117,7 +118,7 @@
 
   </div>
 
-  <!-- CURSOR TRAIL -->
+  <!-- ✨ CURSOR TRAIL -->
   <script>
     document.addEventListener("mousemove", (e) => {
       const dot = document.createElement("div");
