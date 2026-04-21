@@ -15,29 +15,28 @@
       cursor: none;
     }
 
-    /* 🔥 FULL WIDTH EDGE-TO-EDGE TITLE */
-    .title {
-      position: fixed;
-      top: 30px;
-      left: 0;
-      width: 100vw;
+  .title {
+  position: fixed;
+  top: 30px;
+  left: 0;
+  width: 100vw;
 
-      font-size: 22px;
-      font-weight: 300;
-      text-transform: uppercase;
-      letter-spacing: 6px;
+  font-weight: 300;
+  text-transform: uppercase;
 
-      color: white;
-      mix-blend-mode: difference;
+  color: white;
+  mix-blend-mode: difference;
 
-      pointer-events: none;
-      z-index: 1000;
+  pointer-events: none;
+  z-index: 1000;
 
-      display: flex;
-      justify-content: space-between;
+  white-space: nowrap;
 
-      padding: 0 20px;
-    }
+  font-size: 2.2vw; /* scales with screen */
+  letter-spacing: 0.8em;
+
+  text-align: justify;
+}
 
     /* LAYOUT */
     .container {
