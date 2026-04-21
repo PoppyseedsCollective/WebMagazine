@@ -19,6 +19,16 @@
       cursor: none !important;
     }
 
+    /* 🎬 SHAKE ANIMATION */
+    @keyframes subtleShake {
+      0%   { transform: translate(0px, 0px); }
+      20%  { transform: translate(1px, -1px); }
+      40%  { transform: translate(-1px, 1px); }
+      60%  { transform: translate(1px, 1px); }
+      80%  { transform: translate(-1px, -1px); }
+      100% { transform: translate(0px, 0px); }
+    }
+
     /* TITLE */
     .title {
       position: fixed;
@@ -33,6 +43,8 @@
 
       pointer-events: none;
       z-index: 1000;
+
+      animation: subtleShake 4s infinite ease-in-out;
     }
 
     /* DESKTOP LAYOUT */
@@ -88,11 +100,11 @@
       pointer-events: none;
     }
 
-    /* 📱 MOBILE (PHONE) VERSION */
+    /* 📱 MOBILE */
     @media (max-width: 768px) {
 
       html, body {
-        overflow-y: auto; /* allow scrolling */
+        overflow-y: auto;
       }
 
       .title {
@@ -163,7 +175,7 @@
 
   </div>
 
-  <!-- ✨ NEON GREEN CURSOR TRAIL -->
+  <!-- ✨ NEON CURSOR -->
   <script>
     document.addEventListener("mousemove", (e) => {
 
