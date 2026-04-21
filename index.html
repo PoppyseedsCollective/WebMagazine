@@ -19,33 +19,18 @@
       cursor: none !important;
     }
 
-    /* 🌍 EARTHQUAKE TITLE SHAKE */
-    @keyframes quakeShake {
+    /* ✨ BALANCED SHAKE */
+    @keyframes softQuake {
       0%   { transform: translate(0px, 0px); }
-      5%   { transform: translate(-4px, 3px); }
-      10%  { transform: translate(5px, -2px); }
-      15%  { transform: translate(-6px, -4px); }
-      20%  { transform: translate(4px, 6px); }
-      25%  { transform: translate(-3px, -5px); }
-      30%  { transform: translate(6px, 2px); }
-      35%  { transform: translate(-5px, 4px); }
-      40%  { transform: translate(3px, -6px); }
-      45%  { transform: translate(-4px, 5px); }
-      50%  { transform: translate(6px, -3px); }
-      55%  { transform: translate(-6px, 3px); }
-      60%  { transform: translate(4px, 5px); }
-      65%  { transform: translate(-3px, -6px); }
-      70%  { transform: translate(5px, 2px); }
-      75%  { transform: translate(-5px, 4px); }
-      80%  { transform: translate(3px, -4px); }
-      85%  { transform: translate(-4px, 3px); }
-      90%  { transform: translate(2px, -2px); }
+      25%  { transform: translate(1px, -1px); }
+      50%  { transform: translate(-1px, 1px); }
+      75%  { transform: translate(1px, 1px); }
       100% { transform: translate(0px, 0px); }
     }
 
     .title {
       position: fixed;
-      top: 40px;
+      top: 30px;
       left: 0px;
 
       font-size: 130px;
@@ -57,10 +42,10 @@
       pointer-events: none;
       z-index: 1000;
 
-      animation: quakeShake 0.6s infinite steps(2, end);
+      animation: softQuake 0.8s infinite steps(2, end);
     }
 
-    /* DESKTOP LAYOUT */
+    /* DESKTOP */
     .container {
       display: flex;
       width: 100vw;
@@ -113,7 +98,7 @@
       pointer-events: none;
     }
 
-    /* 📱 MOBILE STACK FIX */
+    /* 📱 MOBILE */
     @media (max-width: 768px) {
 
       html, body {
@@ -187,7 +172,7 @@
 
   </div>
 
-  <!-- 🟢 NEON CURSOR TRAIL -->
+  <!-- 🟢 NEON CURSOR -->
   <script>
     document.addEventListener("mousemove", (e) => {
 
