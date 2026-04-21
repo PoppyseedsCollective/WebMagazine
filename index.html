@@ -8,30 +8,44 @@
     html, body {
       margin: 0;
       padding: 0;
-      scroll-behavior: smooth;
+      height: 100%;
+      overflow: hidden; /* prevents scrolling */
       font-family: Arial, sans-serif;
     }
 
     h1 {
-      position: fixed;
+      position: absolute;
       top: 20px;
       left: 20px;
       z-index: 10;
       color: white;
       mix-blend-mode: difference;
+      margin: 0;
     }
 
-    /* FULLSCREEN SECTIONS */
-    .issue {
-      height: 100vh;
+    /* FULL SCREEN ROW */
+    .container {
+      display: flex;
       width: 100vw;
+      height: 100vh;
+    }
+
+    .issue {
+      flex: 1; /* each takes half screen */
       position: relative;
+      overflow: hidden;
+      cursor: pointer;
     }
 
     .issue img {
       width: 100%;
       height: 100%;
-      object-fit: cover; /* fills screen */
+      object-fit: cover; /* fills full panel */
+      transition: transform 0.3s ease;
+    }
+
+    .issue:hover img {
+      transform: scale(1.03);
     }
 
     .label {
@@ -39,38 +53,32 @@
       bottom: 30px;
       left: 30px;
       color: white;
-      font-size: 24px;
+      font-size: 28px;
       background: rgba(0,0,0,0.4);
       padding: 10px 15px;
       border-radius: 8px;
     }
 
-    /* optional scroll hint */
-    .hint {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      color: white;
-      mix-blend-mode: difference;
-      font-size: 14px;
-    }
   </style>
 </head>
 
 <body>
 
   <h1>Poppyseeds Magazine</h1>
-  <div class="hint">Scroll ↓</div>
 
-  <section class="issue">
-    <img src="images/Issue01.png">
-    <div class="label">Issue 01</div>
-  </section>
+  <div class="container">
 
-  <section class="issue">
-    <img src="images/Issue02.png">
-    <div class="label">Issue 02</div>
-  </section>
+    <div class="issue">
+      <img src="images/Issue01.png" alt="Issue 01">
+      <div class="label">Issue 01</div>
+    </div>
+
+    <div class="issue">
+      <img src="images/Issue02.png" alt="Issue 02">
+      <div class="label">Issue 02</div>
+    </div>
+
+  </div>
 
 </body>
 </html>
