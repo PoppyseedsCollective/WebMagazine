@@ -15,18 +15,28 @@
       cursor: none;
     }
 
+    /* 🚫 REMOVE HAND CURSOR COMPLETELY */
+    a, a:hover, a:active, a:visited {
+      cursor: none !important;
+    }
+
+    /* TITLE */
     .title {
       position: fixed;
       top: 30px;
       left: 20px;
+
       font-size: 80px;
       font-weight: 300;
+
       color: white;
       mix-blend-mode: difference;
+
       pointer-events: none;
       z-index: 1000;
     }
 
+    /* LAYOUT */
     .container {
       display: flex;
       width: 100vw;
@@ -66,26 +76,32 @@
     a {
       text-decoration: none;
       color: inherit;
-      cursor: pointer;
     }
 
     .label {
       position: absolute;
       right: 0;
       bottom: -25px;
+
       color: white;
       font-size: 14px;
       font-weight: 300;
       opacity: 0.85;
+
       pointer-events: none;
     }
+
   </style>
 </head>
 
 <body>
 
-  <div class="title">Poppyseeds Magazine</div>
+  <!-- TITLE -->
+  <div class="title">
+    Poppyseeds Magazine
+  </div>
 
+  <!-- MAGAZINES -->
   <div class="container">
 
     <div class="issue left">
@@ -108,40 +124,26 @@
 
   </div>
 
-  <!-- ✨ CURSOR TRAIL (WITH RED HOVER LOGIC) -->
+  <!-- ✨ CURSOR (SINGLE DOT, RED ON HOVER) -->
   <script>
-    document.addEventListener("mousemove", (e) => {
-      const dot = document.createElement("div");
+    const dot = document.createElement("div");
+    document.body.appendChild(dot);
 
-      // check if hovering link
+    dot.style.position = "fixed";
+    dot.style.width = "10px";
+    dot.style.height = "10px";
+    dot.style.borderRadius = "50%";
+    dot.style.pointerEvents = "none";
+    dot.style.zIndex = "9999";
+    dot.style.transform = "translate(-50%, -50%)";
+    dot.style.transition = "background 0.15s ease";
+
+    document.addEventListener("mousemove", (e) => {
       const isLink = e.target.closest("a");
 
-      dot.style.position = "fixed";
       dot.style.left = e.clientX + "px";
       dot.style.top = e.clientY + "px";
-
-      dot.style.width = "10px";
-      dot.style.height = "10px";
-      dot.style.borderRadius = "50%";
-
-      dot.style.background = isLink ? "red" : "white"; // 🔥 HERE
-
-      dot.style.pointerEvents = "none";
-      dot.style.transform = "translate(-50%, -50%)";
-      dot.style.zIndex = "9999";
-
-      dot.style.opacity = "1";
-      dot.style.transition = "opacity 1s ease-out";
-
-      document.body.appendChild(dot);
-
-      setTimeout(() => {
-        dot.style.opacity = "0";
-      }, 10);
-
-      setTimeout(() => {
-        dot.remove();
-      }, 1000);
+      dot.style.background = isLink ? "red" : "white";
     });
   </script>
 
