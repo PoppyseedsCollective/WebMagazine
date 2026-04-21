@@ -4,109 +4,24 @@
   <meta charset="UTF-8">
   <title>Poppyseeds Magazine</title>
 
-  <style><!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <title>Poppyseeds Magazine</title>
-
   <style>
     html, body {
       margin: 0;
       padding: 0;
       height: 100%;
+      overflow: hidden;
       font-family: Arial, sans-serif;
       background: #111;
       cursor: none;
     }
 
-    /* TITLE */
+    /* 🔥 TITLE */
     .title {
       position: fixed;
       top: 30px;
       left: 20px;
+
       font-size: 80px;
-      font-weight: 300;
-      color: white;
-      mix-blend-mode: difference;
-      pointer-events: none;
-      z-index: 1000;
-    }
-
-    /* LAYOUT */
-    .container {
-      display: flex;
-      width: 100vw;
-      height: 100vh;
-    }
-
-    .issue {
-      flex: 1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .img-wrap {
-      position: relative;
-      max-width: 80%;
-    }
-
-    .img-wrap img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    a {
-      text-decoration: none;
-    }
-
-    .label {
-      position: absolute;
-      right: 0;
-      bottom: -25px;
-      color: white;
-      font-size: 14px;
-      opacity: 0.8;
-    }
-  </style>
-</head>
-
-<body>
-
-  <div class="title">Poppyseeds Magazine</div>
-
-  <div class="container">
-
-    <div class="issue">
-      <div class="img-wrap">
-        <a href="https://poppyseeds.space/magazines/Issue01.pdf" target="_blank">
-          <img src="images/Issue01.png">
-        </a>
-        <div class="label">Issue 01</div>
-      </div>
-    </div>
-
-    <div class="issue">
-      <div class="img-wrap">
-        <a href="https://poppyseeds.space/magazines/Issue02.pdf" target="_blank">
-          <img src="images/Issue02.png">
-        </a>
-        <div class="label">Issue 02</div>
-      </div>
-    </div>
-
-  </div>
-
-</body>
-</html>
-    .title {
-      position: fixed;
-      top: 30px;
-      left: 20px;
-
-      font-size: 150px;
       font-weight: 300;
 
       color: white;
@@ -190,7 +105,7 @@
 
     <div class="issue left">
       <div class="img-wrap">
-        <a href="magazines/Issue01.pdf" target="_blank">
+        <a href="pdf/Issue01.pdf" target="_blank">
           <img src="images/Issue01.png" alt="Issue 01">
         </a>
         <div class="label">Issue 01</div>
@@ -199,7 +114,7 @@
 
     <div class="issue right">
       <div class="img-wrap">
-        <a href="magazines/Issue02.pdf" target="_blank">
+        <a href="pdf/Issue02.pdf" target="_blank">
           <img src="images/Issue02.png" alt="Issue 02">
         </a>
         <div class="label">Issue 02</div>
