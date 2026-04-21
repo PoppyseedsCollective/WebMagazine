@@ -15,20 +15,21 @@
       cursor: none;
     }
 
-.title {
-  position: fixed;
-  top: 30px;
-  left: 20px;
+    /* 🔥 TITLE */
+    .title {
+      position: fixed;
+      top: 30px;
+      left: 20px;
 
-  font-size: 150px;
-  font-weight: 300;
+      font-size: 150px;
+      font-weight: 300;
 
-  color: white;
-  mix-blend-mode: difference;
+      color: white;
+      mix-blend-mode: difference;
 
-  pointer-events: none;
-  z-index: 1000;
-}
+      pointer-events: none;
+      z-index: 1000;
+    }
 
     /* LAYOUT */
     .container {
@@ -54,6 +55,7 @@
       padding-left: 120px;
     }
 
+    /* IMAGE WRAP */
     .img-wrap {
       position: relative;
       max-width: 80%;
@@ -67,7 +69,14 @@
       object-fit: contain;
     }
 
-    /* LABEL under image */
+    /* REMOVE LINK STYLING */
+    a {
+      text-decoration: none;
+      color: inherit;
+      cursor: pointer;
+    }
+
+    /* LABEL */
     .label {
       position: absolute;
       right: 0;
@@ -91,19 +100,23 @@
     Poppyseeds Magazine
   </div>
 
-  <!-- MAGAZINES -->
+  <!-- MAGAZINES (NOW CLICKABLE PDF LINKS) -->
   <div class="container">
 
     <div class="issue left">
       <div class="img-wrap">
-        <img src="images/Issue01.png" alt="Issue 01">
+        <a href="pdf/Issue01.pdf" target="_blank">
+          <img src="images/Issue01.png" alt="Issue 01">
+        </a>
         <div class="label">Issue 01</div>
       </div>
     </div>
 
     <div class="issue right">
       <div class="img-wrap">
-        <img src="images/Issue02.png" alt="Issue 02">
+        <a href="pdf/Issue02.pdf" target="_blank">
+          <img src="images/Issue02.png" alt="Issue 02">
+        </a>
         <div class="label">Issue 02</div>
       </div>
     </div>
