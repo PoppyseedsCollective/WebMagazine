@@ -4,14 +4,22 @@
   <meta charset="UTF-8">
   <title>Poppyseeds Collective</title>
 
+  <!-- 🔗 FAVICON -->
   <link rel="icon" type="image/png" href="images/favicon.png">
 
   <!-- 🔗 SOCIAL SHARE (OPEN GRAPH) -->
   <meta property="og:title" content="Poppyseeds Collective">
   <meta property="og:description" content="Magazine & Collective initiated by Manuel Phil. Bischof & Artemis Xeniou">
-  <meta property="og:image" content="images/Media-poppyseeds.jpg">
+  
+  <!-- ⚠️ IMPORTANT FIX: must be absolute URL -->
+  <meta property="og:image" content="https://poppyseeds.space/images/Media-poppyseeds.jpg">
+
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://your-domain.com">
+  <meta property="og:url" content="https://poppyseeds.space">
+
+  <!-- (optional but helpful for WhatsApp) -->
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
 
   <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;400;500&display=swap" rel="stylesheet">
 
@@ -119,25 +127,9 @@
       font-size: 14px;
     }
 
-    /* ================= CREDIT ================= */
-
-    .credit {
-      position: fixed;
-      bottom: 20px;
-      left: 20px;
-      font-size: 10px;
-      color: white;
-      opacity: 0.5;
-      letter-spacing: 0.3px;
-      mix-blend-mode: difference;
-      z-index: 2000;
-      pointer-events: none;
-    }
-
     /* ================= MOBILE ================= */
 
     @media (max-width: 768px) {
-
       .title { font-size: 30px; }
 
       .title.left { left: 10px; }
@@ -211,11 +203,6 @@
       </div>
     </div>
 
-  </div>
-
-  <!-- 👇 CREDIT -->
-  <div class="credit">
-    website made by Manuel Phil. Bischof
   </div>
 
   <script>
