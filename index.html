@@ -15,23 +15,18 @@
       cursor: none;
     }
 
-    /* 🔥 TITLE */
     .title {
       position: fixed;
       top: 30px;
       left: 20px;
-
       font-size: 80px;
       font-weight: 300;
-
       color: white;
       mix-blend-mode: difference;
-
       pointer-events: none;
       z-index: 1000;
     }
 
-    /* LAYOUT */
     .container {
       display: flex;
       width: 100vw;
@@ -55,7 +50,6 @@
       padding-left: 120px;
     }
 
-    /* IMAGE WRAP */
     .img-wrap {
       position: relative;
       max-width: 80%;
@@ -69,38 +63,29 @@
       object-fit: contain;
     }
 
-    /* REMOVE LINK STYLING */
     a {
       text-decoration: none;
       color: inherit;
       cursor: pointer;
     }
 
-    /* LABEL */
     .label {
       position: absolute;
       right: 0;
       bottom: -25px;
-
       color: white;
       font-size: 14px;
       font-weight: 300;
       opacity: 0.85;
-
       pointer-events: none;
     }
-
   </style>
 </head>
 
 <body>
 
-  <!-- TITLE -->
-  <div class="title">
-    Poppyseeds Magazine
-  </div>
+  <div class="title">Poppyseeds Magazine</div>
 
-  <!-- MAGAZINES (NOW CLICKABLE PDF LINKS) -->
   <div class="container">
 
     <div class="issue left">
@@ -123,10 +108,13 @@
 
   </div>
 
-  <!-- CURSOR TRAIL -->
+  <!-- ✨ CURSOR TRAIL (WITH RED HOVER LOGIC) -->
   <script>
     document.addEventListener("mousemove", (e) => {
       const dot = document.createElement("div");
+
+      // check if hovering link
+      const isLink = e.target.closest("a");
 
       dot.style.position = "fixed";
       dot.style.left = e.clientX + "px";
@@ -134,8 +122,9 @@
 
       dot.style.width = "10px";
       dot.style.height = "10px";
-      dot.style.background = "white";
       dot.style.borderRadius = "50%";
+
+      dot.style.background = isLink ? "red" : "white"; // 🔥 HERE
 
       dot.style.pointerEvents = "none";
       dot.style.transform = "translate(-50%, -50%)";
