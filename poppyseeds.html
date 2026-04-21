@@ -52,11 +52,12 @@
       display: flex;
       flex-wrap: wrap;
       align-items: center;
-      gap: 8px;
+      gap: 10px;
     }
 
+    /* ✅ DOUBLED FONT SIZE */
     .name {
-      font-size: 20px;
+      font-size: 40px;
       font-weight: 300;
       white-space: nowrap;
     }
@@ -67,7 +68,7 @@
       border-radius: 50%;
       display: inline-block;
       margin: 0 3px;
-      transform: translateY(-2px);
+      transform: translateY(-6px);
     }
 
     .dot.winter {
@@ -132,6 +133,35 @@
     </div>
 
   </div>
+
+  <!-- 🟢 NEON CURSOR TRAIL -->
+  <script>
+    document.addEventListener("mousemove", (e) => {
+
+      const dot = document.createElement("div");
+      document.body.appendChild(dot);
+
+      dot.style.position = "fixed";
+      dot.style.left = e.clientX + "px";
+      dot.style.top = e.clientY + "px";
+
+      dot.style.width = "10px";
+      dot.style.height = "10px";
+      dot.style.borderRadius = "50%";
+      dot.style.pointerEvents = "none";
+      dot.style.transform = "translate(-50%, -50%)";
+      dot.style.zIndex = "9999";
+
+      dot.style.background = "#39ff14";
+      dot.style.boxShadow = "0 0 8px #39ff14, 0 0 16px #39ff14";
+
+      dot.style.opacity = "1";
+      dot.style.transition = "opacity 0.8s ease-out";
+
+      setTimeout(() => dot.style.opacity = "0", 10);
+      setTimeout(() => dot.remove(), 800);
+    });
+  </script>
 
 </body>
 </html>
