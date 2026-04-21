@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>About — Poppyseeds</title>
 
-  <!-- 🔤 SAME FONT -->
+  <!-- 🔤 FONT -->
   <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;400;500&display=swap" rel="stylesheet">
 
   <style>
@@ -15,6 +15,7 @@
       color: white;
       font-family: 'Unbounded', sans-serif;
       cursor: none;
+      height: 100%;
     }
 
     * {
@@ -27,14 +28,12 @@
       padding: 80px 40px;
     }
 
-    /* TITLE */
     .title {
       font-size: 42px;
       font-weight: 300;
       margin-bottom: 40px;
     }
 
-    /* TEXT */
     .text {
       font-size: 16px;
       line-height: 1.6;
@@ -70,14 +69,10 @@
 
   <div class="wrapper">
 
-    <div class="title">
-      Poppyseeds
-    </div>
+    <div class="title">Poppyseeds</div>
 
     <div class="text">
-      <p>
-        Poppyseeds is an independent art magazine.
-      </p>
+      <p>Poppyseeds is an independent art magazine.</p>
 
       <p>
         It exists somewhere between printed matter, digital space,
@@ -95,6 +90,35 @@
     </div>
 
   </div>
+
+  <!-- 🟢 NEON CURSOR TRAIL -->
+  <script>
+    document.addEventListener("mousemove", (e) => {
+
+      const dot = document.createElement("div");
+      document.body.appendChild(dot);
+
+      dot.style.position = "fixed";
+      dot.style.left = e.clientX + "px";
+      dot.style.top = e.clientY + "px";
+
+      dot.style.width = "10px";
+      dot.style.height = "10px";
+      dot.style.borderRadius = "50%";
+      dot.style.pointerEvents = "none";
+      dot.style.transform = "translate(-50%, -50%)";
+      dot.style.zIndex = "9999";
+
+      dot.style.background = "#39ff14";
+      dot.style.boxShadow = "0 0 8px #39ff14, 0 0 16px #39ff14";
+
+      dot.style.opacity = "1";
+      dot.style.transition = "opacity 0.8s ease-out";
+
+      setTimeout(() => dot.style.opacity = "0", 10);
+      setTimeout(() => dot.remove(), 800);
+    });
+  </script>
 
 </body>
 </html>
