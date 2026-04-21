@@ -15,20 +15,13 @@
       cursor: none;
     }
 
-    /* 🔥 BIGGER TITLE */
+    /* 🔥 SIMPLE LEFT TITLE */
     .title {
       position: fixed;
       top: 30px;
-      left: 0;
-      width: 100vw;
+      left: 20px;
 
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-
-      padding: 0 20px;
-
-      font-size: clamp(36px, 2vw, 110px); /* 👈 bigger here */
+      font-size: 80px;   /* 👈 MANUAL CONTROL */
       font-weight: 300;
 
       color: white;
@@ -75,13 +68,17 @@
       object-fit: contain;
     }
 
+    /* LABEL under image */
     .label {
       position: absolute;
       right: 0;
       bottom: -25px;
+
       color: white;
       font-size: 14px;
+      font-weight: 300;
       opacity: 0.85;
+
       pointer-events: none;
     }
 
@@ -92,8 +89,7 @@
 
   <!-- TITLE -->
   <div class="title">
-    <span>Poppyseeds</span>
-    <span>Magazine</span>
+    Poppyseeds Magazine
   </div>
 
   <!-- MAGAZINES -->
