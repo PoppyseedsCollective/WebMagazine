@@ -19,7 +19,7 @@
       cursor: none !important;
     }
 
-    /* ⚡ SHAKE (used only when triggered) */
+    /* ⚡ SHAKE */
     @keyframes quakeShake {
       0%   { transform: translate(0px, 0px); }
       20%  { transform: translate(3px, -2px); }
@@ -35,7 +35,7 @@
       left: 0px;
 
       font-size: 130px;
-      font-weight: 1;
+      font-weight: 10;
 
       color: white;
       mix-blend-mode: difference;
@@ -44,7 +44,6 @@
       z-index: 1000;
     }
 
-    /* when active */
     .title.shake {
       animation: quakeShake 0.4s steps(2, end);
     }
@@ -204,7 +203,7 @@
       setTimeout(() => dot.remove(), 800);
     });
 
-    /* ⚡ RANDOM SHAKE EVERY ~10s */
+    /* ⚡ RANDOM SHAKE (2–4 seconds) */
     const title = document.getElementById("title");
 
     function triggerShake() {
@@ -212,12 +211,16 @@
 
       setTimeout(() => {
         title.classList.remove("shake");
+        scheduleNextShake(); // schedule next after finishing
       }, 400);
     }
 
-    setInterval(() => {
-      triggerShake();
-    }, 10000);
+    function scheduleNextShake() {
+      const randomDelay = 2000 + Math.random() * 2000; // 2s–4s
+      setTimeout(triggerShake, randomDelay);
+    }
+
+    scheduleNextShake();
   </script>
 
 </body>
