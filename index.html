@@ -12,28 +12,7 @@
       overflow: hidden;
       font-family: Arial, sans-serif;
       background: #111;
-      cursor: none; /* hide default cursor */
-    }
-
-    /* FULL WIDTH TITLE */
-    h1 {
-      position: fixed;
-      top: 30px;
-      left: 0;
-      width: 100vw;
-
-      text-align: center;
-
-      font-size: 20px;
-      letter-spacing: 6px;
-      font-weight: 300;
-      text-transform: uppercase;
-
-      color: white;
-      mix-blend-mode: difference;
-
-      z-index: 1000;
-      pointer-events: none;
+      cursor: none;
     }
 
     /* PINK CURSOR */
@@ -74,7 +53,6 @@
       padding-left: 120px;
     }
 
-    /* IMAGE SIZE */
     .issue img {
       max-width: 80%;
       max-height: 80%;
@@ -83,7 +61,6 @@
       object-fit: contain;
     }
 
-    /* LABEL */
     .label {
       position: absolute;
       right: 20px;
@@ -94,12 +71,42 @@
       opacity: 0.8;
     }
 
+    /* 🔥 REPEATING TITLE ACROSS PAGE */
+    .title-strip {
+      position: fixed;
+      top: 30px;
+      left: 0;
+      width: 100vw;
+
+      display: flex;
+      justify-content: space-between;
+
+      font-size: 18px;
+      letter-spacing: 6px;
+      font-weight: 300;
+      text-transform: uppercase;
+
+      color: white;
+      mix-blend-mode: difference;
+
+      pointer-events: none;
+      z-index: 1000;
+      padding: 0 20px;
+    }
+
   </style>
 </head>
 
 <body>
 
-  <h1>Poppyseeds Magazine</h1>
+  <!-- REPEATED TITLE -->
+  <div class="title-strip">
+    <span>Poppyseeds Magazine</span>
+    <span>Poppyseeds Magazine</span>
+    <span>Poppyseeds Magazine</span>
+    <span>Poppyseeds Magazine</span>
+    <span>Poppyseeds Magazine</span>
+  </div>
 
   <div class="cursor"></div>
 
