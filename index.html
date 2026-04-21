@@ -9,8 +9,9 @@
       margin: 0;
       padding: 0;
       height: 100%;
-      overflow: hidden; /* prevents scrolling */
+      overflow: hidden;
       font-family: Arial, sans-serif;
+      background: #111;
     }
 
     h1 {
@@ -23,7 +24,6 @@
       margin: 0;
     }
 
-    /* FULL SCREEN ROW */
     .container {
       display: flex;
       width: 100vw;
@@ -31,32 +31,33 @@
     }
 
     .issue {
-      flex: 1; /* each takes half screen */
-      position: relative;
-      overflow: hidden;
-      cursor: pointer;
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #000; /* keeps clean edges around image */
     }
 
     .issue img {
       width: 100%;
       height: 100%;
-      object-fit: cover; /* fills full panel */
-      transition: transform 0.3s ease;
-    }
-
-    .issue:hover img {
-      transform: scale(1.03);
+      object-fit: contain; /* IMPORTANT: no cropping */
     }
 
     .label {
       position: absolute;
       bottom: 30px;
-      left: 30px;
       color: white;
-      font-size: 28px;
-      background: rgba(0,0,0,0.4);
-      padding: 10px 15px;
-      border-radius: 8px;
+      font-size: 24px;
+      background: rgba(0,0,0,0.5);
+      padding: 8px 12px;
+      border-radius: 6px;
+    }
+
+    .issue-wrapper {
+      position: relative;
+      width: 100%;
+      height: 100%;
     }
 
   </style>
@@ -69,13 +70,17 @@
   <div class="container">
 
     <div class="issue">
-      <img src="images/Issue01.png" alt="Issue 01">
-      <div class="label">Issue 01</div>
+      <div class="issue-wrapper">
+        <img src="images/Issue01.png" alt="Issue 01">
+        <div class="label">Issue 01</div>
+      </div>
     </div>
 
     <div class="issue">
-      <img src="images/Issue02.png" alt="Issue 02">
-      <div class="label">Issue 02</div>
+      <div class="issue-wrapper">
+        <img src="images/Issue02.png" alt="Issue 02">
+        <div class="label">Issue 02</div>
+      </div>
     </div>
 
   </div>
