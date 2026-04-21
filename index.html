@@ -15,18 +15,27 @@
       cursor: none;
     }
 
-    /* PINK CURSOR */
-    .cursor {
-      width: 10px;
-      height: 10px;
-      background: pink;
-      border-radius: 50%;
+    /* 🔥 REPEATING TITLE */
+    .title-strip {
       position: fixed;
-      top: 0;
+      top: 30px;
       left: 0;
+      width: 100vw;
+
+      display: flex;
+      justify-content: space-between;
+
+      font-size: 18px;
+      letter-spacing: 6px;
+      font-weight: 300;
+      text-transform: uppercase;
+
+      color: white;
+      mix-blend-mode: difference;
+
       pointer-events: none;
-      transform: translate(-50%, -50%);
-      z-index: 9999;
+      z-index: 1000;
+      padding: 0 20px;
     }
 
     /* LAYOUT */
@@ -61,6 +70,7 @@
       object-fit: contain;
     }
 
+    /* LABEL */
     .label {
       position: absolute;
       right: 20px;
@@ -69,29 +79,7 @@
       font-size: 14px;
       letter-spacing: 1px;
       opacity: 0.8;
-    }
-
-    /* 🔥 REPEATING TITLE ACROSS PAGE */
-    .title-strip {
-      position: fixed;
-      top: 30px;
-      left: 0;
-      width: 100vw;
-
-      display: flex;
-      justify-content: space-between;
-
-      font-size: 18px;
-      letter-spacing: 6px;
-      font-weight: 300;
-      text-transform: uppercase;
-
-      color: white;
-      mix-blend-mode: difference;
-
       pointer-events: none;
-      z-index: 1000;
-      padding: 0 20px;
     }
 
   </style>
@@ -99,7 +87,7 @@
 
 <body>
 
-  <!-- REPEATED TITLE -->
+  <!-- TITLE -->
   <div class="title-strip">
     <span>Poppyseeds Magazine</span>
     <span>Poppyseeds Magazine</span>
@@ -108,8 +96,7 @@
     <span>Poppyseeds Magazine</span>
   </div>
 
-  <div class="cursor"></div>
-
+  <!-- MAGAZINES -->
   <div class="container">
 
     <div class="issue left">
@@ -124,12 +111,36 @@
 
   </div>
 
+  <!-- ✨ CURSOR TRAIL EFFECT -->
   <script>
-    const cursor = document.querySelector(".cursor");
-
     document.addEventListener("mousemove", (e) => {
-      cursor.style.left = e.clientX + "px";
-      cursor.style.top = e.clientY + "px";
+      const dot = document.createElement("div");
+
+      dot.style.position = "fixed";
+      dot.style.left = e.clientX + "px";
+      dot.style.top = e.clientY + "px";
+
+      dot.style.width = "10px";
+      dot.style.height = "10px";
+      dot.style.background = "white";
+      dot.style.borderRadius = "50%";
+
+      dot.style.pointerEvents = "none";
+      dot.style.transform = "translate(-50%, -50%)";
+      dot.style.zIndex = "9999";
+
+      dot.style.opacity = "1";
+      dot.style.transition = "opacity 1s ease-out";
+
+      document.body.appendChild(dot);
+
+      setTimeout(() => {
+        dot.style.opacity = "0";
+      }, 10);
+
+      setTimeout(() => {
+        dot.remove();
+      }, 1000);
     });
   </script>
 
