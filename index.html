@@ -4,13 +4,15 @@
   <meta charset="UTF-8">
   <title>Poppyseeds Collective</title>
 
+  <!-- 🔤 FONT -->
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;400;500&display=swap" rel="stylesheet">
+
   <style>
     html, body {
       margin: 0;
       padding: 0;
       height: 100%;
-      overflow: hidden;
-      font-family: Arial, sans-serif;
+      font-family: 'Unbounded', sans-serif;
       background: #111;
       cursor: none;
     }
@@ -19,7 +21,14 @@
       cursor: none !important;
     }
 
-    /* ⚡ SHAKE */
+    /* 🌊 SOFT IDLE MOVEMENT */
+    @keyframes softFloat {
+      0%   { transform: translate(0px, 0px); }
+      50%  { transform: translate(1px, -1px); }
+      100% { transform: translate(0px, 0px); }
+    }
+
+    /* ⚡ STRONG SHAKE BURST */
     @keyframes quakeShake {
       0%   { transform: translate(0px, 0px); }
       20%  { transform: translate(3px, -2px); }
@@ -35,15 +44,19 @@
       left: 0px;
 
       font-size: 130px;
-      font-weight: 10;
+      font-weight: 300;
+      letter-spacing: -1px;
 
       color: white;
       mix-blend-mode: difference;
 
       pointer-events: none;
       z-index: 1000;
+
+      animation: softFloat 3s infinite ease-in-out;
     }
 
+    /* when burst happens */
     .title.shake {
       animation: quakeShake 0.4s steps(2, end);
     }
@@ -57,54 +70,41 @@
 
     .issue {
       flex: 1;
-      position: relative;
       display: flex;
       align-items: center;
     }
 
     .issue.left {
-      justify-content: flex-start;
       padding-left: 60px;
     }
 
     .issue.right {
-      justify-content: flex-start;
       padding-left: 120px;
     }
 
     .img-wrap {
       position: relative;
       max-width: 80%;
-      max-height: 80%;
     }
 
     .img-wrap img {
       width: 100%;
       height: auto;
       display: block;
-      object-fit: contain;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
     }
 
     .label {
       position: absolute;
       right: 0;
       bottom: -25px;
-
       color: white;
       font-size: 14px;
-      opacity: 0.85;
-      pointer-events: none;
     }
 
     /* 📱 MOBILE */
     @media (max-width: 768px) {
 
-      html, body {
+      body {
         overflow-y: auto;
       }
 
@@ -115,21 +115,20 @@
       }
 
       .container {
-        display: flex !important;
-        flex-direction: column !important;
-        height: auto !important;
+        flex-direction: column;
+        height: auto;
         padding-top: 120px;
       }
 
       .issue {
-        width: 100% !important;
-        justify-content: center !important;
-        padding: 30px 0;
+        width: 100%;
+        justify-content: center;
+        padding: 40px 0;
       }
 
       .issue.left,
       .issue.right {
-        padding-left: 0 !important;
+        padding-left: 0;
       }
 
       .img-wrap {
@@ -141,8 +140,6 @@
         position: static;
         margin-top: 10px;
         text-align: right;
-        width: 85%;
-        max-width: 420px;
       }
     }
 
@@ -151,7 +148,7 @@
 
 <body>
 
-  <div class="title" id="title">Poppyseeds Collective</div>
+  <div class="title" id="title">Poppyseeds Magazine</div>
 
   <div class="container">
 
@@ -175,7 +172,7 @@
 
   </div>
 
-  <!-- 🟢 NEON CURSOR -->
+  <!-- 🟢 CURSOR + RANDOM SHAKE -->
   <script>
     document.addEventListener("mousemove", (e) => {
 
@@ -190,11 +187,10 @@
       dot.style.height = "10px";
       dot.style.borderRadius = "50%";
       dot.style.pointerEvents = "none";
-      dot.style.zIndex = "9999";
       dot.style.transform = "translate(-50%, -50%)";
 
       dot.style.background = "#39ff14";
-      dot.style.boxShadow = "0 0 8px #39ff14, 0 0 16px #39ff14";
+      dot.style.boxShadow = "0 0 8px #39ff14";
 
       dot.style.opacity = "1";
       dot.style.transition = "opacity 0.8s ease-out";
@@ -203,7 +199,7 @@
       setTimeout(() => dot.remove(), 800);
     });
 
-    /* ⚡ RANDOM SHAKE (2–4 seconds) */
+    /* ⚡ RANDOM BURST ON TOP OF SOFT FLOAT */
     const title = document.getElementById("title");
 
     function triggerShake() {
@@ -211,16 +207,16 @@
 
       setTimeout(() => {
         title.classList.remove("shake");
-        scheduleNextShake(); // schedule next after finishing
+        scheduleNext();
       }, 400);
     }
 
-    function scheduleNextShake() {
-      const randomDelay = 2000 + Math.random() * 2000; // 2s–4s
-      setTimeout(triggerShake, randomDelay);
+    function scheduleNext() {
+      const delay = 2000 + Math.random() * 2000;
+      setTimeout(triggerShake, delay);
     }
 
-    scheduleNextShake();
+    scheduleNext();
   </script>
 
 </body>
