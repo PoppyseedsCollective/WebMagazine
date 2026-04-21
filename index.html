@@ -21,20 +21,19 @@
       cursor: none !important;
     }
 
-    /* remove link styling */
     a {
       text-decoration: none;
       color: inherit;
     }
 
-    /* 🌊 SOFT FLOAT */
+    /* 🌊 FLOAT */
     @keyframes softFloat {
       0%   { transform: translate(0px, 0px); }
       50%  { transform: translate(1px, -1px); }
       100% { transform: translate(0px, 0px); }
     }
 
-    /* ⚡ SHAKE BURST */
+    /* ⚡ SHAKE */
     @keyframes quakeShake {
       0%   { transform: translate(0px, 0px); }
       20%  { transform: translate(3px, -2px); }
@@ -44,28 +43,45 @@
       100% { transform: translate(0px, 0px); }
     }
 
+    /* ================= TITLE ================= */
+
     .title {
       position: fixed;
-      top: 0px;
-      left: 0px;
-
-      font-size: 111px;
+      top: 50%;
       font-weight: 300;
       letter-spacing: -1px;
-
       color: white;
       mix-blend-mode: difference;
-
       z-index: 1000;
 
+      writing-mode: vertical-rl;
+      font-size: clamp(40px, 8vw, 111px);
+    }
+
+    /* LEFT SIDE */
+    .title.left {
+      left: 20px;
+      transform: translateY(-50%) rotate(180deg);
+    }
+
+    /* RIGHT SIDE */
+    .title.right {
+      right: 20px;
+      transform: translateY(-50%) rotate(180deg);
+    }
+
+    /* inner animated text */
+    .inner {
+      display: inline-block;
       animation: softFloat 3s infinite ease-in-out;
     }
 
-    .title.shake {
+    .inner.shake {
       animation: quakeShake 0.4s steps(2, end);
     }
 
-    /* DESKTOP */
+    /* ================= MAIN LAYOUT ================= */
+
     .container {
       display: flex;
       width: 100vw;
@@ -105,17 +121,20 @@
       font-size: 14px;
     }
 
-    /* 📱 MOBILE */
-    @media (max-width: 768px) {
+    /* ================= MOBILE ================= */
 
-      body {
-        overflow-y: auto;
-      }
+    @media (max-width: 768px) {
 
       .title {
         font-size: 30px;
-        top: 20px;
-        left: 20px;
+      }
+
+      .title.left {
+        left: 10px;
+      }
+
+      .title.right {
+        right: 10px;
       }
 
       .container {
@@ -152,9 +171,18 @@
 
 <body>
 
-  <!-- 🔗 TITLE AS LINK -->
+  <!-- 🔗 LEFT TITLE -->
   <a href="about.html">
-    <div class="title" id="title">Poppyseeds Collective</div>
+    <div class="title left">
+      <span class="inner">Poppyseeds</span>
+    </div>
+  </a>
+
+  <!-- 🔗 RIGHT TITLE -->
+  <a href="about.html">
+    <div class="title right">
+      <span class="inner">Collective</span>
+    </div>
   </a>
 
   <div class="container">
@@ -179,10 +207,9 @@
 
   </div>
 
-  <!-- 🟢 CURSOR + RANDOM SHAKE -->
+  <!-- 🟢 CURSOR + SHAKE -->
   <script>
     document.addEventListener("mousemove", (e) => {
-
       const dot = document.createElement("div");
       document.body.appendChild(dot);
 
@@ -206,13 +233,13 @@
       setTimeout(() => dot.remove(), 800);
     });
 
-    const title = document.getElementById("title");
+    const titles = document.querySelectorAll(".inner");
 
     function triggerShake() {
-      title.classList.add("shake");
+      titles.forEach(t => t.classList.add("shake"));
 
       setTimeout(() => {
-        title.classList.remove("shake");
+        titles.forEach(t => t.classList.remove("shake"));
         scheduleNext();
       }, 400);
     }
