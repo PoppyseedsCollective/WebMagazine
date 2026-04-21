@@ -1,1 +1,67 @@
-<h1>Hello world</h1>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Poppyseeds Magazine</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background: #f5f5f5;
+      margin: 0;
+      padding: 40px;
+    }
+
+    h1 {
+      margin-bottom: 40px;
+    }
+
+    .grid {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .cover {
+      width: 250px;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+      border-radius: 8px;
+    }
+
+    .cover:hover {
+      transform: scale(1.05);
+    }
+
+    .title {
+      margin-top: 10px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Poppyseeds Magazine</h1>
+
+  <div class="grid">
+
+    <div>
+      <a href="Issue01.html">
+        <img src="images/Issue01-cover.jpg" class="cover">
+      </a>
+      <div class="title">Issue 01</div>
+    </div>
+
+    <div>
+      <a href="Issue02.html">
+        <img src="images/Issue02-cover.jpg" class="cover">
+      </a>
+      <div class="title">Issue 02</div>
+    </div>
+
+  </div>
+
+</body>
+</html>
