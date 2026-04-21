@@ -8,6 +8,17 @@
 
   <style>
 
+    /* ✨ TEXT SELECTION (disappearing effect) */
+    ::selection {
+      background: white;
+      color: white;
+    }
+
+    ::-moz-selection {
+      background: white;
+      color: white;
+    }
+
     html, body {
       margin: 0;
       padding: 0;
@@ -55,7 +66,7 @@
       gap: 10px;
     }
 
-    /* ✅ DOUBLED FONT SIZE */
+    /* 2x BIGGER ARTIST NAMES */
     .name {
       font-size: 40px;
       font-weight: 300;
@@ -134,7 +145,7 @@
 
   </div>
 
-  <!-- 🟢 NEON CURSOR TRAIL -->
+  <!-- 🟢 CURSOR TRAIL -->
   <script>
     document.addEventListener("mousemove", (e) => {
 
