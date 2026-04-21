@@ -19,25 +19,34 @@
       cursor: none !important;
     }
 
-    /* ⚡ STRONGER + FASTER SHAKE */
-    @keyframes fastShake {
+    /* 🌍 EARTHQUAKE TITLE SHAKE */
+    @keyframes quakeShake {
       0%   { transform: translate(0px, 0px); }
-      10%  { transform: translate(2px, -2px); }
-      20%  { transform: translate(-2px, 2px); }
-      30%  { transform: translate(2px, 2px); }
-      40%  { transform: translate(-2px, -2px); }
-      50%  { transform: translate(3px, 0px); }
-      60%  { transform: translate(-3px, 1px); }
-      70%  { transform: translate(2px, -1px); }
-      80%  { transform: translate(-1px, 2px); }
-      90%  { transform: translate(1px, -2px); }
+      5%   { transform: translate(-4px, 3px); }
+      10%  { transform: translate(5px, -2px); }
+      15%  { transform: translate(-6px, -4px); }
+      20%  { transform: translate(4px, 6px); }
+      25%  { transform: translate(-3px, -5px); }
+      30%  { transform: translate(6px, 2px); }
+      35%  { transform: translate(-5px, 4px); }
+      40%  { transform: translate(3px, -6px); }
+      45%  { transform: translate(-4px, 5px); }
+      50%  { transform: translate(6px, -3px); }
+      55%  { transform: translate(-6px, 3px); }
+      60%  { transform: translate(4px, 5px); }
+      65%  { transform: translate(-3px, -6px); }
+      70%  { transform: translate(5px, 2px); }
+      75%  { transform: translate(-5px, 4px); }
+      80%  { transform: translate(3px, -4px); }
+      85%  { transform: translate(-4px, 3px); }
+      90%  { transform: translate(2px, -2px); }
       100% { transform: translate(0px, 0px); }
     }
 
     .title {
       position: fixed;
-      top: 0px;
-      left: 5px;
+      top: 30px;
+      left: 0px;
 
       font-size: 130px;
       font-weight: 10;
@@ -48,10 +57,10 @@
       pointer-events: none;
       z-index: 1000;
 
-      animation: fastShake 1.2s infinite;
+      animation: quakeShake 0.6s infinite steps(2, end);
     }
 
-    /* DESKTOP */
+    /* DESKTOP LAYOUT */
     .container {
       display: flex;
       width: 100vw;
@@ -104,12 +113,11 @@
       pointer-events: none;
     }
 
-    /* 📱 MOBILE FIX (IMPORTANT PART) */
+    /* 📱 MOBILE STACK FIX */
     @media (max-width: 768px) {
 
       html, body {
-        overflow-y: auto !important;
-        overflow-x: hidden;
+        overflow-y: auto;
       }
 
       .title {
@@ -127,7 +135,6 @@
 
       .issue {
         width: 100% !important;
-        display: flex !important;
         justify-content: center !important;
         padding: 30px 0;
       }
@@ -180,7 +187,7 @@
 
   </div>
 
-  <!-- NEON CURSOR -->
+  <!-- 🟢 NEON CURSOR TRAIL -->
   <script>
     document.addEventListener("mousemove", (e) => {
 
