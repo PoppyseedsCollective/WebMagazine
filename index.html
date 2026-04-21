@@ -19,12 +19,13 @@
       cursor: none !important;
     }
 
-    /* ✨ BALANCED SHAKE */
-    @keyframes softQuake {
+    /* ⚡ SHAKE (used only when triggered) */
+    @keyframes quakeShake {
       0%   { transform: translate(0px, 0px); }
-      25%  { transform: translate(1px, -1px); }
-      50%  { transform: translate(-1px, 1px); }
-      75%  { transform: translate(1px, 1px); }
+      20%  { transform: translate(3px, -2px); }
+      40%  { transform: translate(-3px, 2px); }
+      60%  { transform: translate(2px, 3px); }
+      80%  { transform: translate(-2px, -3px); }
       100% { transform: translate(0px, 0px); }
     }
 
@@ -33,7 +34,7 @@
       top: 30px;
       left: 0px;
 
-      font-size: 20px;
+      font-size: 130px;
       font-weight: 10;
 
       color: white;
@@ -41,8 +42,11 @@
 
       pointer-events: none;
       z-index: 1000;
+    }
 
-      animation: softQuake 0.8s infinite steps(2, end);
+    /* when active */
+    .title.shake {
+      animation: quakeShake 0.4s steps(2, end);
     }
 
     /* DESKTOP */
@@ -148,7 +152,7 @@
 
 <body>
 
-  <div class="title">Poppyseeds Magazine</div>
+  <div class="title" id="title">Poppyseeds Magazine</div>
 
   <div class="container">
 
@@ -196,14 +200,24 @@
       dot.style.opacity = "1";
       dot.style.transition = "opacity 0.8s ease-out";
 
-      setTimeout(() => {
-        dot.style.opacity = "0";
-      }, 10);
+      setTimeout(() => dot.style.opacity = "0", 10);
+      setTimeout(() => dot.remove(), 800);
+    });
+
+    /* ⚡ RANDOM SHAKE EVERY ~10s */
+    const title = document.getElementById("title");
+
+    function triggerShake() {
+      title.classList.add("shake");
 
       setTimeout(() => {
-        dot.remove();
-      }, 800);
-    });
+        title.classList.remove("shake");
+      }, 400);
+    }
+
+    setInterval(() => {
+      triggerShake();
+    }, 10000);
   </script>
 
 </body>
