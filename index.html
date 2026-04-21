@@ -15,28 +15,27 @@
       cursor: none;
     }
 
-.title {
-  position: fixed;
-  top: 30px;
-  left: 0;
-  width: 100vw;
+    /* 🔥 FULL WIDTH TITLE */
+    .title {
+      position: fixed;
+      top: 30px;
+      left: 0;
+      width: 100vw;
 
-  font-weight: 300;
+      display: flex;
+      justify-content: space-between;
 
-  color: white;
-  mix-blend-mode: difference;
+      padding: 0 20px;
 
-  pointer-events: none;
-  z-index: 1000;
+      font-size: clamp(18px, 2.2vw, 32px);
+      font-weight: 300;
 
-  white-space: nowrap;
+      color: white;
+      mix-blend-mode: difference;
 
-  font-size: clamp(50px, 2.2vw, 32px);
-
-  letter-spacing: 0.02em; /* subtle, not exaggerated */
-
-  text-align: center;
-}
+      pointer-events: none;
+      z-index: 1000;
+    }
 
     /* LAYOUT */
     .container {
@@ -89,10 +88,10 @@
 
   <!-- TITLE -->
   <div class="title">
-    Poppyseeds Magazine
+    <span>Poppyseeds Magazine</span>
   </div>
 
-  <!-- MAGAZINES (NOT CLICKABLE) -->
+  <!-- MAGAZINES (NOT LINKS) -->
   <div class="container">
 
     <div class="issue left">
