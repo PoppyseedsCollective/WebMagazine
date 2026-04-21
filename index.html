@@ -15,18 +15,17 @@
       cursor: none;
     }
 
-    /* 🔥 REPEATING TITLE */
-    .title-strip {
+    /* 🔥 SINGLE FULL-WIDTH TITLE */
+    .title {
       position: fixed;
       top: 30px;
       left: 0;
       width: 100vw;
 
-      display: flex;
-      justify-content: space-between;
+      text-align: center;
 
-      font-size: 18px;
-      letter-spacing: 6px;
+      font-size: 22px;
+      letter-spacing: 8px;
       font-weight: 300;
       text-transform: uppercase;
 
@@ -35,7 +34,6 @@
 
       pointer-events: none;
       z-index: 1000;
-      padding: 0 20px;
     }
 
     /* LAYOUT */
@@ -88,12 +86,8 @@
 <body>
 
   <!-- TITLE -->
-  <div class="title-strip">
-    <span>Poppyseeds Magazine</span>
-    <span>Poppyseeds Magazine</span>
-    <span>Poppyseeds Magazine</span>
-    <span>Poppyseeds Magazine</span>
-    <span>Poppyseeds Magazine</span>
+  <div class="title">
+    Poppyseeds Magazine
   </div>
 
   <!-- MAGAZINES -->
@@ -111,7 +105,7 @@
 
   </div>
 
-  <!-- ✨ CURSOR TRAIL EFFECT -->
+  <!-- ✨ CURSOR TRAIL -->
   <script>
     document.addEventListener("mousemove", (e) => {
       const dot = document.createElement("div");
