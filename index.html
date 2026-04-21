@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <title>Poppyseeds Collective</title>
 
-  <!-- 🔤 FONT -->
   <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;400;500&display=swap" rel="stylesheet">
 
   <style>
@@ -17,9 +16,7 @@
       cursor: none;
     }
 
-    * {
-      cursor: none !important;
-    }
+    * { cursor: none !important; }
 
     a {
       text-decoration: none;
@@ -43,7 +40,7 @@
       100% { transform: translate(0px, 0px); }
     }
 
-    /* ================= TITLE ================= */
+    /* ================= TITLES ================= */
 
     .title {
       position: fixed;
@@ -58,19 +55,16 @@
       font-size: clamp(40px, 8vw, 111px);
     }
 
-    /* LEFT SIDE */
     .title.left {
       left: 20px;
       transform: translateY(-50%) rotate(180deg);
     }
 
-    /* RIGHT SIDE */
     .title.right {
       right: 20px;
       transform: translateY(-50%) rotate(180deg);
     }
 
-    /* inner animated text */
     .inner {
       display: inline-block;
       animation: softFloat 3s infinite ease-in-out;
@@ -80,7 +74,7 @@
       animation: quakeShake 0.4s steps(2, end);
     }
 
-    /* ================= MAIN LAYOUT ================= */
+    /* ================= LAYOUT ================= */
 
     .container {
       display: flex;
@@ -94,13 +88,8 @@
       align-items: center;
     }
 
-    .issue.left {
-      padding-left: 80px;
-    }
-
-    .issue.right {
-      padding-left: 100px;
-    }
+    .issue.left { padding-left: 60px; }
+    .issue.right { padding-left: 120px; }
 
     .img-wrap {
       position: relative;
@@ -109,7 +98,6 @@
 
     .img-wrap img {
       width: 100%;
-      height: auto;
       display: block;
     }
 
@@ -124,23 +112,15 @@
     /* ================= MOBILE ================= */
 
     @media (max-width: 768px) {
+      .title { font-size: 30px; }
 
-      .title {
-        font-size: 30px;
-      }
-
-      .title.left {
-        left: 10px;
-      }
-
-      .title.right {
-        right: 10px;
-      }
+      .title.left { left: 10px; }
+      .title.right { right: 10px; }
 
       .container {
         flex-direction: column;
-        height: auto;
         padding-top: 120px;
+        height: auto;
       }
 
       .issue {
@@ -165,20 +145,19 @@
         text-align: right;
       }
     }
-
   </style>
 </head>
 
 <body>
 
-  <!-- 🔗 LEFT TITLE -->
-  <a href="about.html">
+  <!-- 🔗 LEFT → POPPYSEEDS PAGE -->
+  <a href="poppyseeds.html">
     <div class="title left">
       <span class="inner">Poppyseeds</span>
     </div>
   </a>
 
-  <!-- 🔗 RIGHT TITLE -->
+  <!-- 🔗 RIGHT → ABOUT PAGE -->
   <a href="about.html">
     <div class="title right">
       <span class="inner">Collective</span>
@@ -207,7 +186,6 @@
 
   </div>
 
-  <!-- 🟢 CURSOR + SHAKE -->
   <script>
     document.addEventListener("mousemove", (e) => {
       const dot = document.createElement("div");
@@ -216,13 +194,11 @@
       dot.style.position = "fixed";
       dot.style.left = e.clientX + "px";
       dot.style.top = e.clientY + "px";
-
       dot.style.width = "10px";
       dot.style.height = "10px";
       dot.style.borderRadius = "50%";
       dot.style.pointerEvents = "none";
       dot.style.transform = "translate(-50%, -50%)";
-
       dot.style.background = "#39ff14";
       dot.style.boxShadow = "0 0 8px #39ff14";
 
