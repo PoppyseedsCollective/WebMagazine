@@ -2,12 +2,23 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Artists — Poppyseeds</title>
+  <title>About — Poppyseeds</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;400;500&display=swap" rel="stylesheet">
 
   <style>
-    
+
+    /* ✨ DISAPPEARING SELECTION (FORCE WHITE TEXT) */
+    ::selection {
+      background: white;
+      color: white;
+    }
+
+    ::-moz-selection {
+      background: white;
+      color: white;
+    }
+
     html, body {
       margin: 0;
       padding: 0;
@@ -15,11 +26,35 @@
       color: white;
       font-family: 'Unbounded', sans-serif;
       cursor: none;
+      height: 100%;
     }
 
-    * { cursor: none !important; }
+    * {
+      cursor: none !important;
+    }
 
-    /* BACK */
+    .wrapper {
+      max-width: 700px;
+      padding: 80px 40px;
+    }
+
+    .title {
+      font-size: 25px;
+      font-weight: 300;
+      margin-bottom: 40px;
+      white-space: pre-line;
+    }
+
+    .text {
+      font-size: 12px;
+      line-height: 1.6;
+      opacity: 0.9;
+    }
+
+    .text p {
+      margin-bottom: 20px;
+    }
+
     .back {
       position: fixed;
       top: 30px;
@@ -28,65 +63,23 @@
       opacity: 0.7;
       text-decoration: none;
       color: white;
-      z-index: 1000;
     }
 
-    .back:hover { opacity: 1; }
-
-    /* WRAPPER */
-    .wrapper {
-      max-width: 1100px;
-      padding: 90px 40px;
+    .back:hover {
+      opacity: 1;
     }
 
-    /* SECTION TITLE */
-    .section-title {
-      font-size: 12px;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      opacity: 0.6;
-      margin-bottom: 25px;
-    }
-
-    /* GRID OF NAMES */
-    .list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      align-items: center;
-      line-height: 1.6;
-    }
-
-    .name {
-      font-size: 40px;
-      font-weight: 300;
-      white-space: nowrap;
-      opacity: 0.95;
-    }
-
-    /* DOTS */
-    .dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
+    .ig {
+      color: white;
+      text-decoration: none;
+      transition: all 0.2s ease;
       display: inline-block;
-      margin: 0 6px;
-      transform: translateY(-2px);
     }
 
-    /* winter purple */
-    .dot.winter {
-      background: #a855f7;
-    }
-
-    /* summer dark brown-grey */
-    .dot.summer {
-      background: #3a3430;
-    }
-
-    /* spacing between sections */
-    .section {
-      margin-bottom: 70px;
+    .ig:hover {
+      color: #a855f7;
+      transform: scale(1.06) translateY(-1px);
+      text-shadow: 0 0 10px rgba(168, 85, 247, 0.4);
     }
 
   </style>
@@ -94,66 +87,38 @@
 
 <body>
 
-  <!-- BACK -->
   <a href="index.html" class="back">←</a>
 
   <div class="wrapper">
 
-    <!-- ================= WINTER 24 ================= -->
-    <div class="section">
-
-      <div class="section-title">Winter '24 Edition</div>
-
-      <div class="list">
-
-        <span class="name">Agata Luisa</span><span class="dot winter"></span>
-        <span class="name">Alease B. Hansen-Evelyn</span><span class="dot winter"></span>
-        <span class="name">Anne Malling</span><span class="dot winter"></span>
-        <span class="name">Babs Wolbert</span><span class="dot winter"></span>
-        <span class="name">Dara Karadjov</span><span class="dot winter"></span>
-        <span class="name">Dorota Molčanová</span><span class="dot winter"></span>
-        <span class="name">Ella Mørtsell</span><span class="dot winter"></span>
-        <span class="name">Eran van Rijn</span><span class="dot winter"></span>
-        <span class="name">Işıl Ercanlı</span><span class="dot winter"></span>
-        <span class="name">Julie Hanuliaková</span><span class="dot winter"></span>
-        <span class="name">Lourien</span><span class="dot winter"></span>
-        <span class="name">Nati Ária</span><span class="dot winter"></span>
-        <span class="name">Sigurd Groendahl</span><span class="dot winter"></span>
-        <span class="name">Jelle Snijders</span><span class="dot winter"></span>
-        <span class="name">Oskuriende</span>
-
-      </div>
-
+    <div class="title">
+The difficulty of our times has been (as it always has) a defining force for our 
+generation’s evolvement, that we find ourselves up against constantly.
+As writers, poets and poppyseeds, we were asked to contemplate on the things around
+or inside of us that required our attention, maybe once in the past, in a surrounding
+present, or an undefined future.
+No matter the time, we are always within a challenging position when trying to figure
+out what it might be that demands our notice, and even so, it is merely a second step
+before the immense how to help, how to be there, how to affect for -it -them -us. And
+of course the first step: an itching request for something to change.
     </div>
 
-    <!-- ================= SUMMER 25 ================= -->
-    <div class="section">
-
-      <div class="section-title">Summer '25 Edition</div>
-
-      <div class="list">
-
-        <span class="name">Andreja Maiburovaite</span><span class="dot summer"></span>
-        <span class="name">Alexandros Nikolaou</span><span class="dot summer"></span>
-        <span class="name">Babs Wolbert</span><span class="dot summer"></span>
-        <span class="name">Chun Chen</span><span class="dot summer"></span>
-        <span class="name">Charlotte Jones</span><span class="dot summer"></span>
-        <span class="name">Graziella Piras</span><span class="dot summer"></span>
-        <span class="name">Lourien</span><span class="dot summer"></span>
-        <span class="name">Martin van Grootel Hernandez</span><span class="dot summer"></span>
-        <span class="name">Mili Calderon</span><span class="dot summer"></span>
-        <span class="name">Mizki Nakanishi</span><span class="dot summer"></span>
-        <span class="name">Patricija Gonsalesa-Ortisa</span><span class="dot summer"></span>
-        <span class="name">Sue and Neul</span><span class="dot summer"></span>
-        <span class="name">Yeraz Kortun</span>
-
-      </div>
-
+    <div class="text">
+      <p>
+        Poppyseeds Magazine & Collective initiated by
+        <a class="ig" href="https://www.instagram.com/manuel.phil.bischof/" target="_blank">
+          Manuel Phil. Bischof
+        </a>
+        &
+        <a class="ig" href="https://www.instagram.com/artemis.x19/" target="_blank">
+          Artemis Xeniou
+        </a>,
+        The Hague, 2024
+      </p>
     </div>
 
   </div>
 
-  <!-- 🟢 CURSOR -->
   <script>
     document.addEventListener("mousemove", (e) => {
 
@@ -163,6 +128,7 @@
       dot.style.position = "fixed";
       dot.style.left = e.clientX + "px";
       dot.style.top = e.clientY + "px";
+
       dot.style.width = "10px";
       dot.style.height = "10px";
       dot.style.borderRadius = "50%";
