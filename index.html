@@ -15,25 +15,28 @@
       cursor: none;
     }
 
-    /* 🔥 SINGLE FULL-WIDTH TITLE */
+    /* 🔥 FULL WIDTH EDGE-TO-EDGE TITLE */
     .title {
       position: fixed;
       top: 30px;
       left: 0;
       width: 100vw;
 
-      text-align: center;
-
       font-size: 22px;
-      letter-spacing: 8px;
       font-weight: 300;
       text-transform: uppercase;
+      letter-spacing: 6px;
 
       color: white;
       mix-blend-mode: difference;
 
       pointer-events: none;
       z-index: 1000;
+
+      display: flex;
+      justify-content: space-between;
+
+      padding: 0 20px;
     }
 
     /* LAYOUT */
@@ -87,7 +90,8 @@
 
   <!-- TITLE -->
   <div class="title">
-    Poppyseeds Magazine
+    <span>Poppyseeds</span>
+    <span>Magazine</span>
   </div>
 
   <!-- MAGAZINES -->
