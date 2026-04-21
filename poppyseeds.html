@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <title>Artists — Poppyseeds</title>
 
-  <!-- 🔤 FONT -->
   <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;400;500&display=swap" rel="stylesheet">
 
   <style>
@@ -17,9 +16,7 @@
       cursor: none;
     }
 
-    * {
-      cursor: none !important;
-    }
+    * { cursor: none !important; }
 
     /* BACK */
     .back {
@@ -33,42 +30,62 @@
       z-index: 1000;
     }
 
-    .back:hover {
-      opacity: 1;
-    }
+    .back:hover { opacity: 1; }
 
     /* WRAPPER */
     .wrapper {
-      max-width: 900px;
-      padding: 80px 40px;
+      max-width: 1100px;
+      padding: 90px 40px;
     }
 
-    .section {
-      margin-bottom: 60px;
-    }
-
+    /* SECTION TITLE */
     .section-title {
-      font-size: 14px;
-      font-weight: 300;
-      opacity: 0.7;
-      margin-bottom: 20px;
+      font-size: 12px;
       letter-spacing: 1px;
       text-transform: uppercase;
+      opacity: 0.6;
+      margin-bottom: 25px;
     }
 
+    /* GRID OF NAMES */
     .list {
-      font-size: 13px;
-      line-height: 1.8;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      line-height: 1.6;
+    }
+
+    .name {
+      font-size: 20px;
+      font-weight: 300;
+      white-space: nowrap;
       opacity: 0.95;
     }
 
-    .list span {
-      display: block;
+    /* DOTS */
+    .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      display: inline-block;
+      margin: 0 6px;
+      transform: translateY(-2px);
     }
 
-    /* subtle spacing vibe */
-    .block {
-      margin-bottom: 40px;
+    /* winter purple */
+    .dot.winter {
+      background: #a855f7;
+    }
+
+    /* summer dark brown-grey */
+    .dot.summer {
+      background: #3a3430;
+    }
+
+    /* spacing between sections */
+    .section {
+      margin-bottom: 70px;
     }
 
   </style>
@@ -87,21 +104,23 @@
       <div class="section-title">Winter '24 Edition</div>
 
       <div class="list">
-        <span>Agata Luisa</span>
-        <span>Alease B. Hansen-Evelyn</span>
-        <span>Anne Malling</span>
-        <span>Babs Wolbert</span>
-        <span>Dara Karadjov</span>
-        <span>Dorota Molčanová</span>
-        <span>Ella Mørtsell</span>
-        <span>Eran van Rijn</span>
-        <span>Işıl Ercanlı</span>
-        <span>Julie Hanuliaková</span>
-        <span>Lourien</span>
-        <span>Nati Ária</span>
-        <span>Sigurd Groendahl</span>
-        <span>Jelle Snijders</span>
-        <span>Oskuriende</span>
+
+        <span class="name">Agata Luisa</span><span class="dot winter"></span>
+        <span class="name">Alease B. Hansen-Evelyn</span><span class="dot winter"></span>
+        <span class="name">Anne Malling</span><span class="dot winter"></span>
+        <span class="name">Babs Wolbert</span><span class="dot winter"></span>
+        <span class="name">Dara Karadjov</span><span class="dot winter"></span>
+        <span class="name">Dorota Molčanová</span><span class="dot winter"></span>
+        <span class="name">Ella Mørtsell</span><span class="dot winter"></span>
+        <span class="name">Eran van Rijn</span><span class="dot winter"></span>
+        <span class="name">Işıl Ercanlı</span><span class="dot winter"></span>
+        <span class="name">Julie Hanuliaková</span><span class="dot winter"></span>
+        <span class="name">Lourien</span><span class="dot winter"></span>
+        <span class="name">Nati Ária</span><span class="dot winter"></span>
+        <span class="name">Sigurd Groendahl</span><span class="dot winter"></span>
+        <span class="name">Jelle Snijders</span><span class="dot winter"></span>
+        <span class="name">Oskuriende</span>
+
       </div>
 
     </div>
@@ -112,26 +131,28 @@
       <div class="section-title">Summer '25 Edition</div>
 
       <div class="list">
-        <span>Andreja Maiburovaite</span>
-        <span>Alexandros Nikolaou</span>
-        <span>Babs Wolbert</span>
-        <span>Chun Chen</span>
-        <span>Charlotte Jones</span>
-        <span>Graziella Piras</span>
-        <span>Lourien</span>
-        <span>Martin van Grootel Hernandez</span>
-        <span>Mili Calderon</span>
-        <span>Mizki Nakanishi</span>
-        <span>Patricija Gonsalesa-Ortisa</span>
-        <span>Sue and Neul</span>
-        <span>Yeraz Kortun</span>
+
+        <span class="name">Andreja Maiburovaite</span><span class="dot summer"></span>
+        <span class="name">Alexandros Nikolaou</span><span class="dot summer"></span>
+        <span class="name">Babs Wolbert</span><span class="dot summer"></span>
+        <span class="name">Chun Chen</span><span class="dot summer"></span>
+        <span class="name">Charlotte Jones</span><span class="dot summer"></span>
+        <span class="name">Graziella Piras</span><span class="dot summer"></span>
+        <span class="name">Lourien</span><span class="dot summer"></span>
+        <span class="name">Martin van Grootel Hernandez</span><span class="dot summer"></span>
+        <span class="name">Mili Calderon</span><span class="dot summer"></span>
+        <span class="name">Mizki Nakanishi</span><span class="dot summer"></span>
+        <span class="name">Patricija Gonsalesa-Ortisa</span><span class="dot summer"></span>
+        <span class="name">Sue and Neul</span><span class="dot summer"></span>
+        <span class="name">Yeraz Kortun</span>
+
       </div>
 
     </div>
 
   </div>
 
-  <!-- 🟢 NEON CURSOR TRAIL -->
+  <!-- 🟢 CURSOR -->
   <script>
     document.addEventListener("mousemove", (e) => {
 
@@ -141,7 +162,6 @@
       dot.style.position = "fixed";
       dot.style.left = e.clientX + "px";
       dot.style.top = e.clientY + "px";
-
       dot.style.width = "10px";
       dot.style.height = "10px";
       dot.style.borderRadius = "50%";
