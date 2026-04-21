@@ -30,25 +30,36 @@
       height: 100vh;
     }
 
+    /* BASE PANEL */
     .issue {
       flex: 1;
       position: relative;
       display: flex;
       align-items: center;
-      justify-content: center;
-      background: #000;
     }
 
-    /* SMALLER IMAGE */
+    /* LEFT ISSUE */
+    .issue.left {
+      justify-content: flex-start;
+      padding-left: 60px;
+    }
+
+    /* RIGHT ISSUE (slightly more inward) */
+    .issue.right {
+      justify-content: flex-start;
+      padding-left: 120px;
+    }
+
+    /* IMAGE SIZE */
     .issue img {
-      max-width: 80%;   /* controls size */
-      max-height: 80%;  /* controls size */
+      max-width: 80%;
+      max-height: 80%;
       width: auto;
       height: auto;
       object-fit: contain;
     }
 
-    /* bottom right label */
+    /* LABEL bottom right */
     .label {
       position: absolute;
       right: 20px;
@@ -68,12 +79,12 @@
 
   <div class="container">
 
-    <div class="issue">
+    <div class="issue left">
       <img src="images/Issue01.png" alt="Issue 01">
       <div class="label">Issue 01</div>
     </div>
 
-    <div class="issue">
+    <div class="issue right">
       <img src="images/Issue02.png" alt="Issue 02">
       <div class="label">Issue 02</div>
     </div>
