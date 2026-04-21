@@ -15,7 +15,7 @@
       cursor: none;
     }
 
-    /* 🚫 FORCE NO HAND CURSOR ANYWHERE */
+    /* 🚫 force no system cursor anywhere */
     * {
       cursor: none !important;
     }
@@ -94,8 +94,10 @@
 
 <body>
 
+  <!-- TITLE -->
   <div class="title">Poppyseeds Magazine</div>
 
+  <!-- MAGAZINES -->
   <div class="container">
 
     <div class="issue left">
@@ -118,26 +120,38 @@
 
   </div>
 
-  <!-- ✨ NEON GREEN CURSOR -->
+  <!-- ✨ NEON GREEN TRAIL CURSOR -->
   <script>
-    const dot = document.createElement("div");
-    document.body.appendChild(dot);
-
-    dot.style.position = "fixed";
-    dot.style.width = "12px";
-    dot.style.height = "12px";
-    dot.style.borderRadius = "50%";
-    dot.style.pointerEvents = "none";
-    dot.style.zIndex = "9999";
-    dot.style.transform = "translate(-50%, -50%)";
-
-    /* 🌟 NEON GLOW STYLE */
-    dot.style.background = "#39ff14";
-    dot.style.boxShadow = "0 0 10px #39ff14, 0 0 20px #39ff14";
-
     document.addEventListener("mousemove", (e) => {
+
+      const dot = document.createElement("div");
+      document.body.appendChild(dot);
+
+      dot.style.position = "fixed";
       dot.style.left = e.clientX + "px";
       dot.style.top = e.clientY + "px";
+
+      dot.style.width = "10px";
+      dot.style.height = "10px";
+      dot.style.borderRadius = "50%";
+      dot.style.pointerEvents = "none";
+      dot.style.zIndex = "9999";
+      dot.style.transform = "translate(-50%, -50%)";
+
+      // 🟢 NEON GREEN
+      dot.style.background = "#39ff14";
+      dot.style.boxShadow = "0 0 8px #39ff14, 0 0 16px #39ff14";
+
+      dot.style.opacity = "1";
+      dot.style.transition = "opacity 0.8s ease-out";
+
+      setTimeout(() => {
+        dot.style.opacity = "0";
+      }, 10);
+
+      setTimeout(() => {
+        dot.remove();
+      }, 800);
     });
   </script>
 
