@@ -14,20 +14,25 @@
       background: #111;
     }
 
-  h1 {
-  position: absolute;
+ h1 {
+  position: fixed;
   top: 30px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 10;
+  left: 0;
+  width: 100vw;
 
-  color: white;
-  font-size: 18px;
-  letter-spacing: 4px;
+  text-align: center;
+
+  font-size: 20px;
+  letter-spacing: 6px;
   font-weight: 300;
   text-transform: uppercase;
 
-  opacity: 0.85;
+  color: white;
+
+  mix-blend-mode: difference;
+  z-index: 1000;
+
+  pointer-events: none; /* so it doesn't block clicks */
 }
 
     .container {
