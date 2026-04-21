@@ -15,8 +15,8 @@
       cursor: none;
     }
 
-    /* 🚫 REMOVE HAND CURSOR COMPLETELY */
-    a, a:hover, a:active, a:visited {
+    /* 🚫 FORCE NO HAND CURSOR ANYWHERE */
+    * {
       cursor: none !important;
     }
 
@@ -85,9 +85,7 @@
 
       color: white;
       font-size: 14px;
-      font-weight: 300;
       opacity: 0.85;
-
       pointer-events: none;
     }
 
@@ -96,18 +94,14 @@
 
 <body>
 
-  <!-- TITLE -->
-  <div class="title">
-    Poppyseeds Magazine
-  </div>
+  <div class="title">Poppyseeds Magazine</div>
 
-  <!-- MAGAZINES -->
   <div class="container">
 
     <div class="issue left">
       <div class="img-wrap">
         <a href="magazines/Issue01.pdf" target="_blank">
-          <img src="images/Issue01.png" alt="Issue 01">
+          <img src="images/Issue01.png">
         </a>
         <div class="label">Issue 01</div>
       </div>
@@ -116,7 +110,7 @@
     <div class="issue right">
       <div class="img-wrap">
         <a href="magazines/Issue02.pdf" target="_blank">
-          <img src="images/Issue02.png" alt="Issue 02">
+          <img src="images/Issue02.png">
         </a>
         <div class="label">Issue 02</div>
       </div>
@@ -124,26 +118,26 @@
 
   </div>
 
-  <!-- ✨ CURSOR (SINGLE DOT, RED ON HOVER) -->
+  <!-- ✨ NEON GREEN CURSOR -->
   <script>
     const dot = document.createElement("div");
     document.body.appendChild(dot);
 
     dot.style.position = "fixed";
-    dot.style.width = "10px";
-    dot.style.height = "10px";
+    dot.style.width = "12px";
+    dot.style.height = "12px";
     dot.style.borderRadius = "50%";
     dot.style.pointerEvents = "none";
     dot.style.zIndex = "9999";
     dot.style.transform = "translate(-50%, -50%)";
-    dot.style.transition = "background 0.15s ease";
+
+    /* 🌟 NEON GLOW STYLE */
+    dot.style.background = "#39ff14";
+    dot.style.boxShadow = "0 0 10px #39ff14, 0 0 20px #39ff14";
 
     document.addEventListener("mousemove", (e) => {
-      const isLink = e.target.closest("a");
-
       dot.style.left = e.clientX + "px";
       dot.style.top = e.clientY + "px";
-      dot.style.background = isLink ? "red" : "white";
     });
   </script>
 
