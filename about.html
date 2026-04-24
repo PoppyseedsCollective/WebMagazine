@@ -2,146 +2,36 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>About — Poppyseeds</title>
+  <title>About</title>
 
-  <!-- 🟢 GREEN DOT FAVICON -->
-  <link rel="icon" type="image/svg+xml"
-    href="data:image/svg+xml,
-    <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'>
-      <circle cx='32' cy='32' r='10' fill='%2339ff14'/>
-    </svg>">
-
+  <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;400;500&display=swap" rel="stylesheet">
-
-  <style>
-
-    /* invisible selection */
-    ::selection {
-      background: white;
-      color: white;
-    }
-
-    ::-moz-selection {
-      background: white;
-      color: white;
-    }
-
-    html, body {
-      margin: 0;
-      padding: 0;
-      background: #111;
-      color: white;
-      font-family: 'Unbounded', sans-serif;
-      cursor: none;
-    }
-
-    * { cursor: none !important; }
-
-    /* ================= NAV ================= */
-
-    .top-left-title {
-      position: fixed;
-      top: 20px;
-      left: 20px;
-      font-size: 16px;
-      font-style: italic;
-      display: flex;
-      gap: 10px;
-      z-index: 3000;
-    }
-
-    .top-left-title a {
-      color: white;            /* ALWAYS WHITE */
-      text-decoration: none;
-      position: relative;
-    }
-
-    /* ❌ FORCE REMOVE ANY HOVER COLOR EFFECTS */
-    .top-left-title a:hover,
-    .top-left-title a:visited,
-    .top-left-title a:active {
-      color: white !important;
-    }
-
-    .top-left-title a::after {
-      display: none !important;
-    }
-
-    /* ================= CONTENT ================= */
-
-    .wrapper {
-      max-width: 700px;
-      padding: 80px 40px;
-    }
-
-    .title {
-      font-size: 25px;
-      font-weight: 300;
-      margin-bottom: 40px;
-      white-space: pre-line;
-    }
-
-    .text {
-      font-size: 12px;
-      line-height: 1.6;
-      opacity: 0.9;
-    }
-
-    .text p {
-      margin-bottom: 20px;
-    }
-
-    .ig {
-      color: white;
-      text-decoration: none;
-    }
-
-    .ig:hover {
-      color: #a855f7;
-    }
-
-  </style>
 </head>
 
 <body>
 
-  <!-- NAV -->
-  <div class="top-left-title">
-    <a href="poppyseeds.html">poppyseeds</a>
-    <span>·</span>
-    <a href="about.html">collective</a>
-  </div>
+<div class="top-left-title">
+  <a href="poppyseeds.html">poppyseeds</a>
+  <span>·</span>
+  <a href="about.html">collective</a>
+</div>
 
-  <!-- CONTENT -->
-  <div class="wrapper">
+<div class="wrapper-about">
 
-    <div class="title">
+  <div class="title">
 The difficulty of our times has been (as it always has) a defining force for our 
-generation’s evolvement, that we find ourselves up against constantly.
-As writers, poets and poppyseeds, we were asked to contemplate on the things around
-or inside of us that required our attention, maybe once in the past, in a surrounding
-present, or an undefined future.
-No matter the time, we are always within a challenging position when trying to figure
-out what it might be that demands our notice, and even so, it is merely a second step
-before the immense how to help, how to be there, how to affect for -it -them -us. And
-of course the first step: an itching request for something to change.
-    </div>
-
-    <div class="text">
-      <p>
-        Poppyseeds Magazine & Collective initiated by
-        <a class="ig" href="https://www.instagram.com/manuel.phil.bischof/" target="_blank">
-          Manuel Phil. Bischof
-        </a>
-        &
-        <a class="ig" href="https://www.instagram.com/artemis.x19/" target="_blank">
-          Artemis Xeniou
-        </a>,
-        The Hague, 2024
-      </p>
-    </div>
-
+generation’s evolvement...
   </div>
+
+  <div class="text">
+    Poppyseeds Magazine & Collective initiated by Manuel Phil. Bischof & Artemis Xeniou
+  </div>
+
+</div>
+
+<div class="cursor"></div>
+
+<script src="script.js"></script>
 
 </body>
 </html>
