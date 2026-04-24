@@ -168,23 +168,45 @@ of course the first step: an itching request for something to change.
   </div>
 
   <!-- 🟢 CURSOR SCRIPT -->
-  <script>
-    const cursor = document.querySelector(".cursor");
-    const nav = document.querySelector(".top-left-title");
+ <script>
+  const cursor = document.querySelector(".cursor");
 
-    document.addEventListener("mousemove", (e) => {
+  document.addEventListener("mousemove", (e) => {
+    // main cursor
+    if (cursor) {
       cursor.style.left = e.clientX + "px";
       cursor.style.top = e.clientY + "px";
-    });
+    }
 
-    nav.addEventListener("mouseenter", () => {
-      document.body.classList.add("nav-hover");
-    });
+    // trail dot
+    const dot = document.createElement("div");
+    document.body.appendChild(dot);
 
-    nav.addEventListener("mouseleave", () => {
-      document.body.classList.remove("nav-hover");
-    });
-  </script>
+    dot.style.position = "fixed";
+    dot.style.left = e.clientX + "px";
+    dot.style.top = e.clientY + "px";
+    dot.style.width = "10px";
+    dot.style.height = "10px";
+    dot.style.borderRadius = "50%";
+    dot.style.background = "#39ff14";
+    dot.style.boxShadow = "0 0 10px #39ff14";
+    dot.style.pointerEvents = "none";
+    dot.style.transform = "translate(-50%, -50%)";
+    dot.style.zIndex = "9998";
+
+    dot.style.opacity = "1";
+    dot.style.transition = "opacity 0.8s ease-out, transform 0.8s ease-out";
+
+    setTimeout(() => {
+      dot.style.opacity = "0";
+      dot.style.transform = "translate(-50%, -50%) scale(0.5)";
+    }, 10);
+
+    setTimeout(() => {
+      dot.remove();
+    }, 800);
+  });
+</script>
 
 </body>
 </html>
