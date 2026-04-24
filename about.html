@@ -4,11 +4,19 @@
   <meta charset="UTF-8">
   <title>About — Poppyseeds</title>
 
-<link rel="icon" type="image/svg+xml"
-  href="data:image/svg+xml,
-  <svg xmlns='http://www.w3.org/2000/svg' width='64' height='64'>
-    <circle cx='32' cy='32' r='10' fill='#39ff14'/>
-  </svg>">
+  <!-- 🌸 SOFT PURPLE FAVICON -->
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,
+    <svg xmlns='http://www.w3.org/2000/svg' width='64' height='64'>
+      <defs>
+        <radialGradient id='g' cx='50%' cy='50%' r='50%'>
+          <stop offset='0%' stop-color='#d6b3ff'/>
+          <stop offset='60%' stop-color='#b56cff'/>
+          <stop offset='100%' stop-color='#7a4bd6'/>
+        </radialGradient>
+      </defs>
+      <circle cx='32' cy='32' r='10' fill='url(%23g)' />
+    </svg>">
 
   <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;400;500&display=swap" rel="stylesheet">
 
@@ -31,7 +39,7 @@
 
     * { cursor: none !important; }
 
-    /* ================= TOP NAV ================= */
+    /* ================= NAV ================= */
 
     .top-left-title {
       position: fixed;
@@ -42,7 +50,6 @@
       z-index: 3000;
       display: flex;
       gap: 10px;
-      letter-spacing: -0.3px;
     }
 
     .top-left-title a {
@@ -86,21 +93,15 @@
       opacity: 0.9;
     }
 
-    .text p {
-      margin-bottom: 20px;
-    }
-
     .ig {
       color: white;
       text-decoration: none;
-      transition: all 0.2s ease;
-      display: inline-block;
+      transition: 0.2s ease;
     }
 
     .ig:hover {
       color: #b56cff;
-      transform: scale(1.06) translateY(-1px);
-      text-shadow: 0 0 10px rgba(168, 85, 247, 0.4);
+      transform: scale(1.05);
     }
 
     /* ================= CURSOR ================= */
@@ -114,7 +115,14 @@
       box-shadow: 0 0 10px #39ff14, 0 0 20px #39ff14;
       pointer-events: none;
       transform: translate(-50%, -50%);
-      z-index: 999999;
+      z-index: 9999;
+      transition: background 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    /* purple hover over text */
+    .hover-text .cursor {
+      background: #b56cff;
+      box-shadow: 0 0 10px #b56cff, 0 0 20px #b56cff;
     }
 
   </style>
@@ -126,11 +134,10 @@
   <div class="top-left-title">
     <a href="index.html" data-text="poppyseeds">poppyseeds</a>
     <span>·</span>
-    <!-- 🔁 FIX: collective now goes HOME -->
     <a href="index.html" data-text="collective">collective</a>
   </div>
 
-  <!-- 🟢 CURSOR -->
+  <!-- 🟢 CURSOR BASE -->
   <div class="cursor"></div>
 
   <!-- CONTENT -->
@@ -138,38 +145,68 @@
 
     <div class="title">
 The difficulty of our times has been (as it always has) a defining force for our 
-generation’s evolvement, that we find ourselves up against constantly.
-As writers, poets and poppyseeds, we were asked to contemplate on the things around
-or inside of us that required our attention, maybe once in the past, in a surrounding
-present, or an undefined future.
-No matter the time, we are always within a challenging position when trying to figure
-out what it might be that demands our notice, and even so, it is merely a second step
-before the immense how to help, how to be there, how to affect for -it -them -us. And
-of course the first step: an itching request for something to change.
+generation’s evolvement...
     </div>
 
     <div class="text">
       <p>
         Poppyseeds Magazine & Collective initiated by
-        <a class="ig" href="https://www.instagram.com/manuel.phil.bischof/" target="_blank">
-          Manuel Phil. Bischof
-        </a>
+        <a class="ig" href="https://www.instagram.com/manuel.phil.bischof/" target="_blank">Manuel Phil. Bischof</a>
         &
-        <a class="ig" href="https://www.instagram.com/artemis.x19/" target="_blank">
-          Artemis Xeniou
-        </a>,
+        <a class="ig" href="https://www.instagram.com/artemis.x19/" target="_blank">Artemis Xeniou</a>,
         The Hague, 2024
       </p>
     </div>
 
   </div>
 
+  <!-- 🟢 REAL CURSOR TRAIL (FIXED) -->
   <script>
     const cursor = document.querySelector(".cursor");
 
     document.addEventListener("mousemove", (e) => {
       cursor.style.left = e.clientX + "px";
       cursor.style.top = e.clientY + "px";
+
+      const dot = document.createElement("div");
+      document.body.appendChild(dot);
+
+      dot.style.position = "fixed";
+      dot.style.left = e.clientX + "px";
+      dot.style.top = e.clientY + "px";
+      dot.style.width = "10px";
+      dot.style.height = "10px";
+      dot.style.borderRadius = "50%";
+      dot.style.background = "#39ff14";
+      dot.style.boxShadow = "0 0 10px #39ff14";
+      dot.style.pointerEvents = "none";
+      dot.style.transform = "translate(-50%, -50%)";
+      dot.style.zIndex = "9998";
+
+      dot.style.opacity = "1";
+      dot.style.transition = "opacity 0.8s ease-out, transform 0.8s ease-out";
+
+      setTimeout(() => {
+        dot.style.opacity = "0";
+        dot.style.transform = "translate(-50%, -50%) scale(0.5)";
+      }, 10);
+
+      setTimeout(() => {
+        dot.remove();
+      }, 800);
+    });
+
+    // purple cursor over text
+    const textLinks = document.querySelectorAll(".ig");
+
+    textLinks.forEach(link => {
+      link.addEventListener("mouseenter", () => {
+        document.body.classList.add("hover-text");
+      });
+
+      link.addEventListener("mouseleave", () => {
+        document.body.classList.remove("hover-text");
+      });
     });
   </script>
 
