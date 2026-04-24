@@ -51,6 +51,7 @@
       text-decoration: none;
     }
 
+    /* 🟣 ONLY POPPYSEEDS HAS PURPLE HOVER EFFECT */
     .top-left-title a::after {
       content: attr(data-text);
       position: absolute;
@@ -66,10 +67,9 @@
       opacity: 1;
     }
 
-    /* 🟣 CURSOR HOVER STATE (ONLY NAV) */
-    .nav-hover .cursor {
-      background: #b56cff;
-      box-shadow: 0 0 10px #b56cff, 0 0 20px #b56cff;
+    /* ❌ REMOVE EFFECT FROM COLLECTIVE ONLY */
+    .top-left-title a.collective::after {
+      display: none;
     }
 
     /* ================= CONTENT ================= */
@@ -118,6 +118,12 @@
       transition: background 0.15s ease, box-shadow 0.15s ease;
     }
 
+    /* 🟣 cursor turns purple ONLY on nav hover */
+    .nav-hover .cursor {
+      background: #b56cff;
+      box-shadow: 0 0 10px #b56cff, 0 0 20px #b56cff;
+    }
+
   </style>
 </head>
 
@@ -125,9 +131,9 @@
 
   <!-- 🌟 NAV -->
   <div class="top-left-title">
-    <a href="index.html" data-text="poppyseeds" class="nav-item">poppyseeds</a>
+    <a href="index.html" data-text="poppyseeds" class="poppy">poppyseeds</a>
     <span>·</span>
-    <a href="index.html" data-text="collective" class="nav-item">collective</a>
+    <a href="index.html" data-text="collective" class="collective">collective</a>
   </div>
 
   <!-- 🟢 CURSOR -->
@@ -174,7 +180,6 @@ of course the first step: an itching request for something to change.
       cursor.style.top = e.clientY + "px";
     });
 
-    // ONLY nav hover = purple cursor
     nav.addEventListener("mouseenter", () => {
       document.body.classList.add("nav-hover");
     });
