@@ -57,7 +57,6 @@
       position: relative;
     }
 
-    /* ✨ local purple hover */
     .top-left-title a::after {
       content: attr(data-text);
       position: absolute;
@@ -109,12 +108,30 @@
       opacity: 0.8;
     }
 
+    /* ================= CREDITS ================= */
+
+    .credit {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+
+      font-size: 10px;
+      color: rgba(255, 255, 255, 0.35);
+      letter-spacing: 0.5px;
+
+      z-index: 3000;
+      user-select: none;
+      pointer-events: none;
+    }
+
   </style>
 </head>
 
 <body>
 
-  <!-- 🌟 GLOBAL NAV -->
+  <!-- 🌟 TOP NAV -->
   <div class="top-left-title">
     <a data-text="poppyseeds" href="index.html">poppyseeds</a>
     <span style="color:white;">·</span>
@@ -144,7 +161,7 @@
 
   </div>
 
-  <!-- 🟢 NEON CURSOR -->
+  <!-- 🟢 CURSOR -->
   <script>
     document.addEventListener("mousemove", (e) => {
       const dot = document.createElement("div");
@@ -153,28 +170,29 @@
       dot.style.position = "fixed";
       dot.style.left = e.clientX + "px";
       dot.style.top = e.clientY + "px";
+
       dot.style.width = "8px";
       dot.style.height = "8px";
       dot.style.borderRadius = "50%";
       dot.style.pointerEvents = "none";
       dot.style.transform = "translate(-50%, -50%)";
+      dot.style.zIndex = "999999";
 
       dot.style.background = "#39ff14";
       dot.style.boxShadow = "0 0 10px #39ff14, 0 0 20px #39ff14";
-      dot.style.zIndex = "999999";
 
       dot.style.opacity = "1";
       dot.style.transition = "opacity 0.8s ease-out";
 
-      setTimeout(() => {
-        dot.style.opacity = "0";
-      }, 10);
-
-      setTimeout(() => {
-        dot.remove();
-      }, 800);
+      setTimeout(() => dot.style.opacity = "0", 10);
+      setTimeout(() => dot.remove(), 800);
     });
   </script>
+
+  <!-- 📎 CREDIT -->
+  <div class="credit">
+    built by Manuel Phil. Bischof.
+  </div>
 
 </body>
 </html>
