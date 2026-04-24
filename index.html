@@ -4,19 +4,18 @@
   <meta charset="UTF-8">
   <title>Poppyseeds Collective</title>
 
+  <!-- 🌟 NEON DOT FAVICON -->
   <link rel="icon" type="image/svg+xml"
-  href="data:image/svg+xml,
-  <svg xmlns='http://www.w3.org/2000/svg' width='64' height='64'>
-    <circle cx='32' cy='32' r='10' fill='%2339ff14'/>
-  </svg>">
+    href="data:image/svg+xml,
+    <svg xmlns='http://www.w3.org/2000/svg' width='64' height='64'>
+      <circle cx='32' cy='32' r='10' fill='%2339ff14'/>
+    </svg>">
 
   <meta property="og:title" content="Poppyseeds Collective">
   <meta property="og:description" content="Magazine & Collective initiated by Manuel Phil. Bischof & Artemis Xeniou">
-
   <meta property="og:image" content="https://raw.githubusercontent.com/USERNAME/REPO/main/images/Media-poppyseeds.jpg">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://poppyseeds.space">
-
   <meta name="twitter:card" content="summary_large_image">
 
   <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;400;500&display=swap" rel="stylesheet">
@@ -44,16 +43,15 @@
       position: fixed;
       top: 20px;
       left: 20px;
-      font-size: 16px; /* ⬅ slightly bigger */
+      font-size: 16px;
       font-style: italic;
       color: white;
       z-index: 2000;
-      letter-spacing: -0.3px;
       display: flex;
       gap: 10px;
+      letter-spacing: -0.3px;
     }
 
-    /* ✨ HOVER PURPLE EFFECT */
     .top-left-title a {
       color: white;
       transition: color 0.2s ease;
@@ -90,53 +88,14 @@
       display: block;
     }
 
-    /* 📉 SMALLER LABELS */
+    /* 📉 SMALL LABELS */
     .label {
       position: absolute;
       right: 0;
       bottom: -20px;
       color: white;
-      font-size: 11px; /* ⬅ smaller */
+      font-size: 11px;
       opacity: 0.8;
-    }
-
-    /* ================= MOBILE ================= */
-
-    @media (max-width: 768px) {
-
-      .top-left-title {
-        font-size: 13px;
-        left: 10px;
-        top: 15px;
-      }
-
-      .container {
-        flex-direction: column;
-        padding-top: 120px;
-        height: auto;
-      }
-
-      .issue {
-        width: 100%;
-        justify-content: center;
-        padding: 40px 0;
-      }
-
-      .issue.left,
-      .issue.right {
-        padding-left: 0;
-      }
-
-      .img-wrap {
-        width: 85%;
-        max-width: 420px;
-      }
-
-      .label {
-        position: static;
-        margin-top: 10px;
-        text-align: right;
-      }
     }
 
   </style>
@@ -144,7 +103,7 @@
 
 <body>
 
-  <!-- 🌟 TOP LEFT NAV -->
+  <!-- 🌟 TOP NAV -->
   <div class="top-left-title">
     <a href="poppyseeds.html">poppyseeds</a>
     <span>·</span>
@@ -172,6 +131,39 @@
     </div>
 
   </div>
+
+  <!-- 🟢 NEON CURSOR (FIXED) -->
+  <script>
+    document.addEventListener("mousemove", (e) => {
+      const dot = document.createElement("div");
+      document.body.appendChild(dot);
+
+      dot.style.position = "fixed";
+      dot.style.left = e.clientX + "px";
+      dot.style.top = e.clientY + "px";
+      dot.style.width = "8px";
+      dot.style.height = "8px";
+      dot.style.borderRadius = "50%";
+      dot.style.pointerEvents = "none";
+      dot.style.transform = "translate(-50%, -50%)";
+
+      dot.style.background = "#39ff14";
+      dot.style.boxShadow = "0 0 10px #39ff14, 0 0 20px #39ff14";
+
+      dot.style.zIndex = "999999";
+
+      dot.style.opacity = "1";
+      dot.style.transition = "opacity 0.8s ease-out";
+
+      setTimeout(() => {
+        dot.style.opacity = "0";
+      }, 10);
+
+      setTimeout(() => {
+        dot.remove();
+      }, 800);
+    });
+  </script>
 
 </body>
 </html>
