@@ -26,11 +26,6 @@
 
     * { cursor: none !important; }
 
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
     /* ================= NAV ================= */
 
     .top-left-title {
@@ -45,24 +40,13 @@
     }
 
     .top-left-title a {
-      color: white;
-      position: relative;
+      color: white; /* ALWAYS WHITE */
+      text-decoration: none;
     }
 
-    /* 🟣 hover text effect (only poppyseeds style) */
+    /* ❌ REMOVE PURPLE TEXT EFFECT COMPLETELY */
     .top-left-title a::after {
-      content: attr(data-text);
-      position: absolute;
-      left: 0;
-      top: 0;
-      color: #b56cff;
-      opacity: 0;
-      transition: opacity 0.15s ease;
-      pointer-events: none;
-    }
-
-    .top-left-title a:hover::after {
-      opacity: 1;
+      display: none !important;
     }
 
     /* ================= CONTENT ================= */
@@ -135,23 +119,21 @@
 
 <body>
 
-  <!-- 🌟 NAV -->
+  <!-- NAV -->
   <div class="top-left-title">
-    <a href="index.html" data-text="poppyseeds">poppyseeds</a>
+    <a href="index.html">poppyseeds</a>
     <span>·</span>
-    <a href="about.html" data-text="collective">collective</a>
+    <a href="about.html">collective</a>
   </div>
 
-  <!-- 🟢 CURSOR -->
+  <!-- CURSOR -->
   <div class="cursor"></div>
 
   <!-- CONTENT -->
   <div class="wrapper">
 
-    <!-- WINTER -->
     <div class="section">
       <div class="section-title">Winter '24 Edition</div>
-
       <div class="list">
         <span class="name">Agata Luisa</span><span class="dot winter"></span>
         <span class="name">Alease B. Hansen-Evelyn</span><span class="dot winter"></span>
@@ -171,10 +153,8 @@
       </div>
     </div>
 
-    <!-- SUMMER -->
     <div class="section">
       <div class="section-title">Summer '25 Edition</div>
-
       <div class="list">
         <span class="name">Andreja Maiburovaite</span><span class="dot summer"></span>
         <span class="name">Alexandros Nikolaou</span><span class="dot summer"></span>
@@ -194,7 +174,7 @@
 
   </div>
 
-  <!-- 🟢 CURSOR SCRIPT (STABLE) -->
+  <!-- CURSOR SCRIPT -->
   <script>
     const cursor = document.querySelector(".cursor");
 
