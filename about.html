@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>About — Poppyseeds</title>
 
-  <!-- 🟢 GREEN DOT FAVICON (stable) -->
+  <!-- 🟢 GREEN DOT FAVICON -->
   <link rel="icon" type="image/svg+xml"
     href="data:image/svg+xml,
     <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'>
@@ -20,10 +20,15 @@
       color: white;
     }
 
+    ::-moz-selection {
+      background: white;
+      color: white;
+    }
+
     html, body {
       margin: 0;
       padding: 0;
-      background: #1a1a1a;
+      background: #111;
       color: white;
       font-family: 'Unbounded', sans-serif;
       cursor: none;
@@ -47,36 +52,20 @@
 
     .top-left-title a {
       color: white;
-      position: relative;
       text-decoration: none;
+      position: relative;
     }
 
-    /* purple hover only effect */
+    /* ❌ REMOVE ANY PURPLE TEXT EFFECT */
     .top-left-title a::after {
-      content: attr(data-text);
-      position: absolute;
-      left: 0;
-      top: 0;
-      color: #b56cff;
-      opacity: 0;
-      transition: opacity 0.15s ease;
-      pointer-events: none;
-    }
-
-    .top-left-title a:hover::after {
-      opacity: 1;
-    }
-
-    /* remove hover effect for collective */
-    .top-left-title a.collective::after {
-      display: none;
+      display: none !important;
     }
 
     /* ================= CONTENT ================= */
 
     .wrapper {
       max-width: 700px;
-      padding: 110px 40px;
+      padding: 80px 40px;
     }
 
     .title {
@@ -92,36 +81,18 @@
       opacity: 0.9;
     }
 
+    .text p {
+      margin-bottom: 20px;
+    }
+
     .ig {
       color: white;
       text-decoration: none;
-      transition: 0.2s ease;
+      transition: 0.2s;
     }
 
     .ig:hover {
-      color: #b56cff;
-      transform: scale(1.05);
-    }
-
-    /* ================= CURSOR ================= */
-
-    .cursor {
-      position: fixed;
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: #39ff14;
-      box-shadow: 0 0 10px #39ff14, 0 0 20px #39ff14;
-      pointer-events: none;
-      transform: translate(-50%, -50%);
-      z-index: 9999;
-      transition: background 0.15s ease, box-shadow 0.15s ease;
-    }
-
-    /* purple cursor only on nav hover */
-    .nav-hover .cursor {
-      background: #b56cff;
-      box-shadow: 0 0 10px #b56cff, 0 0 20px #b56cff;
+      color: #a855f7;
     }
 
   </style>
@@ -129,15 +100,12 @@
 
 <body>
 
-  <!-- 🌟 NAV -->
+  <!-- NAV -->
   <div class="top-left-title">
-    <a href="index.html" data-text="poppyseeds">poppyseeds</a>
+    <a href="poppyseeds.html">poppyseeds</a>
     <span>·</span>
-    <a href="index.html" data-text="collective" class="collective">collective</a>
+    <a href="about.html">collective</a>
   </div>
-
-  <!-- 🟢 CURSOR -->
-  <div class="cursor"></div>
 
   <!-- CONTENT -->
   <div class="wrapper">
@@ -169,52 +137,6 @@ of course the first step: an itching request for something to change.
     </div>
 
   </div>
-
-  <!-- 🟢 CURSOR SCRIPT (RESTORED + STABLE) -->
-  <script>
-    const cursor = document.querySelector(".cursor");
-    const nav = document.querySelector(".top-left-title");
-
-    document.addEventListener("mousemove", (e) => {
-      cursor.style.left = e.clientX + "px";
-      cursor.style.top = e.clientY + "px";
-
-      const dot = document.createElement("div");
-      document.body.appendChild(dot);
-
-      dot.style.position = "fixed";
-      dot.style.left = e.clientX + "px";
-      dot.style.top = e.clientY + "px";
-      dot.style.width = "10px";
-      dot.style.height = "10px";
-      dot.style.borderRadius = "50%";
-      dot.style.background = "#39ff14";
-      dot.style.boxShadow = "0 0 10px #39ff14";
-      dot.style.pointerEvents = "none";
-      dot.style.transform = "translate(-50%, -50%)";
-      dot.style.zIndex = "9998";
-
-      dot.style.opacity = "1";
-      dot.style.transition = "opacity 0.8s ease-out, transform 0.8s ease-out";
-
-      setTimeout(() => {
-        dot.style.opacity = "0";
-        dot.style.transform = "translate(-50%, -50%) scale(0.5)";
-      }, 10);
-
-      setTimeout(() => {
-        dot.remove();
-      }, 800);
-    });
-
-    nav.addEventListener("mouseenter", () => {
-      document.body.classList.add("nav-hover");
-    });
-
-    nav.addEventListener("mouseleave", () => {
-      document.body.classList.remove("nav-hover");
-    });
-  </script>
 
 </body>
 </html>
