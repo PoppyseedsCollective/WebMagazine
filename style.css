@@ -1,1 +1,122 @@
 
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #1a1a1a;
+  color: white;
+  font-family: 'Unbounded', sans-serif;
+  cursor: none;
+}
+
+* {
+  cursor: none !important;
+}
+
+/* ================= NAV ================= */
+
+.top-left-title {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  font-size: 16px;
+  font-style: italic;
+  display: flex;
+  gap: 10px;
+  z-index: 3000;
+}
+
+.top-left-title a {
+  color: white;
+  text-decoration: none;
+}
+
+.top-left-title a:hover {
+  color: white;
+}
+
+/* ================= SELECTION ================= */
+
+::selection {
+  background: white;
+  color: white;
+}
+
+/* ================= CURSOR ================= */
+
+.cursor {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #39ff14;
+  box-shadow: 0 0 10px #39ff14, 0 0 20px #39ff14;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+}
+
+.nav-hover .cursor {
+  background: #b56cff;
+  box-shadow: 0 0 12px #b56cff, 0 0 24px #b56cff;
+}
+
+/* ================= PAGES ================= */
+
+.wrapper {
+  max-width: 1100px;
+  padding: 110px 40px;
+}
+
+.section {
+  margin-bottom: 80px;
+}
+
+.section-title {
+  font-size: 12px;
+  opacity: 0.5;
+  text-transform: uppercase;
+  margin-bottom: 25px;
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+
+.name {
+  font-size: 56px;
+  font-weight: 300;
+  line-height: 1;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0 4px;
+  transform: translateY(-8px);
+}
+
+.dot.winter { background: #a855f7; }
+.dot.summer { background: #3a3430; }
+
+.wrapper-about {
+  max-width: 700px;
+  padding: 80px 40px;
+}
+
+.title {
+  font-size: 25px;
+  font-weight: 300;
+  margin-bottom: 40px;
+  white-space: pre-line;
+}
+
+.text {
+  font-size: 12px;
+  line-height: 1.6;
+  opacity: 0.9;
+}
