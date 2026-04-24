@@ -4,176 +4,21 @@
   <meta charset="UTF-8">
   <title>Poppyseeds Collective</title>
 
-  <!-- 🌸 SOFT PURPLE FAVICON -->
-  <link rel="icon" type="image/svg+xml"
-    href="data:image/svg+xml,
-    <svg xmlns='http://www.w3.org/2000/svg' width='64' height='64'>
-      <defs>
-        <radialGradient id='g' cx='50%' cy='50%' r='50%'>
-          <stop offset='0%' stop-color='#d6b3ff'/>
-          <stop offset='60%' stop-color='#b56cff'/>
-          <stop offset='100%' stop-color='#7a4bd6'/>
-        </radialGradient>
-      </defs>
-      <circle cx='32' cy='32' r='10' fill='url(%23g)' />
-    </svg>">
-
+  <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;400;500&display=swap" rel="stylesheet">
-
-  <style>
-
-    html, body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      font-family: 'Unbounded', sans-serif;
-      background: #1a1a1a;
-      cursor: none;
-    }
-
-    * { cursor: none !important; }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    /* ================= TOP NAV ================= */
-
-    .top-left-title {
-      position: fixed;
-      top: 20px;
-      left: 20px;
-      font-size: 16px;
-      font-style: italic;
-      z-index: 3000;
-      display: flex;
-      gap: 10px;
-      letter-spacing: -0.3px;
-      pointer-events: auto;
-    }
-
-    .top-left-title a {
-      color: white;
-      position: relative;
-    }
-
-    .top-left-title a::after {
-      content: attr(data-text);
-      position: absolute;
-      left: 0;
-      top: 0;
-      color: #b56cff;
-      opacity: 0;
-      transition: opacity 0.15s ease;
-      pointer-events: none;
-    }
-
-    .top-left-title a:hover::after {
-      opacity: 1;
-    }
-
-    /* ================= LAYOUT ================= */
-
-    .container {
-      display: flex;
-      width: 100vw;
-      height: 100vh;
-    }
-
-    .issue {
-      flex: 1;
-      display: flex;
-      align-items: center;
-    }
-
-    .issue.left { padding-left: 60px; }
-    .issue.right { padding-left: 120px; }
-
-    .img-wrap {
-      position: relative;
-      max-width: 80%;
-    }
-
-    .img-wrap img {
-      width: 100%;
-      display: block;
-    }
-
-    .label {
-      position: absolute;
-      right: 0;
-      bottom: -20px;
-      color: white;
-      font-size: 11px;
-      opacity: 0.8;
-    }
-
-    /* ================= CREDIT ================= */
-
-    .credit {
-      position: fixed;
-      right: 20px;
-      bottom: 20px;
-      writing-mode: vertical-rl;
-      transform: rotate(180deg);
-
-      font-size: 8px;
-      color: rgba(255, 255, 255, 0.22);
-      letter-spacing: 0.5px;
-
-      z-index: 3000;
-      user-select: none;
-      pointer-events: none;
-
-      transition: transform 0.2s ease, color 0.2s ease;
-    }
-
-    /* 🎯 JUMP ON HOVER */
-    .credit:hover {
-      transform: rotate(180deg) translateX(-3px);
-      color: rgba(255, 255, 255, 0.35);
-    }
-
-  </style>
 </head>
 
 <body>
 
-  <!-- 🌟 NAV -->
-  <div class="top-left-title">
-    <a href="poppyseeds.html" data-text="poppyseeds">poppyseeds</a>
-    <span> · </span>
-    <a href="about.html" data-text="collective">collective</a>
-  </div>
+<div class="top-left-title">
+  <a href="poppyseeds.html">poppyseeds</a>
+  <span>·</span>
+  <a href="about.html">collective</a>
+</div>
 
-  <!-- MAIN CONTENT -->
-  <div class="container">
+<div class="cursor"></div>
 
-    <div class="issue left">
-      <div class="img-wrap">
-        <a href="magazines/Issue01.pdf" target="_blank">
-          <img src="images/Issue01.png">
-        </a>
-        <div class="label">Winter '24</div>
-      </div>
-    </div>
-
-    <div class="issue right">
-      <div class="img-wrap">
-        <a href="magazines/Issue02.pdf" target="_blank">
-          <img src="images/Issue02.png">
-        </a>
-        <div class="label">Summer '25</div>
-      </div>
-    </div>
-
-  </div>
-
-  <!-- 🪶 CREDIT -->
-  <div class="credit">
-    built by Manuel Phil. Bischof.
-  </div>
+<script src="script.js"></script>
 
 </body>
 </html>
