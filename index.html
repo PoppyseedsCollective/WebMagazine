@@ -38,14 +38,14 @@
       color: inherit;
     }
 
-    /* 🌟 TOP LEFT NAV */
+    /* ================= TOP LEFT NAV ================= */
+
     .top-left-title {
       position: fixed;
       top: 20px;
       left: 20px;
       font-size: 16px;
       font-style: italic;
-      color: white;
       z-index: 2000;
       display: flex;
       gap: 10px;
@@ -54,11 +54,23 @@
 
     .top-left-title a {
       color: white;
-      transition: color 0.2s ease;
+      position: relative;
     }
 
-    .top-left-title a:hover {
+    /* ✨ LOCAL PURPLE HOVER EFFECT */
+    .top-left-title a::after {
+      content: attr(data-text);
+      position: absolute;
+      left: 0;
+      top: 0;
       color: #b56cff;
+      opacity: 0;
+      transition: opacity 0.15s ease;
+      pointer-events: none;
+    }
+
+    .top-left-title a:hover::after {
+      opacity: 1;
     }
 
     /* ================= LAYOUT ================= */
@@ -88,7 +100,6 @@
       display: block;
     }
 
-    /* 📉 SMALL LABELS */
     .label {
       position: absolute;
       right: 0;
@@ -103,11 +114,11 @@
 
 <body>
 
-  <!-- 🌟 TOP NAV -->
+  <!-- 🌟 TOP LEFT NAV -->
   <div class="top-left-title">
-    <a href="poppyseeds.html">poppyseeds</a>
-    <span>·</span>
-    <a href="about.html">collective</a>
+    <a data-text="poppyseeds" href="poppyseeds.html">poppyseeds</a>
+    <span style="color:white;">·</span>
+    <a data-text="collective" href="about.html">collective</a>
   </div>
 
   <div class="container">
@@ -132,7 +143,7 @@
 
   </div>
 
-  <!-- 🟢 NEON CURSOR (FIXED) -->
+  <!-- 🟢 NEON CURSOR -->
   <script>
     document.addEventListener("mousemove", (e) => {
       const dot = document.createElement("div");
@@ -149,7 +160,6 @@
 
       dot.style.background = "#39ff14";
       dot.style.boxShadow = "0 0 10px #39ff14, 0 0 20px #39ff14";
-
       dot.style.zIndex = "999999";
 
       dot.style.opacity = "1";
