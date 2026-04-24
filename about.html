@@ -4,18 +4,24 @@
   <meta charset="UTF-8">
   <title>About — Poppyseeds</title>
 
-  <!-- 🌟 NEON DOT FAVICON -->
+  <!-- 🌸 SOFT PURPLE FAVICON -->
   <link rel="icon" type="image/svg+xml"
     href="data:image/svg+xml,
     <svg xmlns='http://www.w3.org/2000/svg' width='64' height='64'>
-      <circle cx='32' cy='32' r='10' fill='%2339ff14'/>
+      <defs>
+        <radialGradient id='g' cx='50%' cy='50%' r='50%'>
+          <stop offset='0%' stop-color='#d6b3ff'/>
+          <stop offset='60%' stop-color='#b56cff'/>
+          <stop offset='100%' stop-color='#7a4bd6'/>
+        </radialGradient>
+      </defs>
+      <circle cx='32' cy='32' r='10' fill='url(%23g)' />
     </svg>">
 
   <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;400;500&display=swap" rel="stylesheet">
 
   <style>
 
-    /* ✨ SELECTION */
     ::selection {
       background: white;
       color: white;
@@ -33,11 +39,6 @@
 
     * { cursor: none !important; }
 
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
     /* ================= TOP NAV ================= */
 
     .top-left-title {
@@ -46,7 +47,7 @@
       left: 20px;
       font-size: 16px;
       font-style: italic;
-      z-index: 2000;
+      z-index: 3000;
       display: flex;
       gap: 10px;
       letter-spacing: -0.3px;
@@ -55,9 +56,9 @@
     .top-left-title a {
       color: white;
       position: relative;
+      text-decoration: none;
     }
 
-    /* ✨ purple hover reveal */
     .top-left-title a::after {
       content: attr(data-text);
       position: absolute;
@@ -97,7 +98,6 @@
       margin-bottom: 20px;
     }
 
-    /* Instagram links */
     .ig {
       color: white;
       text-decoration: none;
@@ -106,9 +106,23 @@
     }
 
     .ig:hover {
-      color: #a855f7;
+      color: #b56cff;
       transform: scale(1.06) translateY(-1px);
       text-shadow: 0 0 10px rgba(168, 85, 247, 0.4);
+    }
+
+    /* ================= CURSOR ================= */
+
+    .cursor {
+      position: fixed;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #39ff14;
+      box-shadow: 0 0 10px #39ff14, 0 0 20px #39ff14;
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      z-index: 999999;
     }
 
   </style>
@@ -116,13 +130,18 @@
 
 <body>
 
-  <!-- 🌟 GLOBAL NAV -->
+  <!-- 🌟 NAV -->
   <div class="top-left-title">
-    <a data-text="poppyseeds" href="index.html">poppyseeds</a>
-    <span style="color:white;">·</span>
-    <a data-text="collective" href="about.html">collective</a>
+    <a href="index.html" data-text="poppyseeds">poppyseeds</a>
+    <span>·</span>
+    <!-- 🔁 FIX: collective now goes HOME -->
+    <a href="index.html" data-text="collective">collective</a>
   </div>
 
+  <!-- 🟢 CURSOR -->
+  <div class="cursor"></div>
+
+  <!-- CONTENT -->
   <div class="wrapper">
 
     <div class="title">
@@ -153,32 +172,12 @@ of course the first step: an itching request for something to change.
 
   </div>
 
-  <!-- 🟢 CURSOR -->
   <script>
+    const cursor = document.querySelector(".cursor");
+
     document.addEventListener("mousemove", (e) => {
-
-      const dot = document.createElement("div");
-      document.body.appendChild(dot);
-
-      dot.style.position = "fixed";
-      dot.style.left = e.clientX + "px";
-      dot.style.top = e.clientY + "px";
-
-      dot.style.width = "8px";
-      dot.style.height = "8px";
-      dot.style.borderRadius = "50%";
-      dot.style.pointerEvents = "none";
-      dot.style.transform = "translate(-50%, -50%)";
-      dot.style.zIndex = "999999";
-
-      dot.style.background = "#39ff14";
-      dot.style.boxShadow = "0 0 10px #39ff14, 0 0 20px #39ff14";
-
-      dot.style.opacity = "1";
-      dot.style.transition = "opacity 0.8s ease-out";
-
-      setTimeout(() => dot.style.opacity = "0", 10);
-      setTimeout(() => dot.remove(), 800);
+      cursor.style.left = e.clientX + "px";
+      cursor.style.top = e.clientY + "px";
     });
   </script>
 
