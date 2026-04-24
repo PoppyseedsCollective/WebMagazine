@@ -4,19 +4,11 @@
   <meta charset="UTF-8">
   <title>Poppyseeds Collective</title>
 
-  <!-- 🌟 NEON DOT FAVICON -->
   <link rel="icon" type="image/svg+xml"
     href="data:image/svg+xml,
     <svg xmlns='http://www.w3.org/2000/svg' width='64' height='64'>
       <circle cx='32' cy='32' r='10' fill='%2339ff14'/>
     </svg>">
-
-  <meta property="og:title" content="Poppyseeds Collective">
-  <meta property="og:description" content="Magazine & Collective initiated by Manuel Phil. Bischof & Artemis Xeniou">
-  <meta property="og:image" content="https://raw.githubusercontent.com/USERNAME/REPO/main/images/Media-poppyseeds.jpg">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://poppyseeds.space">
-  <meta name="twitter:card" content="summary_large_image">
 
   <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;400;500&display=swap" rel="stylesheet">
 
@@ -46,30 +38,21 @@
       left: 20px;
       font-size: 16px;
       font-style: italic;
-      z-index: 2000;
+      z-index: 3000;
       display: flex;
       gap: 10px;
       letter-spacing: -0.3px;
+      pointer-events: auto;
     }
 
     .top-left-title a {
       color: white;
       position: relative;
+      pointer-events: auto;
     }
 
-    .top-left-title a::after {
-      content: attr(data-text);
-      position: absolute;
-      left: 0;
-      top: 0;
-      color: #b56cff;
-      opacity: 0;
-      transition: opacity 0.15s ease;
-      pointer-events: none;
-    }
-
-    .top-left-title a:hover::after {
-      opacity: 1;
+    .top-left-title span {
+      color: white;
     }
 
     /* ================= LAYOUT ================= */
@@ -108,7 +91,28 @@
       opacity: 0.8;
     }
 
-    /* ================= CREDITS ================= */
+    /* ================= CURSOR ================= */
+
+    .cursor {
+      position: fixed;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #39ff14;
+      box-shadow: 0 0 10px #39ff14, 0 0 20px #39ff14;
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      z-index: 999999;
+      transition: background 0.2s ease, transform 0.1s ease;
+    }
+
+    /* cursor turns purple on nav hover */
+    .hovering-nav .cursor {
+      background: #b56cff;
+      box-shadow: 0 0 12px #b56cff, 0 0 24px #b56cff;
+    }
+
+    /* ================= CREDIT ================= */
 
     .credit {
       position: fixed;
@@ -117,7 +121,7 @@
       writing-mode: vertical-rl;
       transform: rotate(180deg);
 
-      font-size: 10px;
+      font-size: 9px; /* ⬅ smaller */
       color: rgba(255, 255, 255, 0.35);
       letter-spacing: 0.5px;
 
@@ -131,14 +135,17 @@
 
 <body>
 
-  <!-- 🌟 TOP NAV -->
+  <!-- 🌟 NAV -->
   <div class="top-left-title">
-    <a data-text="poppyseeds" href="index.html">poppyseeds</a>
-    <span style="color:white;">·</span>
-    <a data-text="collective" href="about.html">collective</a>
+    <a href="index.html" data-text="poppyseeds">poppyseeds</a>
+    <span>·</span>
+    <a href="about.html" data-text="collective">collective</a>
   </div>
 
-  <!-- MAIN CONTENT -->
+  <!-- 🟢 CURSOR -->
+  <div class="cursor"></div>
+
+  <!-- MAIN -->
   <div class="container">
 
     <div class="issue left">
@@ -161,38 +168,30 @@
 
   </div>
 
-  <!-- 🟢 CURSOR -->
-  <script>
-    document.addEventListener("mousemove", (e) => {
-      const dot = document.createElement("div");
-      document.body.appendChild(dot);
-
-      dot.style.position = "fixed";
-      dot.style.left = e.clientX + "px";
-      dot.style.top = e.clientY + "px";
-
-      dot.style.width = "8px";
-      dot.style.height = "8px";
-      dot.style.borderRadius = "50%";
-      dot.style.pointerEvents = "none";
-      dot.style.transform = "translate(-50%, -50%)";
-      dot.style.zIndex = "999999";
-
-      dot.style.background = "#39ff14";
-      dot.style.boxShadow = "0 0 10px #39ff14, 0 0 20px #39ff14";
-
-      dot.style.opacity = "1";
-      dot.style.transition = "opacity 0.8s ease-out";
-
-      setTimeout(() => dot.style.opacity = "0", 10);
-      setTimeout(() => dot.remove(), 800);
-    });
-  </script>
-
   <!-- 📎 CREDIT -->
   <div class="credit">
     built by Manuel Phil. Bischof.
   </div>
+
+  <script>
+    const cursor = document.querySelector(".cursor");
+
+    document.addEventListener("mousemove", (e) => {
+      cursor.style.left = e.clientX + "px";
+      cursor.style.top = e.clientY + "px";
+    });
+
+    // 🟣 cursor turns purple over nav
+    const nav = document.querySelector(".top-left-title");
+
+    nav.addEventListener("mouseenter", () => {
+      document.body.classList.add("hovering-nav");
+    });
+
+    nav.addEventListener("mouseleave", () => {
+      document.body.classList.remove("hovering-nav");
+    });
+  </script>
 
 </body>
 </html>
