@@ -40,13 +40,8 @@
     }
 
     .top-left-title a {
-      color: white; /* ALWAYS WHITE */
+      color: white;
       text-decoration: none;
-    }
-
-    /* ❌ REMOVE PURPLE TEXT EFFECT COMPLETELY */
-    .top-left-title a::after {
-      display: none !important;
     }
 
     /* ================= CONTENT ================= */
@@ -62,9 +57,8 @@
 
     .section-title {
       font-size: 12px;
-      letter-spacing: 1px;
-      text-transform: uppercase;
       opacity: 0.5;
+      text-transform: uppercase;
       margin-bottom: 25px;
     }
 
@@ -106,12 +100,11 @@
       pointer-events: none;
       transform: translate(-50%, -50%);
       z-index: 9999;
-      transition: background 0.15s ease, box-shadow 0.15s ease;
     }
 
     .nav-hover .cursor {
       background: #b56cff;
-      box-shadow: 0 0 10px #b56cff, 0 0 20px #b56cff;
+      box-shadow: 0 0 12px #b56cff, 0 0 24px #b56cff;
     }
 
   </style>
@@ -174,13 +167,43 @@
 
   </div>
 
-  <!-- CURSOR SCRIPT -->
+  <!-- CURSOR SCRIPT (FIXED TAIL) -->
   <script>
     const cursor = document.querySelector(".cursor");
 
     document.addEventListener("mousemove", (e) => {
+
+      // main cursor
       cursor.style.left = e.clientX + "px";
       cursor.style.top = e.clientY + "px";
+
+      // 🌿 TRAIL DOT (THIS WAS MISSING)
+      const dot = document.createElement("div");
+      document.body.appendChild(dot);
+
+      dot.style.position = "fixed";
+      dot.style.left = e.clientX + "px";
+      dot.style.top = e.clientY + "px";
+      dot.style.width = "10px";
+      dot.style.height = "10px";
+      dot.style.borderRadius = "50%";
+      dot.style.background = "#39ff14";
+      dot.style.boxShadow = "0 0 10px #39ff14";
+      dot.style.pointerEvents = "none";
+      dot.style.transform = "translate(-50%, -50%)";
+      dot.style.zIndex = "9998";
+
+      dot.style.opacity = "1";
+      dot.style.transition = "opacity 0.8s ease-out, transform 0.8s ease-out";
+
+      setTimeout(() => {
+        dot.style.opacity = "0";
+        dot.style.transform = "translate(-50%, -50%) scale(0.5)";
+      }, 10);
+
+      setTimeout(() => {
+        dot.remove();
+      }, 800);
     });
 
     const nav = document.querySelector(".top-left-title");
