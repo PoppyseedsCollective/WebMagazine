@@ -4,22 +4,23 @@
   <meta charset="UTF-8">
   <title>Poppyseeds — Artists</title>
 
-  <!-- 🌟 NEON DOT FAVICON -->
+  <!-- 🌸 SOFT PURPLE FAVICON -->
   <link rel="icon" type="image/svg+xml"
     href="data:image/svg+xml,
     <svg xmlns='http://www.w3.org/2000/svg' width='64' height='64'>
-      <circle cx='32' cy='32' r='10' fill='%2339ff14'/>
+      <defs>
+        <radialGradient id='g' cx='50%' cy='50%' r='50%'>
+          <stop offset='0%' stop-color='#d6b3ff'/>
+          <stop offset='60%' stop-color='#b56cff'/>
+          <stop offset='100%' stop-color='#7a4bd6'/>
+        </radialGradient>
+      </defs>
+      <circle cx='32' cy='32' r='10' fill='url(%23g)' />
     </svg>">
 
   <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;400;500&display=swap" rel="stylesheet">
 
   <style>
-
-    /* ✨ TEXT SELECTION */
-    ::selection {
-      background: white;
-      color: white;
-    }
 
     html, body {
       margin: 0;
@@ -45,7 +46,7 @@
       left: 20px;
       font-size: 16px;
       font-style: italic;
-      z-index: 2000;
+      z-index: 3000;
       display: flex;
       gap: 10px;
       letter-spacing: -0.3px;
@@ -56,7 +57,6 @@
       position: relative;
     }
 
-    /* ✨ purple hover reveal */
     .top-left-title a::after {
       content: attr(data-text);
       position: absolute;
@@ -72,7 +72,7 @@
       opacity: 1;
     }
 
-    /* ================= LAYOUT ================= */
+    /* ================= CONTENT ================= */
 
     .wrapper {
       max-width: 1100px;
@@ -94,16 +94,15 @@
     .list {
       display: flex;
       flex-wrap: wrap;
-      align-items: center;
       gap: 12px;
+      align-items: center;
     }
 
-    /* 📈 BIGGER ARTIST NAMES */
     .name {
-      font-size: 56px;   /* ⬅ increased */
+      font-size: 56px;
       font-weight: 300;
-      white-space: nowrap;
       line-height: 1;
+      white-space: nowrap;
     }
 
     .dot {
@@ -115,12 +114,27 @@
       transform: translateY(-8px);
     }
 
-    .dot.winter {
-      background: #a855f7;
+    .dot.winter { background: #a855f7; }
+    .dot.summer { background: #3a3430; }
+
+    /* ================= CURSOR ================= */
+
+    .cursor {
+      position: fixed;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #39ff14;
+      box-shadow: 0 0 10px #39ff14, 0 0 20px #39ff14;
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      z-index: 999999;
+      transition: background 0.2s ease;
     }
 
-    .dot.summer {
-      background: #3a3430;
+    .hovering-nav .cursor {
+      background: #b56cff;
+      box-shadow: 0 0 12px #b56cff, 0 0 24px #b56cff;
     }
 
   </style>
@@ -128,13 +142,17 @@
 
 <body>
 
-  <!-- 🌟 GLOBAL NAV -->
+  <!-- 🌟 NAV -->
   <div class="top-left-title">
-    <a data-text="poppyseeds" href="index.html">poppyseeds</a>
-    <span style="color:white;">·</span>
-    <a data-text="collective" href="about.html">collective</a>
+    <a href="index.html" data-text="poppyseeds">poppyseeds</a>
+    <span>·</span>
+    <a href="about.html" data-text="collective">collective</a>
   </div>
 
+  <!-- 🟢 CURSOR -->
+  <div class="cursor"></div>
+
+  <!-- CONTENT -->
   <div class="wrapper">
 
     <!-- WINTER -->
@@ -183,31 +201,23 @@
 
   </div>
 
-  <!-- 🟢 CURSOR -->
+  <!-- 🟢 CURSOR SCRIPT -->
   <script>
+    const cursor = document.querySelector(".cursor");
+
     document.addEventListener("mousemove", (e) => {
-      const dot = document.createElement("div");
-      document.body.appendChild(dot);
+      cursor.style.left = e.clientX + "px";
+      cursor.style.top = e.clientY + "px";
+    });
 
-      dot.style.position = "fixed";
-      dot.style.left = e.clientX + "px";
-      dot.style.top = e.clientY + "px";
+    const nav = document.querySelector(".top-left-title");
 
-      dot.style.width = "8px";
-      dot.style.height = "8px";
-      dot.style.borderRadius = "50%";
-      dot.style.pointerEvents = "none";
-      dot.style.transform = "translate(-50%, -50%)";
-      dot.style.zIndex = "999999";
+    nav.addEventListener("mouseenter", () => {
+      document.body.classList.add("hovering-nav");
+    });
 
-      dot.style.background = "#39ff14";
-      dot.style.boxShadow = "0 0 10px #39ff14, 0 0 20px #39ff14";
-
-      dot.style.opacity = "1";
-      dot.style.transition = "opacity 0.8s ease-out";
-
-      setTimeout(() => dot.style.opacity = "0", 10);
-      setTimeout(() => dot.remove(), 800);
+    nav.addEventListener("mouseleave", () => {
+      document.body.classList.remove("hovering-nav");
     });
   </script>
 
