@@ -40,7 +40,7 @@
       position: fixed;
       top: 20px;
       left: 20px;
-      font-size: 14px;
+      font-size: 16px; /* ⬅ slightly bigger */
       font-style: italic;
       color: white;
       z-index: 2000;
@@ -49,30 +49,14 @@
       gap: 10px;
     }
 
+    /* ✨ HOVER PURPLE EFFECT */
     .top-left-title a {
-      opacity: 0.9;
-      transition: opacity 0.2s ease;
+      color: white;
+      transition: color 0.2s ease;
     }
 
     .top-left-title a:hover {
-      opacity: 1;
-    }
-
-    /* 🌊 FLOAT */
-    @keyframes softFloat {
-      0%   { transform: translate(0px, 0px); }
-      50%  { transform: translate(1px, -1px); }
-      100% { transform: translate(0px, 0px); }
-    }
-
-    /* ⚡ SHAKE */
-    @keyframes quakeShake {
-      0%   { transform: translate(0px, 0px); }
-      20%  { transform: translate(3px, -2px); }
-      40%  { transform: translate(-3px, 2px); }
-      60%  { transform: translate(2px, 3px); }
-      80%  { transform: translate(-2px, -3px); }
-      100% { transform: translate(0px, 0px); }
+      color: #b56cff;
     }
 
     /* ================= LAYOUT ================= */
@@ -102,12 +86,14 @@
       display: block;
     }
 
+    /* 📉 SMALLER LABELS */
     .label {
       position: absolute;
       right: 0;
-      bottom: -25px;
+      bottom: -20px;
       color: white;
-      font-size: 14px;
+      font-size: 11px; /* ⬅ smaller */
+      opacity: 0.8;
     }
 
     /* ================= MOBILE ================= */
@@ -115,7 +101,7 @@
     @media (max-width: 768px) {
 
       .top-left-title {
-        font-size: 12px;
+        font-size: 13px;
         left: 10px;
         top: 15px;
       }
@@ -157,7 +143,7 @@
   <!-- 🌟 TOP LEFT NAV -->
   <div class="top-left-title">
     <a href="poppyseeds.html">poppyseeds</a>
-    <span> · </span>
+    <span>·</span>
     <a href="about.html">collective</a>
   </div>
 
@@ -182,30 +168,6 @@
     </div>
 
   </div>
-
-  <script>
-    document.addEventListener("mousemove", (e) => {
-      const dot = document.createElement("div");
-      document.body.appendChild(dot);
-
-      dot.style.position = "fixed";
-      dot.style.left = e.clientX + "px";
-      dot.style.top = e.clientY + "px";
-      dot.style.width = "10px";
-      dot.style.height = "10px";
-      dot.style.borderRadius = "50%";
-      dot.style.pointerEvents = "none";
-      dot.style.transform = "translate(-50%, -50%)";
-      dot.style.background = "#39ff14";
-      dot.style.boxShadow = "0 0 8px #39ff14";
-
-      dot.style.opacity = "1";
-      dot.style.transition = "opacity 0.8s ease-out";
-
-      setTimeout(() => dot.style.opacity = "0", 10);
-      setTimeout(() => dot.remove(), 800);
-    });
-  </script>
 
 </body>
 </html>
