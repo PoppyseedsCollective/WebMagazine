@@ -2,235 +2,43 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Poppyseeds — Artists</title>
+  <title>Poppyseeds</title>
 
-  <!-- 🟢 GREEN DOT FAVICON -->
-  <link rel="icon" type="image/svg+xml"
-    href="data:image/svg+xml,
-    <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'>
-      <circle cx='32' cy='32' r='10' fill='%2339ff14'/>
-    </svg>">
-
+  <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;400;500&display=swap" rel="stylesheet">
-
-  <style>
-
-    /* 🟢 SELECTION (MATCH ABOUT PAGE) */
-    ::selection {
-      background: white;
-      color: white;
-    }
-
-    ::-moz-selection {
-      background: white;
-      color: white;
-    }
-
-    html, body {
-      margin: 0;
-      padding: 0;
-      background: #1a1a1a;
-      color: white;
-      font-family: 'Unbounded', sans-serif;
-      cursor: none;
-    }
-
-    * { cursor: none !important; }
-
-    /* ================= NAV ================= */
-
-    .top-left-title {
-      position: fixed;
-      top: 20px;
-      left: 20px;
-      font-size: 16px;
-      font-style: italic;
-      z-index: 3000;
-      display: flex;
-      gap: 10px;
-    }
-
-    .top-left-title a {
-      color: white;
-      text-decoration: none;
-      position: relative;
-    }
-
-    /* ❌ REMOVE PURPLE TEXT EFFECT COMPLETELY */
-    .top-left-title a::after {
-      display: none !important;
-    }
-
-    /* ================= CONTENT ================= */
-
-    .wrapper {
-      max-width: 1100px;
-      padding: 110px 40px;
-    }
-
-    .section {
-      margin-bottom: 80px;
-    }
-
-    .section-title {
-      font-size: 12px;
-      opacity: 0.5;
-      text-transform: uppercase;
-      margin-bottom: 25px;
-    }
-
-    .list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      align-items: center;
-    }
-
-    .name {
-      font-size: 56px;
-      font-weight: 300;
-      line-height: 1;
-      white-space: nowrap;
-    }
-
-    .dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      display: inline-block;
-      margin: 0 4px;
-      transform: translateY(-8px);
-    }
-
-    .dot.winter { background: #a855f7; }
-    .dot.summer { background: #3a3430; }
-
-    /* ================= CURSOR ================= */
-
-    .cursor {
-      position: fixed;
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: #39ff14;
-      box-shadow: 0 0 10px #39ff14, 0 0 20px #39ff14;
-      pointer-events: none;
-      transform: translate(-50%, -50%);
-      z-index: 9999;
-    }
-
-    .nav-hover .cursor {
-      background: #b56cff;
-      box-shadow: 0 0 12px #b56cff, 0 0 24px #b56cff;
-    }
-
-  </style>
 </head>
 
 <body>
 
-  <!-- NAV -->
-  <div class="top-left-title">
-    <a href="index.html">poppyseeds</a>
-    <span>·</span>
-    <a href="about.html">collective</a>
+<div class="top-left-title">
+  <a href="poppyseeds.html">poppyseeds</a>
+  <span>·</span>
+  <a href="about.html">collective</a>
+</div>
+
+<div class="cursor"></div>
+
+<div class="wrapper">
+
+  <div class="section">
+    <div class="section-title">Winter '24</div>
+    <div class="list">
+      <span class="name">Agata Luisa</span><span class="dot winter"></span>
+      <span class="name">Babs Wolbert</span><span class="dot winter"></span>
+    </div>
   </div>
 
-  <!-- CURSOR -->
-  <div class="cursor"></div>
-
-  <!-- CONTENT -->
-  <div class="wrapper">
-
-    <div class="section">
-      <div class="section-title">Winter '24 Edition</div>
-      <div class="list">
-        <span class="name">Agata Luisa</span><span class="dot winter"></span>
-        <span class="name">Alease B. Hansen-Evelyn</span><span class="dot winter"></span>
-        <span class="name">Anne Malling</span><span class="dot winter"></span>
-        <span class="name">Babs Wolbert</span><span class="dot winter"></span>
-        <span class="name">Dara Karadjov</span><span class="dot winter"></span>
-        <span class="name">Dorota Molčanová</span><span class="dot winter"></span>
-        <span class="name">Ella Mørtsell</span><span class="dot winter"></span>
-        <span class="name">Eran van Rijn</span><span class="dot winter"></span>
-        <span class="name">Işıl Ercanlı</span><span class="dot winter"></span>
-        <span class="name">Julie Hanuliaková</span><span class="dot winter"></span>
-        <span class="name">Lourien</span><span class="dot winter"></span>
-        <span class="name">Nati Ária</span><span class="dot winter"></span>
-        <span class="name">Sigurd Groendahl</span><span class="dot winter"></span>
-        <span class="name">Jelle Snijders</span><span class="dot winter"></span>
-        <span class="name">Oskuriende</span>
-      </div>
+  <div class="section">
+    <div class="section-title">Summer '25</div>
+    <div class="list">
+      <span class="name">Andreja Maiburovaite</span><span class="dot summer"></span>
+      <span class="name">Chun Chen</span><span class="dot summer"></span>
     </div>
-
-    <div class="section">
-      <div class="section-title">Summer '25 Edition</div>
-      <div class="list">
-        <span class="name">Andreja Maiburovaite</span><span class="dot summer"></span>
-        <span class="name">Alexandros Nikolaou</span><span class="dot summer"></span>
-        <span class="name">Babs Wolbert</span><span class="dot summer"></span>
-        <span class="name">Chun Chen</span><span class="dot summer"></span>
-        <span class="name">Charlotte Jones</span><span class="dot summer"></span>
-        <span class="name">Graziella Piras</span><span class="dot summer"></span>
-        <span class="name">Lourien</span><span class="dot summer"></span>
-        <span class="name">Martin van Grootel Hernandez</span><span class="dot summer"></span>
-        <span class="name">Mili Calderon</span><span class="dot summer"></span>
-        <span class="name">Mizki Nakanishi</span><span class="dot summer"></span>
-        <span class="name">Patricija Gonsalesa-Ortisa</span><span class="dot summer"></span>
-        <span class="name">Sue and Neul</span><span class="dot summer"></span>
-        <span class="name">Yeraz Kortun</span>
-      </div>
-    </div>
-
   </div>
 
-  <!-- CURSOR SCRIPT (WITH WORKING TAIL) -->
-  <script>
-    const cursor = document.querySelector(".cursor");
+</div>
 
-    document.addEventListener("mousemove", (e) => {
-
-      cursor.style.left = e.clientX + "px";
-      cursor.style.top = e.clientY + "px";
-
-      const dot = document.createElement("div");
-      document.body.appendChild(dot);
-
-      dot.style.position = "fixed";
-      dot.style.left = e.clientX + "px";
-      dot.style.top = e.clientY + "px";
-      dot.style.width = "10px";
-      dot.style.height = "10px";
-      dot.style.borderRadius = "50%";
-      dot.style.background = "#39ff14";
-      dot.style.boxShadow = "0 0 10px #39ff14";
-      dot.style.pointerEvents = "none";
-      dot.style.transform = "translate(-50%, -50%)";
-      dot.style.zIndex = "9998";
-
-      dot.style.opacity = "1";
-      dot.style.transition = "opacity 0.8s ease-out, transform 0.8s ease-out";
-
-      setTimeout(() => {
-        dot.style.opacity = "0";
-        dot.style.transform = "translate(-50%, -50%) scale(0.5)";
-      }, 10);
-
-      setTimeout(() => {
-        dot.remove();
-      }, 800);
-    });
-
-    const nav = document.querySelector(".top-left-title");
-
-    nav.addEventListener("mouseenter", () => {
-      document.body.classList.add("nav-hover");
-    });
-
-    nav.addEventListener("mouseleave", () => {
-      document.body.classList.remove("nav-hover");
-    });
-  </script>
+<script src="script.js"></script>
 
 </body>
 </html>
