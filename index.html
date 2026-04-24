@@ -7,12 +7,11 @@
   <!-- 🔗 FAVICON -->
   <link rel="icon" type="image/png" href="images/favicon.png">
 
-  <!-- 🔗 OPEN GRAPH (WHATSAPP / iMESSAGE / DISCORD) -->
+  <!-- 🔗 OPEN GRAPH -->
   <meta property="og:title" content="Poppyseeds Collective">
   <meta property="og:description" content="Magazine & Collective initiated by Manuel Phil. Bischof & Artemis Xeniou">
 
-  <!-- ⚠️ IMPORTANT: must be absolute URL -->
- <meta property="og:image" content="https://raw.githubusercontent.com/USERNAME/REPO/main/images/Media-poppyseeds.jpg">
+  <meta property="og:image" content="https://raw.githubusercontent.com/USERNAME/REPO/main/images/Media-poppyseeds.jpg">
   <meta property="og:image:type" content="image/jpeg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -20,7 +19,6 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://poppyseeds.space">
 
-  <!-- helps WhatsApp + Twitter fallback -->
   <meta name="twitter:card" content="summary_large_image">
 
   <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;400;500&display=swap" rel="stylesheet">
@@ -32,7 +30,7 @@
       padding: 0;
       height: 100%;
       font-family: 'Unbounded', sans-serif;
-      background: #111;
+      background: #1a1a1a;
       cursor: none;
     }
 
@@ -41,6 +39,18 @@
     a {
       text-decoration: none;
       color: inherit;
+    }
+
+    /* 🌟 TOP LEFT TITLE */
+    .top-left-title {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      font-size: 24px;
+      font-style: italic;
+      color: white;
+      z-index: 2000;
+      letter-spacing: -0.5px;
     }
 
     /* 🌊 FLOAT */
@@ -170,6 +180,11 @@
 </head>
 
 <body>
+
+  <!-- 🌟 TOP LEFT BRAND -->
+  <div class="top-left-title">
+    poppyseeds·collective
+  </div>
 
   <!-- LEFT TITLE -->
   <a href="poppyseeds.html">
