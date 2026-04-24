@@ -15,6 +15,7 @@
 
   <style>
 
+    /* invisible selection */
     ::selection {
       background: white;
       color: white;
@@ -32,7 +33,6 @@
       color: white;
       font-family: 'Unbounded', sans-serif;
       cursor: none;
-      height: 100%;
     }
 
     * { cursor: none !important; }
@@ -45,18 +45,24 @@
       left: 20px;
       font-size: 16px;
       font-style: italic;
-      z-index: 3000;
       display: flex;
       gap: 10px;
+      z-index: 3000;
     }
 
     .top-left-title a {
-      color: white;
+      color: white;            /* ALWAYS WHITE */
       text-decoration: none;
       position: relative;
     }
 
-    /* ❌ REMOVE ANY PURPLE TEXT EFFECT */
+    /* ❌ FORCE REMOVE ANY HOVER COLOR EFFECTS */
+    .top-left-title a:hover,
+    .top-left-title a:visited,
+    .top-left-title a:active {
+      color: white !important;
+    }
+
     .top-left-title a::after {
       display: none !important;
     }
@@ -88,7 +94,6 @@
     .ig {
       color: white;
       text-decoration: none;
-      transition: 0.2s;
     }
 
     .ig:hover {
