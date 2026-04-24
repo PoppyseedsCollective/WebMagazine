@@ -15,6 +15,17 @@
 
   <style>
 
+    /* 🟢 SELECTION (MATCH ABOUT PAGE) */
+    ::selection {
+      background: white;
+      color: white;
+    }
+
+    ::-moz-selection {
+      background: white;
+      color: white;
+    }
+
     html, body {
       margin: 0;
       padding: 0;
@@ -42,6 +53,12 @@
     .top-left-title a {
       color: white;
       text-decoration: none;
+      position: relative;
+    }
+
+    /* ❌ REMOVE PURPLE TEXT EFFECT COMPLETELY */
+    .top-left-title a::after {
+      display: none !important;
     }
 
     /* ================= CONTENT ================= */
@@ -167,17 +184,15 @@
 
   </div>
 
-  <!-- CURSOR SCRIPT (FIXED TAIL) -->
+  <!-- CURSOR SCRIPT (WITH WORKING TAIL) -->
   <script>
     const cursor = document.querySelector(".cursor");
 
     document.addEventListener("mousemove", (e) => {
 
-      // main cursor
       cursor.style.left = e.clientX + "px";
       cursor.style.top = e.clientY + "px";
 
-      // 🌿 TRAIL DOT (THIS WAS MISSING)
       const dot = document.createElement("div");
       document.body.appendChild(dot);
 
