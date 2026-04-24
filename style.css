@@ -123,33 +123,25 @@ html, body {
 
 
 
-.container {
-  display: flex;
-  width: 100vw;
-  height: 100vh;
+.credit {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+
+  font-size: 9px;
+  color: rgba(255,255,255,0.25);
+
+  letter-spacing: 0.5px;
+  z-index: 2000;
+
+  transition: transform 0.2s ease;
 }
 
-.issue {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.issue.left {
-  padding-left: 60px;
-}
-
-.issue.right {
-  padding-right: 60px;
-}
-
-.img-wrap {
-  position: relative;
-  max-width: 80%;
-}
-
-.img-wrap img {
-  width: 100%;
-  display: block;
+/* small “jump” on hover */
+.credit:hover {
+  transform: rotate(180deg) translateY(-6px);
+  color: rgba(255,255,255,0.4);
 }
