@@ -4,18 +4,12 @@
   <meta charset="UTF-8">
   <title>Poppyseeds Collective</title>
 
-  <!-- 🔗 FAVICON -->
   <link rel="icon" type="image/png" href="images/favicon.png">
 
-  <!-- 🔗 OPEN GRAPH -->
   <meta property="og:title" content="Poppyseeds Collective">
   <meta property="og:description" content="Magazine & Collective initiated by Manuel Phil. Bischof & Artemis Xeniou">
 
   <meta property="og:image" content="https://raw.githubusercontent.com/USERNAME/REPO/main/images/Media-poppyseeds.jpg">
-  <meta property="og:image:type" content="image/jpeg">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://poppyseeds.space">
 
@@ -41,16 +35,27 @@
       color: inherit;
     }
 
-    /* 🌟 TOP LEFT TITLE */
+    /* 🌟 TOP LEFT NAV */
     .top-left-title {
       position: fixed;
       top: 20px;
       left: 20px;
-      font-size: 24px;
+      font-size: 14px;
       font-style: italic;
       color: white;
       z-index: 2000;
-      letter-spacing: -0.5px;
+      letter-spacing: -0.3px;
+      display: flex;
+      gap: 10px;
+    }
+
+    .top-left-title a {
+      opacity: 0.9;
+      transition: opacity 0.2s ease;
+    }
+
+    .top-left-title a:hover {
+      opacity: 1;
     }
 
     /* 🌊 FLOAT */
@@ -68,40 +73,6 @@
       60%  { transform: translate(2px, 3px); }
       80%  { transform: translate(-2px, -3px); }
       100% { transform: translate(0px, 0px); }
-    }
-
-    /* ================= TITLES ================= */
-
-    .title {
-      position: fixed;
-      top: 50%;
-      font-weight: 300;
-      letter-spacing: -1px;
-      color: white;
-      mix-blend-mode: difference;
-      z-index: 1000;
-
-      writing-mode: vertical-rl;
-      font-size: clamp(40px, 8vw, 111px);
-    }
-
-    .title.left {
-      left: 20px;
-      transform: translateY(-50%) rotate(180deg);
-    }
-
-    .title.right {
-      right: 20px;
-      transform: translateY(-50%) rotate(180deg);
-    }
-
-    .inner {
-      display: inline-block;
-      animation: softFloat 3s infinite ease-in-out;
-    }
-
-    .inner.shake {
-      animation: quakeShake 0.4s steps(2, end);
     }
 
     /* ================= LAYOUT ================= */
@@ -142,10 +113,12 @@
     /* ================= MOBILE ================= */
 
     @media (max-width: 768px) {
-      .title { font-size: 30px; }
 
-      .title.left { left: 10px; }
-      .title.right { right: 10px; }
+      .top-left-title {
+        font-size: 12px;
+        left: 10px;
+        top: 15px;
+      }
 
       .container {
         flex-direction: column;
@@ -181,24 +154,12 @@
 
 <body>
 
-  <!-- 🌟 TOP LEFT BRAND -->
+  <!-- 🌟 TOP LEFT NAV -->
   <div class="top-left-title">
-    poppyseeds·collective
+    <a href="poppyseeds.html">poppyseeds</a>
+    <span>·</span>
+    <a href="about.html">collective</a>
   </div>
-
-  <!-- LEFT TITLE -->
-  <a href="poppyseeds.html">
-    <div class="title left">
-      <span class="inner">Poppyseeds</span>
-    </div>
-  </a>
-
-  <!-- RIGHT TITLE -->
-  <a href="about.html">
-    <div class="title right">
-      <span class="inner">Collective</span>
-    </div>
-  </a>
 
   <div class="container">
 
@@ -244,24 +205,6 @@
       setTimeout(() => dot.style.opacity = "0", 10);
       setTimeout(() => dot.remove(), 800);
     });
-
-    const titles = document.querySelectorAll(".inner");
-
-    function triggerShake() {
-      titles.forEach(t => t.classList.add("shake"));
-
-      setTimeout(() => {
-        titles.forEach(t => t.classList.remove("shake"));
-        scheduleNext();
-      }, 400);
-    }
-
-    function scheduleNext() {
-      const delay = 2000 + Math.random() * 2000;
-      setTimeout(triggerShake, delay);
-    }
-
-    scheduleNext();
   </script>
 
 </body>
