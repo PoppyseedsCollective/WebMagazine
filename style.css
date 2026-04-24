@@ -120,3 +120,36 @@ html, body {
   line-height: 1.6;
   opacity: 0.9;
 }
+
+
+
+.container {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+}
+
+.issue {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.issue.left {
+  padding-left: 60px;
+}
+
+.issue.right {
+  padding-right: 60px;
+}
+
+.img-wrap {
+  position: relative;
+  max-width: 80%;
+}
+
+.img-wrap img {
+  width: 100%;
+  display: block;
+}
