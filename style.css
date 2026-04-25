@@ -210,14 +210,20 @@ html, body {
 
 /* ================= LINKS ================= */
 
+/* Remove global jump from all links */
 a {
   color: white;
   text-decoration: none;
-  display: inline-block;              /* needed for transform */
-  transition: transform 0.2s ease, color 0.2s ease;
+  transition: color 0.2s ease; /* only color changes for other links */
 }
 
-a:hover {
-  color: #b56cff;
-  transform: translateY(-4px);        /* small jump */
+/* Only make the names (class ig) jump */
+a.ig {
+  display: inline-block;                    /* needed for transform */
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+a.ig:hover {
+  transform: translateY(-4px) scale(1.05); /* lift + slight scale */
+  color: #b56cff;                           /* purplish accent */
 }
