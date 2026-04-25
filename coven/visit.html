@@ -127,29 +127,36 @@ body.flash {
 /* ---------------- MOBILE ---------------- */
 @media (max-width: 600px) {
 
+  body {
+    align-items: flex-start; /* allow card to grow downwards */
+    justify-content: center;
+    padding: 10px;           /* small padding from screen edges */
+  }
+
   .card {
-    width: 80vw;       /* 80% of viewport width */
-    height: 80vh;      /* 80% of viewport height */
-    padding: 32px;
-    display: flex;
+    width: 80vw;    /* 80% of screen width */
+    height: 80vh;   /* 80% of screen height */
+    padding: 24px;
     flex-direction: column;
     justify-content: space-between;
   }
 
   .top {
-    font-size: 13px;
+    font-size: 14px;
     letter-spacing: 0.25em;
   }
 
   .glyph {
-    font-size: 30px;
+    font-size: 36px;
     letter-spacing: 0.45em;
   }
 
   .bottom {
-    font-size: 14px;
+    font-size: 16px;
     line-height: 2;
   }
+
+}
 
 
 }
