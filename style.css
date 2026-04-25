@@ -1,3 +1,4 @@
+/* ================= GLOBAL STYLES ================= */
 
 html, body {
   margin: 0;
@@ -108,18 +109,27 @@ html, body {
   padding: 80px 40px;
 }
 
-.title {
-  font-size: 25px;
-  font-weight: 300;
+/* ================= ABOUT PAGE READABILITY ================= */
+
+.wrapper-about .title {
+  font-size: 28px;
+  font-weight: 400;
+  color: #ffffff;
   margin-bottom: 40px;
-  white-space: pre-line;
 }
 
-.text {
-  font-size: 12px;
-  line-height: 1.6;
-  opacity: 0.9;
+.wrapper-about .text {
+  font-size: 14px;
+  line-height: 1.8;
+  color: #e0e0e0;
+  opacity: 1;
 }
+
+.wrapper-about .text p {
+  margin-bottom: 16px;
+}
+
+/* ================= MAIN PAGE ================= */
 
 .container {
   display: flex;
@@ -145,8 +155,7 @@ html, body {
 .img-wrap {
   position: relative;
   max-width: 76%;
-  margin-top: 40px; /* adjust the number to increase/decrease spacing */
-
+  margin-top: 40px; /* adjust spacing */
 }
 
 .img-wrap img {
@@ -155,47 +164,60 @@ html, body {
 }
 
 .img-wrap .label {
-  position: static;        /* remove any absolute positioning */
+  position: static;        /* label below image */
   font-size: 10px;         /* smaller text */
-  margin-top: 4px;         /* space between image and text */
-  text-align: right;       /* aligns label to the right under the image */
+  margin-top: 4px;         /* space under image */
+  text-align: right;       /* align right */
   color: white;
   font-weight: 400;
-
 }
+
+/* ================= CREDIT ================= */
 
 .credit-horizontal {
   position: fixed;
   right: 20px;
   bottom: 20px;
-
-  writing-mode: vertical-rl;
-  transform: rotate(180deg);
-
   font-size: 9px;
   color: rgba(255,255,255,0.25);
-
   letter-spacing: 0.5px;
   z-index: 2000;
-
   transition: transform 0.2s ease;
 }
 
-/* small “jump” on hover */
+.credit-horizontal:hover {
+  color: rgba(255,255,255,0.4);
+}
+
+/* vertical credit (if needed) */
+.credit {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-size: 9px;
+  color: rgba(255,255,255,0.25);
+  letter-spacing: 0.5px;
+  z-index: 2000;
+  transition: transform 0.2s ease;
+}
+
 .credit:hover {
   transform: rotate(180deg) translateY(-6px);
   color: rgba(255,255,255,0.4);
 }
 
+/* ================= LINKS ================= */
+
 a {
   color: white;
   text-decoration: none;
-  display: inline-block;             /* needed for transform to work properly */
-  transition: transform 0.2s ease, color 0.2s ease; /* smooth jump and color change */
+  display: inline-block;              /* needed for transform */
+  transition: transform 0.2s ease, color 0.2s ease;
 }
 
 a:hover {
-  color: #b56cff;                     /* optional hover color */
-  transform: translateY(-4px);        /* small jump upward */
+  color: #b56cff;
+  transform: translateY(-4px);        /* small jump */
 }
-
