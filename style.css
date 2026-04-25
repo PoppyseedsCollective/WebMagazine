@@ -117,7 +117,7 @@ html, body {
 .wrapper-about-text .about.text {
   font-size: 22px;          /* <-- Adjust this for main paragraph size */
   font-weight: 300;         /* light and elegant */
-  line-height: 1.8;         /* space between lines, adjust for readability */
+  line-height: 1.4;         /* space between lines, adjust for readability */
   color: #f0f0f0;           /* bright and readable */
   opacity: 1;
 }
