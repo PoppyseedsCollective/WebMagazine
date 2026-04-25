@@ -48,18 +48,19 @@
     padding: 40px;
   }
 
+  /* TOP REPLACED (your request) */
   .top {
+    text-align: center;
     font-size: 10px;
     letter-spacing: 0.2em;
     opacity: 0.5;
     line-height: 1.6;
-    text-align: center;
   }
 
+  /* ONLY GLYPHS CLICKABLE */
   .center {
     text-align: center;
     line-height: 1.4;
-    cursor: pointer;
     user-select: none;
   }
 
@@ -72,6 +73,7 @@
       0 1px 0 rgba(255,255,255,0.05),
       0 -1px 1px rgba(0,0,0,0.6);
     margin: 6px 0;
+    cursor: pointer;
   }
 
   .bottom {
@@ -81,7 +83,22 @@
     text-align: center;
   }
 
-  /* selection = disappearance */
+  .bottom span {
+    display: block;
+  }
+
+  .bottom a {
+    color: #d6d2c8;
+    text-decoration: none;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+  }
+
+  .bottom a:hover {
+    color: #f0e9dd;
+    text-shadow: 0 0 6px rgba(255, 240, 210, 0.15);
+  }
+
+  /* 🧠 selection = disappearance */
   ::selection {
     background: #000;
     color: #000;
@@ -94,14 +111,14 @@
 
 <div class="card">
 
-  <!-- ONLY TEXT CHANGED (structure preserved) -->
+  <!-- TOP TEXT UPDATED -->
   <div class="top">
     Consultations<br>
     Charm<br>
     Correspondences
   </div>
 
-  <!-- SAME STRUCTURE -->
+  <!-- ONLY THIS IS INTERACTIVE -->
   <div class="center" id="glyph-container">
     <div class="glyph">RM</div>
     <div class="glyph">AE</div>
@@ -109,8 +126,9 @@
   </div>
 
   <div class="bottom">
-    +32 XXX XX XX XX<br>
-    We respond only to written messages.
+    <span>Consultations</span>
+    <span><a href="voyelle/marma.html">Charm</a></span>
+    <span>Correspondences</span>
   </div>
 
 </div>
@@ -120,7 +138,7 @@
   const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
   function randomFragment() {
-    const len = Math.random() < 0.5 ? 2 : 3; // 2 or 3 letters
+    const len = Math.random() < 0.5 ? 2 : 3; // ER / DRG style
 
     let out = "";
     for (let i = 0; i < len; i++) {
@@ -135,10 +153,10 @@
     });
   }
 
-  // on load
+  // ON LOAD
   shuffleGlyphs();
 
-  // only glyph area clickable
+  // ONLY CLICK ON GLYPHS AREA
   document.getElementById("glyph-container").addEventListener("click", shuffleGlyphs);
 </script>
 
