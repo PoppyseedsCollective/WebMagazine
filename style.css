@@ -108,7 +108,7 @@ html, body {
   max-width: 707px;        /* keeps text from stretching too wide */
   margin: 80px auto;       /* centers it vertically and horizontally */
   padding: 20px;           /* invisible frame around text */
-  margin-right: 100px;
+  margin-right: -100px;
 }
 
 /* ================= ABOUT PAGE TEXT ================= */
