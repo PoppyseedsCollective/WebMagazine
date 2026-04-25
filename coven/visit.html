@@ -29,7 +29,6 @@
     color: #d6d2c8;
   }
 
-  /* subtle paper texture */
   body::before {
     content: "";
     position: fixed;
@@ -47,7 +46,7 @@
     flex-direction: column;
     justify-content: space-between;
     padding: 40px;
-    cursor: pointer; /* indicates interactivity */
+    cursor: pointer;
   }
 
   .top {
@@ -72,7 +71,6 @@
       0 -1px 1px rgba(0,0,0,0.6);
 
     margin: 6px 0;
-    transition: opacity 0.2s ease;
   }
 
   .bottom {
@@ -107,11 +105,10 @@
     A practice of perception
   </div>
 
-  <!-- GLYPHS -->
   <div class="center">
     <div class="glyph">RM</div>
     <div class="glyph">AE</div>
-    <div class="glyph">MN</div>
+    <div class="glyph">MNO</div>
   </div>
 
   <div class="bottom">
@@ -124,7 +121,6 @@
 
 <script>
   const glyphEl = document.querySelectorAll(".glyph");
-
   const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
   function randomPair() {
@@ -138,9 +134,12 @@
     });
   }
 
+  // 🔥 1. randomize ON LOAD
+  shuffleGlyphs();
+
+  // 🔥 2. randomize ON CLICK
   document.querySelector(".card").addEventListener("click", shuffleGlyphs);
 </script>
 
 </body>
 </html>
-
