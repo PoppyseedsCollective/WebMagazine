@@ -10,13 +10,18 @@
     padding: 0;
     height: 100%;
     background: #0f0f0e;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     font-family: serif;
     color: #d6d2c8;
   }
 
+  /* CENTERING THE CARD */
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* subtle paper noise */
   body::before {
     content: "";
     position: fixed;
@@ -27,17 +32,18 @@
     pointer-events: none;
   }
 
+  /* CARD — BETWEEN SIZE */
   .card {
-    width: 420px;   /* ↑ was 320px */
-    height: 540px;   /* ↑ was 420px */
+    width: 360px;
+    height: 480px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 60px;   /* ↑ more breathing space */
+    padding: 54px;
   }
 
   .top {
-    font-size: 11px; /* slightly bigger */
+    font-size: 11px;
     letter-spacing: 0.22em;
     opacity: 0.55;
   }
@@ -47,7 +53,7 @@
   }
 
   .glyph {
-    font-size: 34px;  /* ↑ was 28px */
+    font-size: 30px;
     letter-spacing: 0.45em;
     font-weight: 300;
     color: #d6d2c8;
@@ -58,7 +64,7 @@
   }
 
   .bottom {
-    font-size: 12px;  /* slightly bigger */
+    font-size: 12px;
     line-height: 1.6;
     opacity: 0.7;
   }
