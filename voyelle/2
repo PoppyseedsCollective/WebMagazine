@@ -1,1 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Coven</title>
 
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    background: #0f0f0e;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'EB Garamond', serif;
+    color: #d6d2c8;
+  }
+
+  /* subtle paper texture */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: 
+      radial-gradient(rgba(255,255,255,0.02) 1px, transparent 1px);
+    background-size: 3px 3px;
+    opacity: 0.15;
+    pointer-events: none;
+  }
+
+  .card {
+    width: 320px;
+    height: 420px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 40px;
+  }
+
+  .top {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    opacity: 0.5;
+  }
+
+  .center {
+    text-align: center;
+    line-height: 1.4;
+  }
+
+  .glyph {
+    font-size: 28px;
+    letter-spacing: 0.4em;
+    font-weight: 300;
+
+    /* deboss effect */
+    color: #cfcbbf;
+    text-shadow:
+      0 1px 0 rgba(255,255,255,0.05),
+      0 -1px 1px rgba(0,0,0,0.6);
+  }
+
+  .bottom {
+    font-size: 11px;
+    line-height: 1.6;
+    opacity: 0.7;
+  }
+
+  .bottom span {
+    display: block;
+  }
+
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+  <div class="top">
+    A practice of perception
+  </div>
+
+  <div class="center">
+    <div class="glyph">YL</div>
+    <div class="glyph">AE</div>
+    <div class="glyph">ON</div>
+  </div>
+
+  <div class="bottom">
+    <span>Consultations</span>
+    <span>Objects</span>
+    <span>Correspondences</span>
+  </div>
+
+</div>
+
+</body>
+</html>
