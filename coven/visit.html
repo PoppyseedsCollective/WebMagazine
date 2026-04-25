@@ -242,10 +242,11 @@ glyphEl.forEach(el => el.addEventListener("click", shuffleGlyphs));
 
 // resonance flash effect
 const resonance = document.getElementById("resonance");
-resonance.addEventListener("click", e => {
-  e.preventDefault();
-  document.body.classList.add("flash");
-  setTimeout(() => document.body.classList.remove("flash"), 150);
+if (resonance) {
+  resonance.addEventListener("click", e => {
+    e.preventDefault();
+    document.body.classList.add("flash");
+    setTimeout(() => document.body.classList.remove("flash"), 100);
 });
 </script>
 
