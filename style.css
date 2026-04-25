@@ -153,14 +153,11 @@ html, body {
 }
 
 .img-wrap .label {
-  position: absolute;       /* position relative to .img-wrap */
-  bottom: 8px;              /* distance from bottom of image */
-  right: 8px;               /* distance from right edge */
-  font-size: 12px;          /* smaller text */
-  background: rgba(0,0,0,0.5); /* optional: subtle background for contrast */
+  position: static;        /* remove any absolute positioning */
+  font-size: 12px;         /* smaller text */
+  margin-top: 6px;         /* space between image and text */
+  text-align: right;       /* aligns label to the right under the image */
   color: white;
-  padding: 2px 6px;
-  border-radius: 3px;       /* optional: rounded corners */
   font-weight: 400;
 }
 
