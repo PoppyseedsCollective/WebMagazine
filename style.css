@@ -111,7 +111,7 @@ html, body {
 
 /* ================= ABOUT PAGE TEXT ================= */
 .wrapper-about .text {
-  font-size: 15px;           /* readable size */
+  font-size: 22px;           /* readable size */
   font-weight: 300;          /* lighter for elegance */
   line-height: 2;            /* more vertical spacing */
   color: #f0f0f0;            /* bright, readable */
