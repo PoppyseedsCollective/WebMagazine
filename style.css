@@ -167,8 +167,7 @@ html, body {
 
 /* ================= CREDIT ================= */
 
-/* vertical credit */
-.credit vertical {
+.credit.vertical {
   position: fixed;
   right: 20px;
   bottom: 20px;
@@ -181,7 +180,7 @@ html, body {
   transition: transform 0.2s ease, color 0.2s ease;
 }
 
-.credit:hover {
+.credit.vertical:hover {
   transform: rotate(180deg) translateY(-6px);
   color: rgba(255,255,255,0.4);
 }
