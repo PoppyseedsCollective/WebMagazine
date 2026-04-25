@@ -219,11 +219,16 @@ function randomLetter() {
   return weightedLetters[Math.floor(Math.random() * weightedLetters.length)];
 }
 
-function randomGlyph() {
-  const len = Math.random() < 0.5 ? 2 : 3;
-  let out = "";
-  for (let i = 0; i < len; i++) out += randomLetter();
-  return out;
+function shuffleGlyphs() {
+  const threeLetterIndex = Math.floor(Math.random() * glyphEl.length); // pick 0, 1, or 2
+  glyphEl.forEach((el, index) => {
+    const len = index === threeLetterIndex ? 3 : 2;
+    let out = "";
+    for (let i = 0; i < len; i++) {
+      out += randomLetter();
+    }
+    el.textContent = out;
+  });
 }
 
 function shuffleGlyphs() {
