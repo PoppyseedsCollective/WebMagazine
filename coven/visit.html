@@ -1,12 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-<link rel="icon" href="data:image/svg+xml,
-<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'>
-  <circle cx='50' cy='50' r='22' fill='%23c8a85a'/>
-</svg>">
-
 <meta charset="UTF-8">
 <title>Coven</title>
 
@@ -128,14 +122,14 @@ body.flash {
 @media (max-width: 600px) {
 
   body {
-    align-items: flex-start; /* allow card to grow downwards */
+    align-items: flex-start;
     justify-content: center;
-    padding: 10px;           /* small padding from screen edges */
+    padding: 10px;
   }
 
   .card {
-    width: 80vw;    /* 80% of screen width */
-    height: 80vh;   /* 80% of screen height */
+    width: 80vw;
+    height: 80vh;
     padding: 24px;
     flex-direction: column;
     justify-content: space-between;
@@ -155,7 +149,6 @@ body.flash {
     font-size: 16px;
     line-height: 2;
   }
-
 }
 
 </style>
@@ -184,79 +177,64 @@ body.flash {
 </div>
 
 <script>
-  const glyphEl = document.querySelectorAll(".glyph");
+const glyphEl = document.querySelectorAll(".glyph");
+const weightedLetters = [
+  "E","E","E","E","E","E","E","E","E","E",
+  "A","A","A","A","A","A",
+  "R","R","R","R","R",
+  "S","S","S","S",
+  "T","T","T","T",
+  "N","N","N","N",
+  "I","I","I","I",
+  "L","L","L",
+  "U","U","U",
+  "O","O","O",
+  "D","D","D",
+  "C","C","C",
+  "M","M",
+  "P","P",
+  "G","G",
+  "B","B",
+  "V","V",
+  "H","H",
+  "F","F",
+  "Q","Q",
+  "Y","Y",
+  "J",
+  "X",
+  "Z",
+  "K",
+  "W"
+];
 
-  const weightedLetters = [
-    "E","E","E","E","E","E","E","E","E","E",
-    "A","A","A","A","A","A",
-    "R","R","R","R","R",
-    "S","S","S","S",
-    "T","T","T","T",
-    "N","N","N","N",
-    "I","I","I","I",
-    "L","L","L",
-    "U","U","U",
-    "O","O","O",
-    "D","D","D",
-    "C","C","C",
-    "M","M",
-    "P","P",
-    "G","G",
-    "B","B",
-    "V","V",
-    "H","H",
-    "F","F",
-    "Q","Q",
-    "Y","Y",
-    "J",
-    "X",
-    "Z",
-    "K",
-    "W"
-  ];
+function randomLetter() {
+  return weightedLetters[Math.floor(Math.random() * weightedLetters.length)];
+}
 
-  function randomLetter() {
-    return weightedLetters[
-      Math.floor(Math.random() * weightedLetters.length)
-    ];
-  }
+function randomGlyph() {
+  const len = Math.random() < 0.5 ? 2 : 3;
+  let out = "";
+  for (let i = 0; i < len; i++) out += randomLetter();
+  return out;
+}
 
-  function randomGlyph() {
-    const len = Math.random() < 0.5 ? 2 : 3;
-    let out = "";
-    for (let i = 0; i < len; i++) {
-      out += randomLetter();
-    }
-    return out;
-  }
+function shuffleGlyphs() {
+  glyphEl.forEach(el => el.textContent = randomGlyph());
+}
 
-  function shuffleGlyphs() {
-    glyphEl.forEach(el => {
-      el.textContent = randomGlyph();
-    });
-  }
+// initial load
+shuffleGlyphs();
 
-  // initial load
-  shuffleGlyphs();
+// glyph interaction
+glyphEl.forEach(el => el.addEventListener("click", shuffleGlyphs));
 
-  // glyph interaction
-  glyphEl.forEach(el => {
-    el.addEventListener("click", shuffleGlyphs);
-  });
-
-  // resonance flash
-  const resonance = document.getElementById("resonance");
-
-  resonance.addEventListener("click", (e) => {
-    e.preventDefault();
-
-    document.body.classList.add("flash");
-
-    setTimeout(() => {
-      document.body.classList.remove("flash");
-    }, 150);
-  });
-
+// resonance flash
+const resonance = document.getElementById("resonance");
+resonance.addEventListener("click", e => {
+  e.preventDefault();
+  document.body.classList.add("flash");
+  setTimeout(() => document.body.classList.remove("flash"), 150);
+});
 </script>
 
 </body>
