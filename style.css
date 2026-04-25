@@ -110,16 +110,41 @@ html, body {
 }
 
 /* ================= ABOUT PAGE TEXT ================= */
-.wrapper-about .text {
-  font-size: 12px;           /* readable size */
-  font-weight: 300;          /* lighter for elegance */
-  line-height: 2;            /* more vertical spacing */
-  color: #f0f0f0;            /* bright, readable */
+
+/* Main About Text */
+.wrapper-about-text .about.text {
+  font-size: 22px;          /* <-- Adjust this for main paragraph size */
+  font-weight: 300;         /* light and elegant */
+  line-height: 1.8;         /* space between lines, adjust for readability */
+  color: #f0f0f0;           /* bright and readable */
   opacity: 1;
 }
 
-.wrapper-about .text p {
-  margin-bottom: 20px;       /* extra space between paragraphs */
+.wrapper-about-text .about.text p {
+  margin-bottom: 20px;      /* space between paragraphs */
+}
+
+/* Credit / Names */
+.wrapper-about-text .about.credit {
+  font-size: 14px;          /* <-- Adjust this for credit / names size */
+  line-height: 1.6;
+  color: #d0d0d0;           /* slightly dimmer than main text */
+  margin-top: 20px;
+}
+
+.wrapper-about-text .about.credit p {
+  margin-bottom: 10px;
+}
+
+/* Make only the names inside credits jump on hover */
+.wrapper-about-text .about.credit a.ig {
+  display: inline-block;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.wrapper-about-text .about.credit a.ig:hover {
+  transform: translateY(-4px) scale(1.05); /* lift + slight scale */
+  color: #b56cff;
 }
 
 /* ================= MAIN PAGE ================= */
