@@ -241,7 +241,7 @@ a.ig:hover {
   /* Stack issues vertically */
   .container {
     flex-direction: column;
-    align-items: center;   /* center images */
+    align-items: left;   /* center images */
     height: auto;
     padding: 20px;
   }
@@ -254,11 +254,11 @@ a.ig:hover {
 
   .img-wrap {
     max-width: 70%;       /* smaller images */
-    margin-top: 20px;
+    margin-top: 30px;
   }
 
   .img-wrap .label {
-    text-align: center;
+    text-align: left;
     margin-right: 0;
     font-size: 12px;
   }
@@ -271,18 +271,16 @@ a.ig:hover {
 
   /* About text adjustments */
   .wrapper-about-text {
-    padding: 15px;
+    padding: 20px;
   }
 
   .about.text {
-    font-size: 14px;
-    line-height: 1.8;
-    text-align: left;
+    font-size: 14px;   /* smaller for mobile */
+    line-height: 1.8;  /* readable spacing */
   }
 
   .about.credit p {
     font-size: 12px;
-    text-align: left;
   }
 
   /* Vertical credit at bottom right */
