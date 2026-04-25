@@ -53,7 +53,7 @@ const ctx = canvas.getContext('2d');
 // Draw green circle
 ctx.fillStyle = '#39ff14';  // bright neon green
 ctx.beginPath();
-ctx.arc(16, 16, 10, 0, Math.PI * 2);
+ctx.arc(16, 16, 5, 0, Math.PI * 2);
 ctx.fill();
 
 // Convert canvas to data URL
