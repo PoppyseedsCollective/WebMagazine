@@ -48,25 +48,24 @@
     padding: 40px;
   }
 
-  /* TOP TEXT REPLACED */
   .top {
-    text-align: center;
-    font-size: 11px;
+    font-size: 10px;
     letter-spacing: 0.2em;
-    opacity: 0.6;
-    line-height: 1.8;
+    opacity: 0.5;
+    line-height: 1.6;
+    text-align: center;
   }
 
-  /* ONLY THIS IS CLICKABLE */
   .center {
     text-align: center;
+    line-height: 1.4;
     cursor: pointer;
     user-select: none;
   }
 
   .glyph {
     font-size: 28px;
-    letter-spacing: 0.35em;
+    letter-spacing: 0.4em;
     font-weight: 300;
     color: #cfcbbf;
     text-shadow:
@@ -76,10 +75,10 @@
   }
 
   .bottom {
-    text-align: center;
     font-size: 11px;
-    opacity: 0.7;
     line-height: 1.6;
+    opacity: 0.7;
+    text-align: center;
   }
 
   /* selection = disappearance */
@@ -95,14 +94,14 @@
 
 <div class="card">
 
-  <!-- NEW TOP -->
+  <!-- ONLY TEXT CHANGED (structure preserved) -->
   <div class="top">
     Consultations<br>
     Charm<br>
     Correspondences
   </div>
 
-  <!-- CLICKABLE GLYPHS ONLY -->
+  <!-- SAME STRUCTURE -->
   <div class="center" id="glyph-container">
     <div class="glyph">RM</div>
     <div class="glyph">AE</div>
@@ -118,17 +117,10 @@
 
 <script>
   const glyphEls = document.querySelectorAll(".glyph");
-
   const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
-  // variable-length fragments (your request)
   function randomFragment() {
-    const modes = [
-      2, // ER, DG
-      3  // DRG, SRG, VDM
-    ];
-
-    const len = modes[Math.floor(Math.random() * modes.length)];
+    const len = Math.random() < 0.5 ? 2 : 3; // 2 or 3 letters
 
     let out = "";
     for (let i = 0; i < len; i++) {
@@ -143,10 +135,10 @@
     });
   }
 
-  // ON LOAD
+  // on load
   shuffleGlyphs();
 
-  // ONLY CLICK ON GLYPHS AREA
+  // only glyph area clickable
   document.getElementById("glyph-container").addEventListener("click", shuffleGlyphs);
 </script>
 
