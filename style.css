@@ -109,24 +109,17 @@ html, body {
   padding: 80px 40px;
 }
 
-/* ================= ABOUT PAGE READABILITY ================= */
-
-.wrapper-about .title {
-  font-size: 28px;
-  font-weight: 400;
-  color: #ffffff;
-  margin-bottom: 40px;
-}
-
+/* ================= ABOUT PAGE TEXT ================= */
 .wrapper-about .text {
-  font-size: 14px;
-  line-height: 1.8;
-  color: #e0e0e0;
+  font-size: 15px;           /* readable size */
+  font-weight: 300;          /* lighter for elegance */
+  line-height: 2;            /* more vertical spacing */
+  color: #f0f0f0;            /* bright, readable */
   opacity: 1;
 }
 
 .wrapper-about .text p {
-  margin-bottom: 16px;
+  margin-bottom: 20px;       /* extra space between paragraphs */
 }
 
 /* ================= MAIN PAGE ================= */
@@ -174,23 +167,8 @@ html, body {
 
 /* ================= CREDIT ================= */
 
-.credit-horizontal {
-  position: fixed;
-  right: 20px;
-  bottom: 20px;
-  font-size: 9px;
-  color: rgba(255,255,255,0.25);
-  letter-spacing: 0.5px;
-  z-index: 2000;
-  transition: transform 0.2s ease;
-}
-
-.credit-horizontal:hover {
-  color: rgba(255,255,255,0.4);
-}
-
-/* vertical credit (if needed) */
-.credit {
+/* vertical credit */
+.credit vertical {
   position: fixed;
   right: 20px;
   bottom: 20px;
@@ -200,7 +178,7 @@ html, body {
   color: rgba(255,255,255,0.25);
   letter-spacing: 0.5px;
   z-index: 2000;
-  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, color 0.2s ease;
 }
 
 .credit:hover {
