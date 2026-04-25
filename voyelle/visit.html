@@ -2,71 +2,49 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>View</title>
+<title>Card</title>
 
 <style>
   html, body {
+    all: initial;
     margin: 0;
     padding: 0;
     height: 100%;
     background: #0f0f0e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-family: serif;
     color: #d6d2c8;
   }
 
-  /* CENTERING THE CARD */
-  body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  * {
+    all: unset;
+    box-sizing: border-box;
   }
 
-  /* subtle paper noise */
-  body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    background-image: radial-gradient(rgba(255,255,255,0.02) 1px, transparent 1px);
-    background-size: 3px 3px;
-    opacity: 0.15;
-    pointer-events: none;
-  }
-
-  /* CARD — BETWEEN SIZE */
   .card {
-    width: 360px;
-    height: 480px;
+    width: 320px;
+    height: 420px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 54px;
-  }
-
-  .top {
-    font-size: 11px;
-    letter-spacing: 0.22em;
-    opacity: 0.55;
-  }
-
-  .center {
-    text-align: center;
+    padding: 40px;
+    color: #d6d2c8;
   }
 
   .glyph {
-    font-size: 30px;
-    letter-spacing: 0.45em;
-    font-weight: 300;
-    color: #d6d2c8;
+    font-size: 28px;
+    letter-spacing: 0.4em;
+    text-align: center;
     text-shadow:
       0 1px 0 rgba(255,255,255,0.05),
       0 -1px 1px rgba(0,0,0,0.6);
-    margin: 6px 0;
   }
 
-  .bottom {
-    font-size: 12px;
-    line-height: 1.6;
-    opacity: 0.7;
+  .top, .bottom {
+    font-size: 10px;
+    opacity: 0.6;
   }
 
 </style>
@@ -76,15 +54,11 @@
 
 <div class="card">
 
-  <div class="top">
-    A practice of perception
-  </div>
+  <div class="top">A practice of perception</div>
 
-  <div class="center">
-    <div class="glyph">YL</div>
-    <div class="glyph">AE</div>
-    <div class="glyph">ON</div>
-  </div>
+  <div class="glyph">YL</div>
+  <div class="glyph">AE</div>
+  <div class="glyph">ON</div>
 
   <div class="bottom">
     Consultations<br>
