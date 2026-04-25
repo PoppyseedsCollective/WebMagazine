@@ -45,8 +45,8 @@ html, body {
 
 .cursor {
   position: fixed;
-  width: 10px;
-  height: 10px;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
   background: #39ff14;
   box-shadow: 0 0 10px #39ff14, 0 0 20px #39ff14;
