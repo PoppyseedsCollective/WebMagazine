@@ -259,8 +259,8 @@ a.ig:hover {
 
   .img-wrap .label {
     text-align: left;
-    margin-right: 0;
-    font-size: 12px;
+    margin-right: 10px;
+    font-size: 10px;
   }
 
   /* Keep top-left-title in a single line */
