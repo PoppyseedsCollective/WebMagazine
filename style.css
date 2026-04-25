@@ -104,9 +104,10 @@ html, body {
 .dot.winter { background: #a855f7; }
 .dot.summer { background: #3a3430; }
 
-.wrapper-about {
-  max-width: 700px;
-  padding: 80px 40px;
+.wrapper-about-text {
+  max-width: 700px;        /* keeps text from stretching too wide */
+  margin: 80px auto;       /* centers it vertically and horizontally */
+  padding: 20px;           /* invisible frame around text */
 }
 
 /* ================= ABOUT PAGE TEXT ================= */
