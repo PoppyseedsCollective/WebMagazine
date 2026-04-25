@@ -43,10 +43,27 @@
   .center {
     text-align: center;
     font-size: 12px;
-    line-height: 1.8;
+    line-height: 1.9;
     letter-spacing: 0.05em;
-    opacity: 0.7;
-    max-width: 260px;
+    opacity: 0.75;
+    max-width: 280px;
+  }
+
+  .block {
+    margin-bottom: 18px;
+  }
+
+  .lang {
+    opacity: 0.5;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    margin-bottom: 10px;
+  }
+
+  /* 🧠 selection effect (disappearing text) */
+  ::selection {
+    background: #000;
+    color: #000;
   }
 
 </style>
@@ -55,8 +72,19 @@
 <body>
 
 <div class="center">
-  +32 XXX XX XX XX<br>
-  We respond only to written messages.
+
+  <div class="block">
+    <div class="lang">EN</div>
+    +32 XXX XX XX XX<br>
+    We respond only to written messages.
+  </div>
+
+  <div class="block">
+    <div class="lang">FR</div>
+    +32 XXX XX XX XX<br>
+    Nous répondons uniquement aux messages écrits.
+  </div>
+
 </div>
 
 </body>
