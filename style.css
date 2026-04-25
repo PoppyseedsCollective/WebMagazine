@@ -234,3 +234,73 @@ a.ig:hover {
   transform: translateY(-4px) scale(1.05); /* lift + slight scale */
   color: #b56cff;                           /* purplish accent */
 }
+
+
+/* ================= MOBILE STYLES ================= */
+@media screen and (max-width: 768px) {
+
+  /* Center the nav and reduce size */
+  .top-left-title {
+    top: 10px;
+    left: 10px;
+    font-size: 14px;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  /* Cursor stays hidden */
+  .cursor {
+    display: none;
+  }
+
+  /* About text container */
+  .wrapper-about-text {
+    max-width: 90%;
+    margin: 40px auto;
+    padding: 15px;
+  }
+
+  .wrapper-about-text .about.text {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .wrapper-about-text .about.credit {
+    font-size: 12px;
+    line-height: 1.5;
+    margin-top: 15px;
+  }
+
+  /* Main page issues stack vertically */
+  .container {
+    flex-direction: column;
+    height: auto;
+    padding: 20px 0;
+  }
+
+  .issue {
+    width: 100%;
+    padding: 10px 0;
+  }
+
+  .img-wrap {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
+  .img-wrap .label {
+    text-align: center;
+    margin-top: 6px;
+    font-size: 9px;
+    margin-right: 0; /* reset right margin for small screens */
+  }
+
+  /* Vertical credit moves to bottom center */
+  .credit.vertical {
+    right: 50%;
+    bottom: 10px;
+    transform: translateX(50%) rotate(180deg);
+    font-size: 8px;
+  }
+
+}
