@@ -46,52 +46,46 @@
     flex-direction: column;
     justify-content: space-between;
     padding: 40px;
-    cursor: pointer;
   }
 
+  /* TOP TEXT REPLACED */
   .top {
-    font-size: 10px;
+    text-align: center;
+    font-size: 11px;
     letter-spacing: 0.2em;
-    opacity: 0.5;
+    opacity: 0.6;
+    line-height: 1.8;
   }
 
+  /* ONLY THIS IS CLICKABLE */
   .center {
     text-align: center;
-    line-height: 1.4;
+    cursor: pointer;
+    user-select: none;
   }
 
   .glyph {
     font-size: 28px;
-    letter-spacing: 0.4em;
+    letter-spacing: 0.35em;
     font-weight: 300;
     color: #cfcbbf;
-
     text-shadow:
       0 1px 0 rgba(255,255,255,0.05),
       0 -1px 1px rgba(0,0,0,0.6);
-
     margin: 6px 0;
   }
 
   .bottom {
+    text-align: center;
     font-size: 11px;
-    line-height: 1.6;
     opacity: 0.7;
+    line-height: 1.6;
   }
 
-  .bottom span {
-    display: block;
-  }
-
-  .bottom a {
-    color: #d6d2c8;
-    text-decoration: none;
-    transition: color 0.3s ease, text-shadow 0.3s ease;
-  }
-
-  .bottom a:hover {
-    color: #f0e9dd;
-    text-shadow: 0 0 6px rgba(255, 240, 210, 0.15);
+  /* selection = disappearance */
+  ::selection {
+    background: #000;
+    color: #000;
   }
 
 </style>
@@ -101,44 +95,59 @@
 
 <div class="card">
 
+  <!-- NEW TOP -->
   <div class="top">
-    A practice of perception
+    Consultations<br>
+    Charm<br>
+    Correspondences
   </div>
 
-  <div class="center">
+  <!-- CLICKABLE GLYPHS ONLY -->
+  <div class="center" id="glyph-container">
     <div class="glyph">RM</div>
     <div class="glyph">AE</div>
-    <div class="glyph">MNO</div>
+    <div class="glyph">MN</div>
   </div>
 
   <div class="bottom">
-    <span><a href="consultations.html">Consultations</a></span>
-    <span><a href="charm.html">Charm</a></span>
-    <span>Correspondences</span>
+    +32 XXX XX XX XX<br>
+    We respond only to written messages.
   </div>
 
 </div>
 
 <script>
-  const glyphEl = document.querySelectorAll(".glyph");
+  const glyphEls = document.querySelectorAll(".glyph");
+
   const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
-  function randomPair() {
-    return letters[Math.floor(Math.random() * letters.length)] +
-           letters[Math.floor(Math.random() * letters.length)];
+  // variable-length fragments (your request)
+  function randomFragment() {
+    const modes = [
+      2, // ER, DG
+      3  // DRG, SRG, VDM
+    ];
+
+    const len = modes[Math.floor(Math.random() * modes.length)];
+
+    let out = "";
+    for (let i = 0; i < len; i++) {
+      out += letters[Math.floor(Math.random() * letters.length)];
+    }
+    return out;
   }
 
   function shuffleGlyphs() {
-    glyphEl.forEach(el => {
-      el.textContent = randomPair();
+    glyphEls.forEach(el => {
+      el.textContent = randomFragment();
     });
   }
 
-  // 🔥 1. randomize ON LOAD
+  // ON LOAD
   shuffleGlyphs();
 
-  // 🔥 2. randomize ON CLICK
-  document.querySelector(".card").addEventListener("click", shuffleGlyphs);
+  // ONLY CLICK ON GLYPHS AREA
+  document.getElementById("glyph-container").addEventListener("click", shuffleGlyphs);
 </script>
 
 </body>
