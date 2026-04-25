@@ -152,6 +152,18 @@ html, body {
   display: block;
 }
 
+.img-wrap .label {
+  position: absolute;       /* position relative to .img-wrap */
+  bottom: 8px;              /* distance from bottom of image */
+  right: 8px;               /* distance from right edge */
+  font-size: 12px;          /* smaller text */
+  background: rgba(0,0,0,0.5); /* optional: subtle background for contrast */
+  color: white;
+  padding: 2px 6px;
+  border-radius: 3px;       /* optional: rounded corners */
+  font-weight: 400;
+}
+
 .credit {
   position: fixed;
   right: 20px;
