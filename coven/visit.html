@@ -196,38 +196,12 @@ body {
   // on load
   shuffleGlyphs();
 
-  // on click
-
-  <script>
-  const glyphEl = document.querySelectorAll(".glyph");
-  const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-
-  function randomGlyph() {
-    const len = Math.random() < 0.5 ? 2 : 3;
-
-    let out = "";
-    for (let i = 0; i < len; i++) {
-      out += letters[Math.floor(Math.random() * letters.length)];
-    }
-    return out;
-  }
-
-  function shuffleGlyphs() {
-    glyphEl.forEach(el => {
-      el.textContent = randomGlyph();
-    });
-  }
-
-  // initial load
-  shuffleGlyphs();
-
-  // ONLY glyphs are clickable now
+  // ONLY glyphs clickable
   glyphEl.forEach(el => {
     el.addEventListener("click", shuffleGlyphs);
+    el.style.cursor = "pointer";
   });
-</script>
 
-  
 </script>
 
 </body>
