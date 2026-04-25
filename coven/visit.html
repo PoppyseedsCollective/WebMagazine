@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -47,13 +46,16 @@
     flex-direction: column;
     justify-content: space-between;
     padding: 40px;
-    cursor: pointer;
   }
 
-  .top {
-    font-size: 10px;
+  /* SAME TYPO SYSTEM FOR TOP & BOTTOM */
+  .top,
+  .bottom {
+    text-align: center;
+    font-size: 11px;
+    line-height: 1.6;
     letter-spacing: 0.2em;
-    opacity: 0.5;
+    opacity: 0.55;
   }
 
   .center {
@@ -74,16 +76,6 @@
     margin: 6px 0;
   }
 
-  .bottom {
-    font-size: 11px;
-    line-height: 1.6;
-    opacity: 0.7;
-  }
-
-  .bottom span {
-    display: block;
-  }
-
   .bottom a {
     color: #d6d2c8;
     text-decoration: none;
@@ -95,6 +87,12 @@
     text-shadow: 0 0 6px rgba(255, 240, 210, 0.15);
   }
 
+  /* 🧠 selection = disappearance */
+  ::selection {
+    background: #000;
+    color: #000;
+  }
+
 </style>
 </head>
 
@@ -102,8 +100,11 @@
 
 <div class="card">
 
+  <!-- MIRRORED TYPO SYSTEM -->
   <div class="top">
-    A practice of perception
+    Consultations<br>
+    Charm<br>
+    Correspondences
   </div>
 
   <div class="center">
@@ -113,9 +114,9 @@
   </div>
 
   <div class="bottom">
-    <span>Consultations</span>
-    <span><a href="voyelle/marma.html">Charm</a></span>
-    <span>Correspondences</span>
+    Consultations<br>
+    <a href="voyelle/marma.html">Charm</a><br>
+    Correspondences
   </div>
 
 </div>
@@ -135,10 +136,7 @@
     });
   }
 
-  // 🔥 1. randomize ON LOAD
   shuffleGlyphs();
-
-  // 🔥 2. randomize ON CLICK
   document.querySelector(".card").addEventListener("click", shuffleGlyphs);
 </script>
 
