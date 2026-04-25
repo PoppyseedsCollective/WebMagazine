@@ -187,16 +187,5 @@ html, body {
   color: rgba(255,255,255,0.4);
 }
 
-.credit-horizontal {
-  position: fixed;                  /* stays in place */
-  right: 20px;                      /* distance from right edge */
-  bottom: 20px;                     /* bottom of the page */
-  font-size: 9px;                   /* very small text */
-  color: rgba(150, 150, 150, 0.6); /* soft grey */
-  font-weight: 300;                 /* light text */
-  z-index: 2000;                    /* above most content */
-  white-space: nowrap;              /* prevents wrapping */
-  letter-spacing: 0.5px;            /* optional spacing */
-}
 
 
