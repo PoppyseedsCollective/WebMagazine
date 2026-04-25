@@ -2,25 +2,37 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Card</title>
+<title>Coven</title>
+
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@300;400&display=swap" rel="stylesheet">
 
 <style>
-  html, body {
-    all: initial;
+  * {
     margin: 0;
     padding: 0;
-    height: 100%;
+    box-sizing: border-box;
+  }
+
+  body {
     background: #0f0f0e;
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: serif;
+    font-family: 'EB Garamond', serif;
     color: #d6d2c8;
   }
 
-  * {
-    all: unset;
-    box-sizing: border-box;
+  /* subtle paper texture */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: 
+      radial-gradient(rgba(255,255,255,0.02) 1px, transparent 1px);
+    background-size: 3px 3px;
+    opacity: 0.15;
+    pointer-events: none;
   }
 
   .card {
@@ -30,21 +42,39 @@
     flex-direction: column;
     justify-content: space-between;
     padding: 40px;
-    color: #d6d2c8;
+  }
+
+  .top {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    opacity: 0.5;
+  }
+
+  .center {
+    text-align: center;
+    line-height: 1.4;
   }
 
   .glyph {
     font-size: 28px;
     letter-spacing: 0.4em;
-    text-align: center;
+    font-weight: 300;
+
+    /* deboss effect */
+    color: #cfcbbf;
     text-shadow:
       0 1px 0 rgba(255,255,255,0.05),
       0 -1px 1px rgba(0,0,0,0.6);
   }
 
-  .top, .bottom {
-    font-size: 10px;
-    opacity: 0.6;
+  .bottom {
+    font-size: 11px;
+    line-height: 1.6;
+    opacity: 0.7;
+  }
+
+  .bottom span {
+    display: block;
   }
 
 </style>
@@ -54,16 +84,20 @@
 
 <div class="card">
 
-  <div class="top">A practice of perception</div>
+  <div class="top">
+    A practice of perception
+  </div>
 
-  <div class="glyph">YL</div>
-  <div class="glyph">AE</div>
-  <div class="glyph">ON</div>
+  <div class="center">
+    <div class="glyph">YL</div>
+    <div class="glyph">AE</div>
+    <div class="glyph">ON</div>
+  </div>
 
   <div class="bottom">
-    Consultations<br>
-    Objects<br>
-    Correspondences
+    <span>Consultations</span>
+    <span>Objects</span>
+    <span>Correspondences</span>
   </div>
 
 </div>
