@@ -159,7 +159,13 @@ body.flash {
     line-height: 2;
   }
 }
-
+/* Disable flash animation for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  body.flash {
+    animation: none !important;
+    background: #0f0f0e !important;
+  }
+}
 </style>
 </head>
 
@@ -241,24 +247,26 @@ shuffleGlyphs();
 // glyph click interaction
 glyphEl.forEach(el => el.addEventListener("click", shuffleGlyphs));
 
-// resonance flash effect (double flash)
 const resonance = document.getElementById("resonance");
 if (resonance) {
   resonance.addEventListener("click", e => {
     e.preventDefault();
 
-    function flashOnce(duration = 50, delay = 50, callback) {
-      document.body.classList.add("flash");
-      setTimeout(() => {
-        document.body.classList.remove("flash");
-        if (callback) setTimeout(callback, delay); // next flash after delay
-      }, duration);
-    }
+    // Only flash if user hasn't requested reduced motion
+    if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      function flashOnce(duration = 50, delay = 50, callback) {
+        document.body.classList.add("flash");
+        setTimeout(() => {
+          document.body.classList.remove("flash");
+          if (callback) setTimeout(callback, delay);
+        }, duration);
+      }
 
-    // Trigger two flashes
-    flashOnce(50, 50, () => {
-      flashOnce(50);
-    });
+      // Trigger two flashes
+      flashOnce(50, 50, () => {
+        flashOnce(50);
+      });
+    }
   });
 }
 </script>
