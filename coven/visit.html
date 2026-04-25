@@ -241,13 +241,24 @@ shuffleGlyphs();
 // glyph click interaction
 glyphEl.forEach(el => el.addEventListener("click", shuffleGlyphs));
 
-// resonance flash effect
+// resonance flash effect (double flash)
 const resonance = document.getElementById("resonance");
 if (resonance) {
   resonance.addEventListener("click", e => {
     e.preventDefault();
-    document.body.classList.add("flash");
-    setTimeout(() => document.body.classList.remove("flash"), 50);
+
+    function flashOnce(duration = 50, delay = 50, callback) {
+      document.body.classList.add("flash");
+      setTimeout(() => {
+        document.body.classList.remove("flash");
+        if (callback) setTimeout(callback, delay); // next flash after delay
+      }, duration);
+    }
+
+    // Trigger two flashes
+    flashOnce(50, 50, () => {
+      flashOnce(50);
+    });
   });
 }
 </script>
