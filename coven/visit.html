@@ -14,12 +14,14 @@
 
 <style>
 
+/* ---------------- RESET ---------------- */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* ---------------- BODY ---------------- */
 body {
   background: #0f0f0e;
   height: 100vh;
@@ -29,9 +31,16 @@ body {
   font-family: 'EB Garamond', serif;
   color: #d6d2c8;
 
-  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cdefs%3E%3CradialGradient id='g' cx='50%25' cy='50%25' r='50%25'%3E%3Cstop offset='0%25' stop-color='%23c8a85a' stop-opacity='1'/%3E%3Cstop offset='100%25' stop-color='%23c8a85a' stop-opacity='0'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='20' cy='20' r='8' fill='url(%23g)'/%3E%3C/svg%3E") 20 20, auto;
+  /* fallback safety cursor */
+  cursor: default;
 }
 
+/* ---------------- GLOBAL GOLD CURSOR ---------------- */
+html, body, * {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cdefs%3E%3CradialGradient id='g' cx='50%25' cy='50%25' r='50%25'%3E%3Cstop offset='0%25' stop-color='%23c8a85a' stop-opacity='1'/%3E%3Cstop offset='100%25' stop-color='%23c8a85a' stop-opacity='0'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='20' cy='20' r='8' fill='url(%23g)'/%3E%3C/svg%3E") 20 20, auto !important;
+}
+
+/* ---------------- BACKGROUND TEXTURE ---------------- */
 body::before {
   content: "";
   position: fixed;
@@ -42,6 +51,7 @@ body::before {
   pointer-events: none;
 }
 
+/* ---------------- CARD ---------------- */
 .card {
   width: 320px;
   height: 420px;
@@ -50,21 +60,23 @@ body::before {
   justify-content: space-between;
   padding: 40px;
 
-  /* FIX: no global hand cursor */
   cursor: default;
 }
 
+/* ---------------- TOP TEXT ---------------- */
 .top {
   font-size: 11px;
   letter-spacing: 0.2em;
   opacity: 0.7;
 }
 
+/* ---------------- CENTER ---------------- */
 .center {
   text-align: center;
   line-height: 1.4;
 }
 
+/* ---------------- GYLPHS ---------------- */
 .glyph {
   font-size: 28px;
   letter-spacing: 0.4em;
@@ -77,10 +89,10 @@ body::before {
 
   margin: 6px 0;
 
-  /* FIX: only glyphs interactive */
-  cursor: pointer;
+  cursor: inherit;
 }
 
+/* ---------------- BOTTOM LINKS ---------------- */
 .bottom {
   font-size: 10px;
   line-height: 1.6;
@@ -94,15 +106,17 @@ body::before {
 .bottom a {
   color: #d6d2c8;
   text-decoration: none;
-  transition: color 0.3s ease, text-shadow 0.3s ease;
+  transition: color 0.3s ease, text-shadow 0.3s ease, filter 0.3s ease;
 }
 
+/* ONLY visual change (NO cursor change) */
 .bottom a:hover {
   color: #f0e9dd;
-  text-shadow: 0 0 6px rgba(255, 240, 210, 0.15);
+  text-shadow: 0 0 6px rgba(255, 240, 210, 0.25);
+  filter: brightness(1.15);
 }
 
-/* selection */
+/* ---------------- SELECTION ---------------- */
 ::selection {
   background: #000;
   color: #000;
@@ -190,7 +204,7 @@ body::before {
   // on load
   shuffleGlyphs();
 
-  // ONLY glyphs clickable
+  // click glyphs only
   glyphEl.forEach(el => {
     el.addEventListener("click", shuffleGlyphs);
   });
