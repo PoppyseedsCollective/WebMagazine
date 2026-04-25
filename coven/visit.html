@@ -1,3 +1,30 @@
+it should still appear like this but with the changes of:
+
+
+can you exchange the bightness of the block
+A practice of perception
+
+with
+
+Consultations
+Charm
+Correspondences
+
+
+and to change the letters, the feeld of clicking only on the letters.
+and please add one letter but this should be also random,
+sometimes like:
+ER
+DG
+DRG
+sometimes 
+
+DF
+SRG
+VD
+
+and last moint, also here when you select, bckgroudn color balck and also typo black
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -46,22 +73,18 @@
     flex-direction: column;
     justify-content: space-between;
     padding: 40px;
+    cursor: pointer;
   }
 
-  /* TOP REPLACED (your request) */
   .top {
-    text-align: center;
     font-size: 10px;
     letter-spacing: 0.2em;
     opacity: 0.5;
-    line-height: 1.6;
   }
 
-  /* ONLY GLYPHS CLICKABLE */
   .center {
     text-align: center;
     line-height: 1.4;
-    user-select: none;
   }
 
   .glyph {
@@ -69,18 +92,18 @@
     letter-spacing: 0.4em;
     font-weight: 300;
     color: #cfcbbf;
+
     text-shadow:
       0 1px 0 rgba(255,255,255,0.05),
       0 -1px 1px rgba(0,0,0,0.6);
+
     margin: 6px 0;
-    cursor: pointer;
   }
 
   .bottom {
     font-size: 11px;
     line-height: 1.6;
     opacity: 0.7;
-    text-align: center;
   }
 
   .bottom span {
@@ -98,12 +121,6 @@
     text-shadow: 0 0 6px rgba(255, 240, 210, 0.15);
   }
 
-  /* 🧠 selection = disappearance */
-  ::selection {
-    background: #000;
-    color: #000;
-  }
-
 </style>
 </head>
 
@@ -111,15 +128,11 @@
 
 <div class="card">
 
-  <!-- TOP TEXT UPDATED -->
   <div class="top">
-    Consultations<br>
-    Charm<br>
-    Correspondences
+    A practice of perception
   </div>
 
-  <!-- ONLY THIS IS INTERACTIVE -->
-  <div class="center" id="glyph-container">
+  <div class="center">
     <div class="glyph">RM</div>
     <div class="glyph">AE</div>
     <div class="glyph">MN</div>
@@ -134,30 +147,25 @@
 </div>
 
 <script>
-  const glyphEls = document.querySelectorAll(".glyph");
+  const glyphEl = document.querySelectorAll(".glyph");
   const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
-  function randomFragment() {
-    const len = Math.random() < 0.5 ? 2 : 3; // ER / DRG style
-
-    let out = "";
-    for (let i = 0; i < len; i++) {
-      out += letters[Math.floor(Math.random() * letters.length)];
-    }
-    return out;
+  function randomPair() {
+    return letters[Math.floor(Math.random() * letters.length)] +
+           letters[Math.floor(Math.random() * letters.length)];
   }
 
   function shuffleGlyphs() {
-    glyphEls.forEach(el => {
-      el.textContent = randomFragment();
+    glyphEl.forEach(el => {
+      el.textContent = randomPair();
     });
   }
 
-  // ON LOAD
+  // 🔥 1. randomize ON LOAD
   shuffleGlyphs();
 
-  // ONLY CLICK ON GLYPHS AREA
-  document.getElementById("glyph-container").addEventListener("click", shuffleGlyphs);
+  // 🔥 2. randomize ON CLICK
+  document.querySelector(".card").addEventListener("click", shuffleGlyphs);
 </script>
 
 </body>
