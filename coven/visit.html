@@ -129,23 +129,63 @@
 
 <script>
   const glyphEl = document.querySelectorAll(".glyph");
-  const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
-  function randomPair() {
-    return letters[Math.floor(Math.random() * letters.length)] +
-           letters[Math.floor(Math.random() * letters.length)];
+  // Weighted frequency (EN + FR approximation)
+  const weightedLetters = [
+    "E","E","E","E","E","E","E","E","E","E",
+    "A","A","A","A","A","A",
+    "R","R","R","R","R",
+    "S","S","S","S",
+    "T","T","T","T",
+    "N","N","N","N",
+    "I","I","I","I",
+    "L","L","L",
+    "U","U","U",
+    "O","O","O",
+    "D","D","D",
+    "C","C","C",
+    "M","M",
+    "P","P",
+    "G","G",
+    "B","B",
+    "V","V",
+    "H","H",
+    "F","F",
+    "Q","Q",
+    "Y","Y",
+    "J",
+    "X",
+    "Z",
+    "K",
+    "W"
+  ];
+
+  function randomLetter() {
+    return weightedLetters[
+      Math.floor(Math.random() * weightedLetters.length)
+    ];
+  }
+
+  function randomGlyph() {
+    const len = Math.random() < 0.5 ? 2 : 3;
+
+    let out = "";
+    for (let i = 0; i < len; i++) {
+      out += randomLetter();
+    }
+    return out;
   }
 
   function shuffleGlyphs() {
     glyphEl.forEach(el => {
-      el.textContent = randomPair();
+      el.textContent = randomGlyph();
     });
   }
 
-  // 🔥 1. randomize ON LOAD
+  // on load
   shuffleGlyphs();
 
-  // 🔥 2. randomize ON CLICK
+  // on click
   document.querySelector(".card").addEventListener("click", shuffleGlyphs);
 </script>
 
