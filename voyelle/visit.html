@@ -21,7 +21,7 @@
 
   body {
     background: #0f0f0e;
-    height: 130vh;
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -47,6 +47,7 @@
     flex-direction: column;
     justify-content: space-between;
     padding: 40px;
+    cursor: pointer; /* indicates interactivity */
   }
 
   .top {
@@ -64,35 +65,35 @@
     font-size: 28px;
     letter-spacing: 0.4em;
     font-weight: 300;
-
-    /* deboss effect */
     color: #cfcbbf;
+
     text-shadow:
       0 1px 0 rgba(255,255,255,0.05),
       0 -1px 1px rgba(0,0,0,0.6);
+
+    margin: 6px 0;
+    transition: opacity 0.2s ease;
   }
 
- .bottom a:hover {
-  color: #f2ebdf;
-  text-shadow:
-    0 1px 0 rgba(255,255,255,0.05),
-    0 -1px 1px rgba(0,0,0,0.4);
+  .bottom {
+    font-size: 11px;
+    line-height: 1.6;
+    opacity: 0.7;
   }
 
   .bottom span {
     display: block;
   }
 
-  /* LINK STYLE (important) */
   .bottom a {
-    color: inherit;
+    color: #d6d2c8;
     text-decoration: none;
-    opacity: 0.7;
-    transition: opacity 0.3s ease;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
   }
 
   .bottom a:hover {
-    opacity: 1;
+    color: #f0e9dd;
+    text-shadow: 0 0 6px rgba(255, 240, 210, 0.15);
   }
 
 </style>
@@ -106,6 +107,7 @@
     A practice of perception
   </div>
 
+  <!-- GLYPHS -->
   <div class="center">
     <div class="glyph">RM</div>
     <div class="glyph">AE</div>
@@ -114,11 +116,30 @@
 
   <div class="bottom">
     <span>Consultations</span>
-    <span><a href="/marma.html">Charm</a></span>
+    <span><a href="voyelle/marma.html">Charm</a></span>
     <span>Correspondences</span>
   </div>
 
 </div>
+
+<script>
+  const glyphEl = document.querySelectorAll(".glyph");
+
+  const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+  function randomPair() {
+    return letters[Math.floor(Math.random() * letters.length)] +
+           letters[Math.floor(Math.random() * letters.length)];
+  }
+
+  function shuffleGlyphs() {
+    glyphEl.forEach(el => {
+      el.textContent = randomPair();
+    });
+  }
+
+  document.querySelector(".card").addEventListener("click", shuffleGlyphs);
+</script>
 
 </body>
 </html>
