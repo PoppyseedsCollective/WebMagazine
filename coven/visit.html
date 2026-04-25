@@ -30,8 +30,6 @@ body {
   justify-content: center;
   font-family: 'EB Garamond', serif;
   color: #d6d2c8;
-
-  /* fallback safety cursor */
   cursor: default;
 }
 
@@ -51,6 +49,16 @@ body::before {
   pointer-events: none;
 }
 
+/* ---------------- FLASH EFFECT ---------------- */
+body.flash {
+  animation: flashWhite 0.15s ease;
+}
+
+@keyframes flashWhite {
+  0%   { background: #ffffff; }
+  100% { background: #0f0f0e; }
+}
+
 /* ---------------- CARD ---------------- */
 .card {
   width: 320px;
@@ -59,11 +67,9 @@ body::before {
   flex-direction: column;
   justify-content: space-between;
   padding: 40px;
-
-  cursor: default;
 }
 
-/* ---------------- TOP TEXT ---------------- */
+/* ---------------- TOP ---------------- */
 .top {
   font-size: 11px;
   letter-spacing: 0.2em;
@@ -76,23 +82,20 @@ body::before {
   line-height: 1.4;
 }
 
-/* ---------------- GYLPHS ---------------- */
+/* ---------------- GLYPHS ---------------- */
 .glyph {
   font-size: 28px;
   letter-spacing: 0.4em;
   font-weight: 300;
   color: #cfcbbf;
-
   text-shadow:
     0 1px 0 rgba(255,255,255,0.05),
     0 -1px 1px rgba(0,0,0,0.6);
-
   margin: 6px 0;
-
   cursor: inherit;
 }
 
-/* ---------------- BOTTOM LINKS ---------------- */
+/* ---------------- BOTTOM ---------------- */
 .bottom {
   font-size: 10px;
   line-height: 1.6;
@@ -109,7 +112,6 @@ body::before {
   transition: color 0.3s ease, text-shadow 0.3s ease, filter 0.3s ease;
 }
 
-/* ONLY visual change (NO cursor change) */
 .bottom a:hover {
   color: #f0e9dd;
   text-shadow: 0 0 6px rgba(255, 240, 210, 0.25);
@@ -122,7 +124,8 @@ body::before {
   color: #000;
 }
 
-  @media (max-width: 600px) {
+/* ---------------- MOBILE ---------------- */
+@media (max-width: 600px) {
 
   .card {
     width: 85vw;
@@ -166,7 +169,7 @@ body::before {
   <div class="bottom">
     <span><a href="consultations.html">Consultations</a></span>
     <span><a href="charm.html">Charm</a></span>
-    <span>Resonance</span>
+    <span><a href="#" id="resonance">Resonance</a></span>
   </div>
 
 </div>
@@ -211,7 +214,6 @@ body::before {
 
   function randomGlyph() {
     const len = Math.random() < 0.5 ? 2 : 3;
-
     let out = "";
     for (let i = 0; i < len; i++) {
       out += randomLetter();
@@ -225,16 +227,26 @@ body::before {
     });
   }
 
-  // on load
+  // initial load
   shuffleGlyphs();
 
-  // click glyphs only
+  // glyph interaction
   glyphEl.forEach(el => {
     el.addEventListener("click", shuffleGlyphs);
   });
 
+  // resonance flash
+  const resonance = document.getElementById("resonance");
 
-  
+  resonance.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    document.body.classList.add("flash");
+
+    setTimeout(() => {
+      document.body.classList.remove("flash");
+    }, 150);
+  });
 
 </script>
 
