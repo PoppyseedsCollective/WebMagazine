@@ -122,6 +122,30 @@ body::before {
   color: #000;
 }
 
+  @media (max-width: 600px) {
+
+  .card {
+    width: 85vw;
+    height: auto;
+    padding: 28px;
+  }
+
+  .top {
+    font-size: 10px;
+  }
+
+  .glyph {
+    font-size: 22px;
+    letter-spacing: 0.35em;
+  }
+
+  .bottom {
+    font-size: 11px;
+    line-height: 1.8;
+  }
+
+}
+
 </style>
 </head>
 
@@ -208,6 +232,9 @@ body::before {
   glyphEl.forEach(el => {
     el.addEventListener("click", shuffleGlyphs);
   });
+
+
+  
 
 </script>
 
