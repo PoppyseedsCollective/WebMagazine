@@ -154,11 +154,16 @@ html, body {
 
 .img-wrap .label {
   position: static;        /* remove any absolute positioning */
-  font-size: 12px;         /* smaller text */
-  margin-top: 6px;         /* space between image and text */
+  font-size: 10px;         /* smaller text */
+  margin-top: 4px;         /* space between image and text */
   text-align: right;       /* aligns label to the right under the image */
   color: white;
   font-weight: 400;
+}
+.label.summer25 {
+  text-align: left;      /* moves text to the left under the image */
+  margin-left: 20px;        /* optional fine-tune, add pixels if you want some spacing */
+  font-size: 12px;       /* smaller text if needed */
 }
 
 .credit {
