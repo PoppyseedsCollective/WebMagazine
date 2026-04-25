@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="icon" href="data:image/svg+xml,
+
+<link rel="icon" href="data:image/svg+xml,
 <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'>
   <circle cx='50' cy='50' r='22' fill='%23c8a85a'/>
 </svg>">
+
 <meta charset="UTF-8">
 <title>Coven</title>
 
@@ -32,8 +34,7 @@
     content: "";
     position: fixed;
     inset: 0;
-    background-image: 
-      radial-gradient(rgba(255,255,255,0.02) 1px, transparent 1px);
+    background-image: radial-gradient(rgba(255,255,255,0.02) 1px, transparent 1px);
     background-size: 3px 3px;
     opacity: 0.15;
     pointer-events: none;
@@ -81,6 +82,18 @@
     display: block;
   }
 
+  /* LINK STYLE (important) */
+  .bottom a {
+    color: inherit;
+    text-decoration: none;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+  }
+
+  .bottom a:hover {
+    opacity: 1;
+  }
+
 </style>
 </head>
 
@@ -100,7 +113,7 @@
 
   <div class="bottom">
     <span>Consultations</span>
-    <span>Objects</span>
+    <span><a href="voyelle/marma.html">Charm</a></span>
     <span>Correspondences</span>
   </div>
 
