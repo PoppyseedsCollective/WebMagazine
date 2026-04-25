@@ -238,19 +238,22 @@ a.ig:hover {
 
 /* ================= MOBILE ================= */
 @media (max-width: 768px) {
+  /* Stack issues vertically */
   .container {
     flex-direction: column;
+    align-items: center;   /* center images */
     height: auto;
     padding: 20px;
   }
 
   .issue {
     justify-content: center;
+    width: 100%;
     padding: 10px 0 !important;
   }
 
   .img-wrap {
-    max-width: 90%;
+    max-width: 70%;       /* smaller images */
     margin-top: 20px;
   }
 
@@ -260,16 +263,33 @@ a.ig:hover {
     font-size: 12px;
   }
 
+  /* Keep top-left-title in a single line */
+  .top-left-title {
+    flex-wrap: nowrap;
+    font-size: 14px;
+  }
+
+  /* About text adjustments */
   .wrapper-about-text {
-    padding: 20px;
+    padding: 15px;
   }
 
   .about.text {
-    font-size: 14px;   /* smaller for mobile */
-    line-height: 1.8;  /* readable spacing */
+    font-size: 14px;
+    line-height: 1.8;
+    text-align: left;
   }
 
   .about.credit p {
     font-size: 12px;
+    text-align: left;
+  }
+
+  /* Vertical credit at bottom right */
+  .credit.vertical {
+    right: 10px;
+    bottom: 10px;
+    font-size: 8px;
+    transform: rotate(180deg);
   }
 }
