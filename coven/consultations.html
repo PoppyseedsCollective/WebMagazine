@@ -1,1 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
 
+<link rel="icon" href="data:image/svg+xml,
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'>
+  <circle cx='50' cy='50' r='22' fill='%23c8a85a'/>
+</svg>">
+
+<meta charset="UTF-8">
+<title>Consultations</title>
+
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    background: #0f0f0e;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'EB Garamond', serif;
+    color: #d6d2c8;
+  }
+
+  /* subtle paper texture */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: radial-gradient(rgba(255,255,255,0.02) 1px, transparent 1px);
+    background-size: 3px 3px;
+    opacity: 0.15;
+    pointer-events: none;
+  }
+
+  .card {
+    width: 360px;
+    height: 480px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 50px;
+  }
+
+  .top {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    opacity: 0.5;
+  }
+
+  .center {
+    text-align: center;
+  }
+
+  .glyph {
+    font-size: 26px;
+    letter-spacing: 0.35em;
+    font-weight: 300;
+    color: #cfcbbf;
+
+    text-shadow:
+      0 1px 0 rgba(255,255,255,0.05),
+      0 -1px 1px rgba(0,0,0,0.6);
+  }
+
+  .info {
+    text-align: center;
+    font-size: 11px;
+    line-height: 1.8;
+    opacity: 0.65;
+    letter-spacing: 0.05em;
+  }
+
+  .bottom {
+    text-align: center;
+    font-size: 10px;
+    opacity: 0.5;
+  }
+
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+  <div class="top">
+    Consultations
+  </div>
+
+  <div class="center">
+    <div class="glyph">RM</div>
+    <div class="glyph">AE</div>
+    <div class="glyph">MN</div>
+  </div>
+
+  <div class="info">
+    +32 356 68 41 61<br>
+    We respond only to written messages.
+  </div>
+
+  <div class="bottom">
+    Written correspondence only
+  </div>
+
+</div>
+
+</body>
+</html>
