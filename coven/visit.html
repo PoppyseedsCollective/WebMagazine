@@ -186,6 +186,7 @@ body.flash {
 
 <script>
 const glyphEl = document.querySelectorAll(".glyph");
+
 const weightedLetters = [
   "E","E","E","E","E","E","E","E","E","E",
   "A","A","A","A","A","A",
@@ -220,7 +221,8 @@ function randomLetter() {
 }
 
 function shuffleGlyphs() {
-  const threeLetterIndex = Math.floor(Math.random() * glyphEl.length); // pick 0, 1, or 2
+  const threeLetterIndex = Math.floor(Math.random() * glyphEl.length); // pick one element for 3 letters
+
   glyphEl.forEach((el, index) => {
     const len = index === threeLetterIndex ? 3 : 2;
     let out = "";
@@ -231,23 +233,11 @@ function shuffleGlyphs() {
   });
 }
 
-function shuffleGlyphs() {
-  glyphEl.forEach(el => el.textContent = randomGlyph());
-}
-
 // initial load
 shuffleGlyphs();
 
 // glyph interaction
 glyphEl.forEach(el => el.addEventListener("click", shuffleGlyphs));
-
-// resonance flash
-const resonance = document.getElementById("resonance");
-resonance.addEventListener("click", e => {
-  e.preventDefault();
-  document.body.classList.add("flash");
-  setTimeout(() => document.body.classList.remove("flash"), 150);
-});
 </script>
 
 </body>
