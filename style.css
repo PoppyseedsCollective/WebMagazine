@@ -287,7 +287,7 @@ a.ig:hover {
   .credit.vertical {
     right: 10px;
     bottom: 10px;
-    font-size: 8px;
+    font-size: 10px;
     transform: rotate(180deg);
   }
 }
