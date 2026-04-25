@@ -187,4 +187,16 @@ html, body {
   color: rgba(255,255,255,0.4);
 }
 
+.credit-horizontal {
+  position: fixed;         /* stays in place when scrolling */
+  right: 20px;             /* distance from right edge */
+  top: 20px;               /* distance from top (or adjust as needed) */
+  font-size: 10px;         /* small text */
+  color: rgba(255, 255, 255, 0.5); /* subtle white */
+  font-weight: 300;        /* light text */
+  z-index: 2000;           /* above most content */
+  white-space: nowrap;     /* prevents wrapping */
+  letter-spacing: 0.5px;   /* optional spacing */
+}
+
 
