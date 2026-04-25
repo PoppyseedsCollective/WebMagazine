@@ -43,3 +43,25 @@ nav.addEventListener("mouseenter", () => {
 nav.addEventListener("mouseleave", () => {
   document.body.classList.remove("nav-hover");
 });
+
+// Create a 32x32 green dot favicon
+const canvas = document.createElement('canvas');
+canvas.width = 32;
+canvas.height = 32;
+const ctx = canvas.getContext('2d');
+
+// Draw green circle
+ctx.fillStyle = '#39ff14';  // bright neon green
+ctx.beginPath();
+ctx.arc(16, 16, 16, 0, Math.PI * 2);
+ctx.fill();
+
+// Convert canvas to data URL
+const faviconURL = canvas.toDataURL('image/png');
+
+// Set favicon
+const favicon = document.getElementById('favicon');
+favicon.href = faviconURL;
+
+
+
