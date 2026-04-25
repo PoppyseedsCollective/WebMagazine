@@ -165,7 +165,7 @@ html, body {
   font-weight: 400;
 }
 .issue.right .img-wrap .label {
-  margin-right: 30px; /* moves it away from the right edge */
+  margin-right: 60px; /* moves it away from the right edge */
 }
 
 /* ================= CREDIT ================= */
