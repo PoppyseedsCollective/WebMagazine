@@ -254,7 +254,7 @@ a.ig:hover {
 
   .img-wrap {
     max-width: 70%;       /* smaller images */
-    margin-top: 0px;
+    margin-top: 10px;
   }
 
   .img-wrap .label {
