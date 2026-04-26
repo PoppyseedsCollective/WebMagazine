@@ -91,7 +91,27 @@ a[href^="tel"] {
   text-decoration: none; /* remove underline */
   cursor: text;          /* optional: normal cursor instead of pointer */
 }
-  
+ @media (max-width: 600px) {
+  body {
+    padding: 18px;
+  }
+
+  .center {
+    max-width: 240px;     /* makes the whole block smaller */
+    font-size: 11px;      /* slightly smaller typography */
+    letter-spacing: 0.25em;
+  }
+
+  .nr {
+    margin-bottom: 8px;
+  }
+
+  .msg {
+    font-size: 10px;
+    line-height: 1.7;
+    max-width: 200px;     /* keeps it tighter on mobile */
+  }
+} 
 </style>
 </head>
 
