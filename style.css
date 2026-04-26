@@ -320,10 +320,10 @@ a.ig:hover {
   }
   .fly-dot {
   position: fixed;
-  width: 6px;
-  height: 6px;
+  width: 3px;
+  height: 3px;
   background: #39ff14;
-  border-radius: 50%;
+  border-radius: 70%;
   box-shadow: 0 0 10px #39ff14, 0 0 20px #39ff14;
   z-index: 9999;
   pointer-events: none;
