@@ -254,12 +254,12 @@ a.ig:hover {
 
   .img-wrap {
     max-width: 66%;       /* smaller images */
-    margin-top: 0px;
+    margin-top: 50px;
   }
 
   .img-wrap .label {
     text-align: left;
-    margin-left: 30px;
+    margin-left: 20px;
     font-size: 10px;
   }
 
