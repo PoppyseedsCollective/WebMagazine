@@ -318,4 +318,16 @@ a.ig:hover {
     font-size: 8px;
     transform: rotate(180deg);
   }
+  .fly-dot {
+  position: fixed;
+  width: 6px;
+  height: 6px;
+  background: #39ff14;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #39ff14, 0 0 20px #39ff14;
+  z-index: 9999;
+  pointer-events: none;
+  top: 50%;
+  left: 50%;
+  }
 }
