@@ -240,10 +240,11 @@ a.ig:hover {
 @media (max-width: 768px) {
   /* Stack issues vertically */
   .container {
-    flex-direction: column;
-    align-items: left;   /* center images */
-    height: auto;
-    padding-top: 50px;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  height: auto;
+  padding-top: 50px;
  
   }
 
