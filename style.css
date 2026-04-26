@@ -243,6 +243,7 @@ a.ig:hover {
     flex-direction: column;
     align-items: left;   /* center images */
     height: auto;
+    padding-top: 50px;
  
   }
 
@@ -266,9 +267,6 @@ a.ig:hover {
   .top-left-title {
     flex-wrap: nowrap;
     font-size: 18px;
-  }
-  .wrapper {
-  padding-top: 50px;
   }
 
   /* About text adjustments */
