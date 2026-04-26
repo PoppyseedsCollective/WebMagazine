@@ -279,8 +279,8 @@ a.ig:hover {
   }
 
   .about.text {
-    font-size: 12px;   /* smaller for mobile */
-    line-height: 1;  /* readable spacing */
+    font-size: 10px;   /* smaller for mobile */
+    line-height: 0.5;  /* readable spacing */
   }
 
   .about.credit p {
