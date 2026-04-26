@@ -243,13 +243,13 @@ a.ig:hover {
     flex-direction: column;
     align-items: left;   /* center images */
     height: auto;
-    padding: 0px;
+ 
   }
 
   .issue {
     justify-content: center;
     width: 100%;
-    padding: 0px 0 !important;
+  
   }
 
   .img-wrap {
@@ -259,7 +259,6 @@ a.ig:hover {
 
   .img-wrap .label {
     text-align: right;
-    margin-right: 0px;
     font-size: 10px;
   }
 
