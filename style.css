@@ -284,6 +284,30 @@ a.ig:hover {
     font-size: 10px;
   }
 
+   /* Poppyseeds Artist page */
+    .poppyseeds-page .wrapper {
+    padding: 80px 18px 60px;
+    gap: 60px;
+  }
+
+  .poppyseeds-page .section-title {
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    margin-bottom: 18px;
+  }
+
+  .poppyseeds-page .list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .poppyseeds-page .name {
+    font-size: 12px;
+    line-height: 1.4;
+    letter-spacing: 0.08em;
+  }
+
   /* Vertical credit at bottom right */
   .credit.vertical {
     right: 10px;
