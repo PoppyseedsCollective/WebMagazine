@@ -106,11 +106,20 @@ a[href^="tel"] {
     margin-bottom: 8px;
   }
 
-  .msg {
-    font-size: 10px;
-    line-height: 1.7;
-    max-width: 200px;     /* keeps it tighter on mobile */
+.msg {
+  font-size: 10px;
+  line-height: 1.7;
+  max-width: 200px;
+
+  .msg:link,
+  .msg:visited,
+  .msg:hover,
+  .msg:active {
+    color: #d6d2c8;
+    text-decoration: none;
   }
+
+
 } 
 </style>
 </head>
