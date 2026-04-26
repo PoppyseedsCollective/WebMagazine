@@ -34,6 +34,16 @@
 
 <style>
 
+.scroll-wash {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at 50% 20%, rgba(200,168,90,0.12), transparent 60%);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  z-index: 0;
+}
+
 /* ---------------- RESET ---------------- */
 * {
   margin: 0;
