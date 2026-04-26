@@ -269,7 +269,7 @@ a.ig:hover {
     font-size: 18px;
   }
   .wrapper {
-  margin-bottom: 50px;
+  padding-top: 50px;
   }
 
   /* About text adjustments */
