@@ -249,7 +249,7 @@ a.ig:hover {
   .issue {
     justify-content: left;
     width: 100%;
-    padding: 30px 0 !important;
+    padding: 0px 0 !important;
   }
 
   .img-wrap {
@@ -287,7 +287,7 @@ a.ig:hover {
   .credit.vertical {
     right: 10px;
     bottom: 10px;
-    font-size: 10px;
+    font-size: 8px;
     transform: rotate(180deg);
   }
 }
