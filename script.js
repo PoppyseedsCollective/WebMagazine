@@ -64,41 +64,43 @@ const favicon = document.getElementById('favicon');
 favicon.href = faviconURL;
 
 // Flying Dot
-const dot = document.querySelector('.fly-dot');
+window.addEventListener("DOMContentLoaded", () => {
+  const dot = document.querySelector(".fly-dot");
 
-let x = window.innerWidth / 2;
-let y = window.innerHeight / 2;
+  let x = window.innerWidth / 2;
+  let y = window.innerHeight / 2;
 
-let vx = (Math.random() - 0.5) * 2;
-let vy = (Math.random() - 0.5) * 2;
+  let vx = (Math.random() - 0.5) * 2;
+  let vy = (Math.random() - 0.5) * 2;
 
-function animate() {
-  x += vx;
-  y += vy;
+  function animate() {
+    x += vx;
+    y += vy;
 
-  // bounce off edges
-  if (x <= 0 || x >= window.innerWidth) vx *= -1;
-  if (y <= 0 || y >= window.innerHeight) vy *= -1;
+    // bounce
+    if (x <= 0 || x >= window.innerWidth) vx *= -1;
+    if (y <= 0 || y >= window.innerHeight) vy *= -1;
 
-  // slight randomness (fly behavior)
-  vx += (Math.random() - 0.5) * 0.3;
-  vy += (Math.random() - 0.5) * 0.3;
+    // randomness
+    vx += (Math.random() - 0.5) * 0.3;
+    vy += (Math.random() - 0.5) * 0.3;
 
-  // limit speed
-  const speed = Math.sqrt(vx * vx + vy * vy);
-  const maxSpeed = 2.2;
-  if (speed > maxSpeed) {
-    vx = (vx / speed) * maxSpeed;
-    vy = (vy / speed) * maxSpeed;
+    // limit speed
+    const speed = Math.sqrt(vx * vx + vy * vy);
+    const maxSpeed = 2.2;
+
+    if (speed > maxSpeed) {
+      vx = (vx / speed) * maxSpeed;
+      vy = (vy / speed) * maxSpeed;
+    }
+
+    dot.style.transform = `translate(${x}px, ${y}px)`;
+
+    requestAnimationFrame(animate);
   }
 
-  dot.style.transform = `translate(${x}px, ${y}px)`;
-
-  requestAnimationFrame(animate);
-}
-
-animate();
-
+  animate();
+});
 
 
 
