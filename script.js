@@ -63,6 +63,17 @@ const faviconURL = canvas.toDataURL('image/png');
 const favicon = document.getElementById('favicon');
 favicon.href = faviconURL;
 
+document.addEventListener('DOMContentLoaded', () => {
+  const cursor = document.querySelector('.cursor');
+
+  if (!cursor) {
+    console.error('Cursor element not found');
+    return;
+  }
+
+  document.addEventListener('mousemove', (e) => {
+    cursor.style.left = e.clientX + 'px';
+    cursor.style.top = e.clientY + 'px';
 
 });
 
