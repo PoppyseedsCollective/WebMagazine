@@ -271,40 +271,39 @@ a.ig:hover {
   }
 
   /* About text adjustments */
-  .wrapper-about-text {
-    text-align: left;
-    margin-left: 50px;
+   .wrapper-about-text .about.text {
+    font-size: 14px;
+    line-height: 1.4;
   }
 
-  .about.text {
-    font-size: 10px;   /* smaller for mobile */
-    line-height: 0.5;  /* readable spacing */
+  .wrapper-about-text .about.credit p {
+    font-size: 12px;
   }
 
-  .about.credit p {
-    font-size: 10px;
+  .name {
+    font-size: 12px;
   }
 
    /* Poppyseeds Artist page */
-    .poppyseeds-page .wrapper {
+    .poppyseeds .wrapper {
     padding: 80px 18px 60px;
     gap: 60px;
   }
 
-  .poppyseeds-page .section-title {
+  .poppyseeds .section-title {
     font-size: 11px;
     letter-spacing: 0.25em;
     margin-bottom: 18px;
   }
 
-  .poppyseeds-page .list {
+  .poppyseeds .list {
     display: flex;
     flex-direction: column;
     gap: 6px;
   }
 
-  .poppyseeds-page .name {
-    font-size: 12px;
+  .poppyseeds .name {
+    font-size: 10px;
     line-height: 1.4;
     letter-spacing: 0.08em;
   }
